@@ -15,28 +15,28 @@ export const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-display text-psychedelic">
-              Golden Shower
-            </div>
-          </Link>
+    <header className="sticky top-0 z-50 bg-black-glossy/95 backdrop-blur supports-[backdrop-filter]:bg-black-glossy/80 border-b border-gold-dark">
+      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+        <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+          <h1 className="font-anton text-2xl font-bold text-gold-primary uppercase tracking-wide">
+            Golden Shower
+          </h1>
+        </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
+        <nav className="hidden md:flex items-center space-x-8">
+          <Link to="/catalogo" className="font-montserrat text-sm uppercase tracking-wide text-white-warm hover:text-gold-primary transition-colors">
+            Catalogo
+          </Link>
+          <Link to="/chi-siamo" className="font-montserrat text-sm uppercase tracking-wide text-white-warm hover:text-gold-primary transition-colors">
+            Chi Siamo
+          </Link>
+          <Link to="/blog" className="font-montserrat text-sm uppercase tracking-wide text-white-warm hover:text-gold-primary transition-colors">
+            Blog
+          </Link>
+          <Link to="/contatti" className="font-montserrat text-sm uppercase tracking-wide text-white-warm hover:text-gold-primary transition-colors">
+            Contatti
+          </Link>
+        </nav>
 
           {/* Actions */}
           <div className="flex items-center space-x-2">
@@ -111,7 +111,6 @@ export const Header = () => {
             </Sheet>
           </div>
         </div>
-      </div>
     </header>
   );
 };

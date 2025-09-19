@@ -1,55 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Golden Shower - Audacious Design System for Provocative Craft Beer */
-/* Mascolino, audace, malizioso - inspired by sensual energy and playful provocation */
-
+/* Golden Shower Palette - Bold and Provocative */
 @layer base {
   :root {
-    /* Golden Shower - Audacious color palette for provocative craft beer */
-    --background: 210 40% 2%;
-    --foreground: 43 100% 88%;
+    /* Golden Shower Palette Colors */
+    --primary: 51 100% 50%;           /* #FFD700 Gold */
+    --primary-foreground: 0 0% 5%;    /* Black for contrast */
     
-    --card: 210 40% 4%;
-    --card-foreground: 43 100% 88%;
+    --secondary: 43 82% 39%;          /* #B8860B Dark Goldenrod */
+    --secondary-foreground: 48 100% 94%;
     
-    --popover: 210 40% 4%;
-    --popover-foreground: 43 100% 88%;
+    --accent: 0 68% 42%;              /* #B22222 Firebrick */
+    --accent-foreground: 48 100% 94%;
     
-    /* Golden mastery - primary gold with intensity */
-    --primary: 43 100% 58%;
-    --primary-foreground: 0 0% 0%;
-    --primary-glow: 43 100% 70%;
+    --muted: 0 0% 5%;                 /* #0D0D0D Near black */
+    --muted-foreground: 48 100% 94%;
     
-    /* Provocative orange-amber secondary */
-    --secondary: 33 100% 55%;
-    --secondary-foreground: 0 0% 0%;
+    --card: 48 100% 94%;              /* #FFF8E1 Warm white */
+    --card-foreground: 0 0% 5%;
     
-    --muted: 210 40% 10%;
-    --muted-foreground: 43 60% 75%;
+    --border: 43 82% 39%;
+    --input: 43 82% 39%;
+    --ring: 51 100% 50%;
     
-    /* Intense red accent for provocation */
-    --accent: 0 85% 45%;
-    --accent-foreground: 43 100% 88%;
+    --background: 48 100% 94%;        /* Warm white base */
+    --foreground: 0 0% 5%;            /* Dark text */
     
-    --destructive: 0 85% 45%;
-    --destructive-foreground: 43 100% 88%;
+    --destructive: 0 68% 42%;
+    --destructive-foreground: 48 100% 94%;
     
-    --border: 43 50% 25%;
-    --input: 43 50% 20%;
-    --ring: 43 100% 58%;
+    --popover: 48 100% 94%;
+    --popover-foreground: 0 0% 5%;
+    
+    /* Custom Golden Shower Colors */
+    --gold-primary: 51 100% 50%;      /* #FFD700 Gold */
+    --gold-dark: 43 82% 39%;          /* #B8860B Dark Goldenrod */
+    --orange-warm: 33 100% 50%;       /* #FF8C00 Dark Orange */
+    --red-intense: 0 68% 42%;         /* #B22222 Firebrick */
+    --black-glossy: 0 0% 5%;          /* #0D0D0D */
+    --white-warm: 48 100% 94%;        /* #FFF8E1 Champagne White */
+    --pink-transgressive: 330 100% 71%; /* #FF69B4 Hot Pink */
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--gold-primary)), hsl(var(--orange-warm)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--white-warm)), hsl(var(--gold-primary) / 0.1)));
     
     --radius: 0.5rem;
-    
-    /* Audacious color extensions */
-    --amber-intense: 25 100% 50%;
-    --red-intense: 0 85% 45%;
-    --black-glossy: 0 0% 8%;
-    --gold-deep: 43 80% 45%;
-    --orange-fire: 20 100% 55%;
     
     /* Provocative gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--amber-intense)));
@@ -109,17 +107,18 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lora', serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
   }
 
   .font-serif {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Lora', serif;
   }
 }
 

@@ -14,9 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        oswald: ['Oswald', 'sans-serif'], // Bold, masculine, audacious titles
-        playfair: ['Playfair Display', 'serif'], // Elegant serif for descriptions
-        inter: ['Inter', 'sans-serif'], // Clean sans-serif for body text
+        'anton': ['Anton', 'sans-serif'],     // Titoli e nomi birre: bold, tutto caps
+        'montserrat': ['Montserrat', 'sans-serif'], // Sottotitoli & CTA: SemiBold
+        'lora': ['Lora', 'serif'],           // Corpo testo: Regular
+        'marker': ['Permanent Marker', 'cursive'], // Accenti grafici: piccole frasi, badge
       },
       colors: {
         border: "hsl(var(--border))",
@@ -53,10 +54,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        psychedelic: {
-          blue: "hsl(var(--psychedelic-blue))",
-          cyan: "hsl(var(--psychedelic-cyan))",
-        },
+        'gold-primary': 'hsl(var(--gold-primary))',
+        'gold-dark': 'hsl(var(--gold-dark))',
+        'orange-warm': 'hsl(var(--orange-warm))',
+        'red-intense': 'hsl(var(--red-intense))',
+        'black-glossy': 'hsl(var(--black-glossy))',
+        'white-warm': 'hsl(var(--white-warm))',
+        'pink-transgressive': 'hsl(var(--pink-transgressive))',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -64,10 +68,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       backgroundImage: {
-        'gradient-primary': 'var(--gradient-primary)',
-        'gradient-psychedelic': 'var(--gradient-psychedelic)',
-        'gradient-retro': 'var(--gradient-retro)',
-        'gradient-sunset': 'var(--gradient-sunset)',
+        'hero-gradient': 'var(--gradient-hero)',
+        'card-gradient': 'var(--gradient-card)',
       },
       boxShadow: {
         'golden': 'var(--shadow-golden)',

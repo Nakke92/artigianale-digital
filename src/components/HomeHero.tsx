@@ -6,47 +6,57 @@ import goldenShowerLabel from '@/assets/golden-shower-label.jpeg';
 
 export const HomeHero = () => {
   return (
-    <section className="relative py-20 overflow-hidden bg-gradient-to-br from-background via-black-glossy to-background">
-      {/* Seductive Background Pattern */}
-      <div className="absolute inset-0 pattern-golden opacity-20"></div>
-      <div className="absolute inset-0 pattern-seductive opacity-10"></div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-gradient">
+      {/* Background Pattern - Golden waves and splashes */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(255,215,0,0.6),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(255,140,0,0.4),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[conic-gradient(from_45deg,transparent_40%,rgba(255,215,0,0.3)_45%,rgba(255,215,0,0.3)_55%,transparent_60%)]" />
+      </div>
       
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Hero Content - Provocative */}
-          <div className="space-y-8">
-            <div className="space-y-6">
-              <h1 className="text-6xl md:text-8xl font-oswald font-bold text-golden leading-tight">
-                Golden Shower
-              </h1>
-              <h2 className="text-2xl md:text-3xl font-oswald font-medium text-seductive">
-                Birra Artigianale per Palati Audaci
-              </h2>
-              <div className="font-playfair text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
-                <p className="mb-4">
-                  <strong className="text-primary">Golden Shower</strong> nasce come provocazione liquida e gioco ironico sul piacere. 
-                </p>
-                <p>
-                  Una birra ispirata al mondo dell'<em className="text-accent">esperienza sensoriale femminile</em> 
-                  e al desiderio di creare un'esperienza di gusto <span className="text-golden">unica e irresistibile</span>.
-                </p>
-              </div>
-            </div>
+      {/* Animated Liquid Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-40 h-40 bg-gold-primary/30 rounded-full blur-2xl animate-pulse" />
+        <div className="absolute top-3/4 right-1/4 w-60 h-60 bg-orange-warm/25 rounded-full blur-2xl animate-pulse delay-1000" />
+        <div className="absolute bottom-1/4 left-1/3 w-32 h-32 bg-pink-transgressive/20 rounded-full blur-xl animate-pulse delay-500" />
+        <div className="absolute top-1/2 right-1/3 w-24 h-24 bg-red-intense/25 rounded-full blur-xl animate-pulse delay-700" />
+      </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/catalogo">
-                <Button size="lg" className="btn-golden text-lg px-8 py-4 hover-lift">
-                  <ShoppingCart className="mr-2 h-5 w-5" />
-                  Scopri le Birre
-                </Button>
-              </Link>
-              <Link to="/chi-siamo">
-                <Button size="lg" className="btn-seductive text-lg px-8 py-4">
-                  <Heart className="mr-2 h-5 w-5" />
-                  La Nostra Storia
-                </Button>
-              </Link>
-            </div>
+      <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
+        <div className="space-y-8 animate-fade-in">
+          {/* Main Headline */}
+          <h1 className="font-anton text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-wider leading-tight">
+            <span className="block text-black-glossy drop-shadow-2xl">Golden Shower</span>
+            <span className="block text-lg md:text-xl lg:text-2xl font-montserrat font-semibold normal-case mt-6 text-gold-dark">
+              Birra Artigianale per Palati Audaci
+            </span>
+          </h1>
+
+          {/* Provocative Description */}
+          <p className="font-lora text-lg md:text-xl lg:text-2xl text-black-glossy max-w-4xl mx-auto leading-relaxed font-medium">
+            Una provocazione liquida che nasce dal gioco ironico sul piacere. 
+            <span className="text-red-intense font-semibold"> Golden Shower</span> è ispirata al mondo dello "squirt" femminile 
+            e al desiderio di creare un'esperienza sensoriale unica che sorprende ad ogni sorso.
+          </p>
+
+          {/* Call to Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-12">
+            <Button 
+              size="lg" 
+              className="font-montserrat text-lg px-10 py-6 uppercase tracking-wide bg-gold-primary hover:bg-gold-dark text-black-glossy shadow-2xl hover:shadow-gold-primary/50 transition-all duration-300 hover:scale-105 border-2 border-gold-dark"
+              onClick={() => window.location.href = '/catalogo'}
+            >
+              Scopri le Birre
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="font-montserrat text-lg px-10 py-6 uppercase tracking-wide border-3 border-gold-primary text-gold-dark hover:bg-gold-primary hover:text-black-glossy shadow-2xl hover:shadow-gold-primary/50 transition-all duration-300 hover:scale-105 bg-white-warm/80"
+              onClick={() => window.location.href = '/carrello'}
+            >
+              Compra Ora
+            </Button>
+          </div>
 
             {/* Provocative Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8">
@@ -86,7 +96,6 @@ export const HomeHero = () => {
             <div className="absolute top-1/2 -left-6 w-16 h-16 bg-gradient-to-br from-orange-fire to-primary rounded-full opacity-50 float-seductive" style={{animationDelay: '4s'}}></div>
           </div>
         </div>
-      </div>
     </section>
   );
 };

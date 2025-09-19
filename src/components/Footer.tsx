@@ -5,18 +5,17 @@ import { Input } from '@/components/ui/input';
 
 export const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-background to-muted/30 border-t border-border/40">
+    <footer className="bg-black-glossy text-white-warm border-t border-gold-dark">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          
-          {/* Brand Section */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Company Info */}
           <div className="space-y-4">
-            <div className="text-2xl font-display text-psychedelic">
+            <h3 className="font-anton text-lg font-semibold text-gold-primary uppercase tracking-wide">
               Golden Shower
-            </div>
-            <p className="text-muted-foreground">
-              Birra artigianale premium dal 2020. Un'esperienza psichedelica 
-              di sapori unici per i veri intenditori.
+            </h3>
+            <p className="text-sm font-lora">
+              Birra artigianale provocatoria dal cuore della Toscana. 
+              Per palati audaci che non temono di sperimentare.
             </p>
             <div className="flex space-x-3">
               <Button variant="ghost" size="icon" className="hover:text-primary">

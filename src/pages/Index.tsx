@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Header } from '@/components/Header';
-import { Hero } from '@/components/Hero';
+import { HomeHero, HomeFeatures } from '@/components/HomeHero';
 import { Footer } from '@/components/Footer';
 import { AgeGate } from '@/components/AgeGate';
 import { CookieBanner } from '@/components/CookieBanner';
@@ -43,8 +43,8 @@ const Index = () => {
         <>
           <Header />
           <main>
-            <Hero />
-            {/* Additional sections will be added here */}
+            <HomeHero />
+            <HomeFeatures />
           </main>
           <Footer />
           <CookieBanner />

@@ -14,8 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Righteous', 'cursive'],
-        body: ['Comfortaa', 'cursive'],
+        oswald: ['Oswald', 'sans-serif'], // Bold, masculine, audacious titles
+        playfair: ['Playfair Display', 'serif'], // Elegant serif for descriptions
+        inter: ['Inter', 'sans-serif'], // Clean sans-serif for body text
       },
       colors: {
         border: "hsl(var(--border))",

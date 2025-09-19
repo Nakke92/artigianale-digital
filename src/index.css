@@ -1,252 +1,104 @@
-@import url('https://fonts.googleapis.com/css2?family=Righteous:wght@400&family=Comfortaa:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Golden Shower Psychedelic Design System inspired by the beer label */
-/* All colors MUST be HSL inspired by the golden/orange/pink psychedelic aesthetic */
+/* Golden Shower - Audacious Design System for Provocative Craft Beer */
+/* Mascolino, audace, malizioso - inspired by sensual energy and playful provocation */
 
 @layer base {
   :root {
-    /* Golden Shower Psychedelic Colors inspired by the label */
-    --background: 32 100% 96%; /* Light golden cream */
-    --foreground: 15 25% 15%; /* Dark brown text */
-
-    --card: 35 95% 92%; /* Warm cream cards */
-    --card-foreground: 15 25% 15%;
-
-    --popover: 35 95% 92%;
-    --popover-foreground: 15 25% 15%;
-
-    /* Primary golden orange inspired by label */
-    --primary: 25 100% 55%; /* Golden orange */
-    --primary-foreground: 0 0% 100%; /* White text on golden */
-    --primary-glow: 30 100% 70%; /* Lighter golden glow */
-
-    /* Secondary pink/magenta from label */
-    --secondary: 320 85% 75%; /* Psychedelic pink */
-    --secondary-foreground: 0 0% 100%;
-
-    /* Muted tones */
-    --muted: 35 50% 85%;
-    --muted-foreground: 15 15% 45%;
-
-    /* Accent retro colors */
-    --accent: 280 100% 70%; /* Electric purple */
-    --accent-foreground: 0 0% 100%;
-
-    /* Psychedelic blue from label */
-    --psychedelic-blue: 200 100% 65%;
-    --psychedelic-cyan: 180 100% 75%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 35 40% 80%;
-    --input: 35 40% 85%;
-    --ring: 25 100% 55%;
-
-    --radius: 1rem; /* More rounded for retro feel */
-
-    /* Psychedelic gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(25 100% 55%), hsl(30 100% 70%));
-    --gradient-psychedelic: linear-gradient(45deg, hsl(25 100% 55%), hsl(320 85% 75%), hsl(280 100% 70%));
-    --gradient-retro: linear-gradient(90deg, hsl(200 100% 65%), hsl(280 100% 70%), hsl(25 100% 55%));
-    --gradient-sunset: linear-gradient(180deg, hsl(25 100% 60%), hsl(15 95% 70%));
-
-    /* Shadows with golden glow */
-    --shadow-golden: 0 10px 30px -10px hsl(25 100% 55% / 0.4);
-    --shadow-psychedelic: 0 0 40px hsl(320 85% 75% / 0.3);
-    --shadow-retro: 0 8px 25px -8px hsl(280 100% 70% / 0.3);
-
-    /* Animations */
-    --transition-psychedelic: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Golden Shower - Audacious color palette for provocative craft beer */
+    --background: 210 40% 2%;
+    --foreground: 43 100% 88%;
+    
+    --card: 210 40% 4%;
+    --card-foreground: 43 100% 88%;
+    
+    --popover: 210 40% 4%;
+    --popover-foreground: 43 100% 88%;
+    
+    /* Golden mastery - primary gold with intensity */
+    --primary: 43 100% 58%;
+    --primary-foreground: 0 0% 0%;
+    --primary-glow: 43 100% 70%;
+    
+    /* Provocative orange-amber secondary */
+    --secondary: 33 100% 55%;
+    --secondary-foreground: 0 0% 0%;
+    
+    --muted: 210 40% 10%;
+    --muted-foreground: 43 60% 75%;
+    
+    /* Intense red accent for provocation */
+    --accent: 0 85% 45%;
+    --accent-foreground: 43 100% 88%;
+    
+    --destructive: 0 85% 45%;
+    --destructive-foreground: 43 100% 88%;
+    
+    --border: 43 50% 25%;
+    --input: 43 50% 20%;
+    --ring: 43 100% 58%;
+    
+    --radius: 0.5rem;
+    
+    /* Audacious color extensions */
+    --amber-intense: 25 100% 50%;
+    --red-intense: 0 85% 45%;
+    --black-glossy: 0 0% 8%;
+    --gold-deep: 43 80% 45%;
+    --orange-fire: 20 100% 55%;
+    
+    /* Provocative gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--amber-intense)));
+    --gradient-intense: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--red-intense)), hsl(var(--orange-fire)));
+    --gradient-golden: linear-gradient(135deg, hsl(43 100% 58%), hsl(25 100% 50%), hsl(20 100% 55%));
+    --gradient-seductive: linear-gradient(135deg, hsl(var(--black-glossy)), hsl(var(--red-intense)));
+    --gradient-hero: linear-gradient(135deg, hsl(210 40% 2%), hsl(var(--black-glossy)), hsl(var(--gold-deep)));
+    
+    /* Sensual shadows with golden intensity */
+    --shadow-golden: 0 15px 35px -10px hsl(var(--primary) / 0.4);
+    --shadow-intense: 0 20px 40px -15px hsl(var(--red-intense) / 0.3);
+    --shadow-glow: 0 0 50px hsl(var(--primary-glow) / 0.8);
+    --shadow-seductive: 0 25px 50px -20px hsl(var(--black-glossy) / 0.6);
+    
+    /* Smooth provocative transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-seductive: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .dark {
-    /* Dark mode with retro neon vibes */
-    --background: 260 15% 8%; /* Deep dark purple */
-    --foreground: 35 95% 92%;
-
-    --card: 260 20% 12%;
-    --card-foreground: 35 95% 92%;
-
-    --popover: 260 20% 12%;
-    --popover-foreground: 35 95% 92%;
-
-    --primary: 25 100% 60%; /* Brighter golden in dark */
-    --primary-foreground: 260 15% 8%;
-    --primary-glow: 30 100% 75%;
-
-    --secondary: 320 90% 70%; /* Bright neon pink */
-    --secondary-foreground: 260 15% 8%;
-
-    --muted: 260 10% 20%;
-    --muted-foreground: 35 30% 65%;
-
-    --accent: 280 100% 75%; /* Bright neon purple */
-    --accent-foreground: 260 15% 8%;
-
-    --psychedelic-blue: 200 100% 70%;
-    --psychedelic-cyan: 180 100% 80%;
-
-    --destructive: 0 85% 65%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 260 15% 25%;
-    --input: 260 15% 20%;
-    --ring: 25 100% 60%;
-
-    /* Enhanced neon gradients for dark mode */
-    --gradient-primary: linear-gradient(135deg, hsl(25 100% 60%), hsl(30 100% 75%));
-    --gradient-psychedelic: linear-gradient(45deg, hsl(25 100% 60%), hsl(320 90% 70%), hsl(280 100% 75%));
-    --gradient-retro: linear-gradient(90deg, hsl(200 100% 70%), hsl(280 100% 75%), hsl(25 100% 60%));
-    --gradient-sunset: linear-gradient(180deg, hsl(25 100% 65%), hsl(15 95% 75%));
-
-    /* Neon glows */
-    --shadow-golden: 0 10px 30px -10px hsl(25 100% 60% / 0.5);
-    --shadow-psychedelic: 0 0 40px hsl(320 90% 70% / 0.4);
-    --shadow-retro: 0 8px 25px -8px hsl(280 100% 75% / 0.4);
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground font-body;
-    font-family: 'Comfortaa', cursive;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Righteous', cursive;
-  }
-}
-
-@layer components {
-  /* Psychedelic text effects */
-  .text-psychedelic {
-    background: var(--gradient-psychedelic);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 200%;
-    animation: psychedelic-flow 4s ease-in-out infinite;
-  }
-
-  .text-golden {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  /* Retro button effects */
-  .btn-psychedelic {
-    background: var(--gradient-psychedelic);
-    border: none;
-    position: relative;
-    overflow: hidden;
-    transition: var(--transition-psychedelic);
-  }
-
-  .btn-psychedelic:hover {
-    transform: scale(1.05) rotate(-1deg);
-    box-shadow: var(--shadow-psychedelic);
-  }
-
-  .btn-golden {
-    background: var(--gradient-primary);
-    box-shadow: var(--shadow-golden);
-    transition: var(--transition-smooth);
-  }
-
-  .btn-golden:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 35px -10px hsl(25 100% 55% / 0.5);
-  }
-
-  /* Card effects */
-  .card-psychedelic {
-    background: hsl(var(--card));
-    border: 2px solid transparent;
-    background-clip: padding-box;
-    position: relative;
-  }
-
-  .card-psychedelic::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    padding: 2px;
-    background: var(--gradient-psychedelic);
-    border-radius: inherit;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    -webkit-mask-composite: xor;
-  }
-
-  /* Age gate overlay */
-  .age-gate-overlay {
-    background: linear-gradient(45deg, 
-      hsl(260 15% 8% / 0.95), 
-      hsl(25 100% 10% / 0.95), 
-      hsl(320 85% 15% / 0.95));
-    backdrop-filter: blur(10px);
-  }
-
-  /* Floating animations */
-  .float-animation {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .pulse-golden {
-    animation: pulse-golden 2s ease-in-out infinite;
-  }
-}
-
-@layer utilities {
-  /* Custom animations */
-  @keyframes psychedelic-flow {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    33% { transform: translateY(-10px) rotate(1deg); }
-    66% { transform: translateY(5px) rotate(-1deg); }
-  }
-
-  @keyframes pulse-golden {
-    0%, 100% { 
-      box-shadow: 0 0 20px hsl(25 100% 55% / 0.3);
-      transform: scale(1);
-    }
-    50% { 
-      box-shadow: 0 0 40px hsl(25 100% 55% / 0.6);
-      transform: scale(1.02);
-    }
-  }
-
-  /* Retro patterns */
-  .retro-dots {
-    background-image: radial-gradient(circle, hsl(25 100% 55% / 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
-  }
-
-  .psychedelic-stripes {
-    background: repeating-linear-gradient(
-      45deg,
-      hsl(25 100% 55% / 0.1),
-      hsl(25 100% 55% / 0.1) 10px,
-      hsl(320 85% 75% / 0.1) 10px,
-      hsl(320 85% 75% / 0.1) 20px
-    );
+    /* Dark mode - intensified provocation for night owls */
+    --background: 0 0% 3%;
+    --foreground: 43 100% 92%;
+    
+    --card: 0 0% 5%;
+    --card-foreground: 43 100% 92%;
+    
+    --popover: 0 0% 5%;
+    --popover-foreground: 43 100% 92%;
+    
+    --primary: 43 100% 65%;
+    --primary-foreground: 0 0% 0%;
+    --primary-glow: 43 100% 75%;
+    
+    --secondary: 33 100% 60%;
+    --secondary-foreground: 0 0% 0%;
+    
+    --muted: 0 0% 8%;
+    --muted-foreground: 43 60% 80%;
+    
+    --accent: 0 90% 55%;
+    --accent-foreground: 43 100% 92%;
+    
+    --destructive: 0 90% 55%;
+    --destructive-foreground: 43 100% 92%;
+    
+    --border: 43 50% 25%;
+    --input: 43 50% 15%;
+    --ring: 43 100% 65%;
   }
 }
 
@@ -257,5 +109,207 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  /* Audacious text effects */
+  .text-golden {
+    background: var(--gradient-golden);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: golden-flow 3s ease-in-out infinite;
+  }
+
+  .text-seductive {
+    background: var(--gradient-seductive);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: seductive-flow 4s ease-in-out infinite;
+  }
+
+  .text-intense {
+    background: var(--gradient-intense);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300% 300%;
+    animation: intense-flow 2s ease-in-out infinite;
+  }
+
+  /* Provocative button effects */
+  .btn-golden {
+    background: var(--gradient-golden);
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-seductive);
+    box-shadow: var(--shadow-golden);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .btn-golden:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-seductive {
+    background: var(--gradient-seductive);
+    color: hsl(var(--foreground));
+    border: 2px solid hsl(var(--red-intense));
+    transition: var(--transition-seductive);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+  }
+
+  .btn-seductive:hover {
+    background: hsl(var(--red-intense));
+    transform: scale(1.02);
+    box-shadow: var(--shadow-intense);
+  }
+
+  /* Mischievous card effects */
+  .card-provocative {
+    background: hsl(var(--card));
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    transition: var(--transition-seductive);
+  }
+
+  .card-provocative::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    background: var(--gradient-intense);
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+  }
+
+  .card-provocative:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--shadow-seductive);
+  }
+
+  /* Sensual hover effects */
+  .hover-seduce {
+    transition: var(--transition-seductive);
+  }
+
+  .hover-seduce:hover {
+    transform: scale(1.05) rotate(1deg);
+    filter: brightness(1.1);
+  }
+
+  /* Age gate overlay with seductive blur */
+  .age-gate-overlay {
+    background: linear-gradient(45deg, 
+      hsl(var(--background) / 0.95), 
+      hsl(var(--black-glossy) / 0.95), 
+      hsl(var(--red-intense) / 0.1));
+    backdrop-filter: blur(15px);
+  }
+
+  /* Floating and pulsing animations */
+  .float-seductive {
+    animation: float-seductive 8s ease-in-out infinite;
+  }
+
+  .pulse-intense {
+    animation: pulse-intense 2s ease-in-out infinite;
+  }
+
+  /* Mischievous patterns */
+  .pattern-golden {
+    background-image: radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.1) 2px, transparent 2px);
+    background-size: 30px 30px;
+  }
+
+  .pattern-seductive {
+    background: repeating-linear-gradient(
+      45deg,
+      hsl(var(--primary) / 0.05),
+      hsl(var(--primary) / 0.05) 15px,
+      hsl(var(--red-intense) / 0.05) 15px,
+      hsl(var(--red-intense) / 0.05) 30px
+    );
+  }
+}
+
+@layer utilities {
+  /* Audacious animations */
+  @keyframes golden-flow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes seductive-flow {
+    0%, 100% { background-position: 0% 50%; }
+    25% { background-position: 100% 100%; }
+    50% { background-position: 200% 50%; }
+    75% { background-position: 100% 0%; }
+  }
+
+  @keyframes intense-flow {
+    0%, 100% { background-position: 0% 50%; }
+    33% { background-position: 100% 100%; }
+    66% { background-position: 200% 0%; }
+  }
+
+  @keyframes float-seductive {
+    0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+    25% { transform: translateY(-15px) rotate(2deg) scale(1.02); }
+    50% { transform: translateY(-5px) rotate(-1deg) scale(0.98); }
+    75% { transform: translateY(-10px) rotate(1deg) scale(1.01); }
+  }
+
+  @keyframes pulse-intense {
+    0%, 100% { 
+      box-shadow: 0 0 30px hsl(var(--primary) / 0.4);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: 0 0 60px hsl(var(--red-intense) / 0.6);
+      transform: scale(1.05);
+    }
+  }
+
+  /* Micro-interactive hover effects */
+  .hover-glow {
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow:hover {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.6);
+    transform: scale(1.02);
+  }
+
+  .hover-lift {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px -15px hsl(var(--primary) / 0.3);
   }
 }

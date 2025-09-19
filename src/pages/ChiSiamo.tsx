@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Link } from 'react-router-dom';
+import { Phone, Mail, MapPin, Beaker, Palette } from 'lucide-react';
 
 export default function ChiSiamo() {
   return (
@@ -11,162 +12,189 @@ export default function ChiSiamo() {
       <Header />
       
       <main className="container mx-auto px-4 py-8">
-        {/* Hero Section */}
+        {/* Hero Section - Provocative */}
         <section className="text-center py-16 relative">
-          <div className="absolute inset-0 retro-dots opacity-20"></div>
+          <div className="absolute inset-0 pattern-golden opacity-20"></div>
           <div className="relative z-10">
-            <h1 className="text-4xl md:text-6xl font-display text-psychedelic mb-6">
-              Il Birrificio Golden Shower
+            <h1 className="text-5xl md:text-7xl font-oswald font-bold text-golden mb-6">
+              Golden Shower Brewery
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Dove la tradizione incontra l'innovazione in un viaggio psichedelico di sapori
+            <h2 className="text-2xl md:text-3xl font-oswald text-seductive mb-8">
+              Dove la Provocazione Incontra l'Artigianalità
+            </h2>
+            <p className="text-xl font-playfair text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              Due amici toscani di <strong className="text-primary">Staffoli</strong>, un piccolo borgo 
+              dove il birrificio è nato dalla voglia di <em className="text-accent">rompere le regole</em> 
+              e sperimentare con l'irriverenza più autentica.
             </p>
           </div>
         </section>
 
-        {/* Story Section */}
+        {/* Founders Section - The Provocateurs */}
+        <section className="py-16">
+          <h2 className="text-4xl font-oswald font-bold text-intense text-center mb-12">
+            I Protagonisti della Provocazione
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Nicolò - The Alchemist */}
+            <Card className="card-provocative hover-lift">
+              <CardContent className="p-8 text-center">
+                <div className="w-32 h-32 bg-gradient-to-br from-primary to-amber-intense rounded-full mx-auto mb-6 flex items-center justify-center float-seductive">
+                  <Beaker className="h-16 w-16 text-black" />
+                </div>
+                <h3 className="text-3xl font-oswald font-bold text-golden mb-3">Nicolò Boschi</h3>
+                <p className="text-lg font-playfair text-accent mb-4">L'Alchimista delle Provocazioni</p>
+                
+                <div className="text-left space-y-4">
+                  <p className="font-playfair text-muted-foreground leading-relaxed">
+                    <strong className="text-primary">Laureato in chimica alimentare</strong>, Nicolò è l'anima tecnica del progetto. 
+                    La sua esperienza da mastro birraio si fonde con una passione irrefrenabile per la sperimentazione audace.
+                  </p>
+                  <p className="font-playfair text-muted-foreground leading-relaxed">
+                    "Ogni ricetta è una provocazione scientifica" - dice mentre mescola ingredienti che altri considererebbero impossibili. 
+                    È lui che trasforma le visioni più maliziose in liquidi che seducono il palato.
+                  </p>
+                </div>
+
+                <div className="mt-6 flex items-center justify-center space-x-4">
+                  <a href="tel:3480720786" className="flex items-center space-x-2 text-primary hover:text-golden transition-colors">
+                    <Phone className="h-4 w-4" />
+                    <span className="font-playfair">348 072 0786</span>
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Lorenzo - The Visionary */}
+            <Card className="card-provocative hover-lift">
+              <CardContent className="p-8 text-center">
+                <div className="w-32 h-32 bg-gradient-to-br from-red-intense to-accent rounded-full mx-auto mb-6 flex items-center justify-center float-seductive" style={{animationDelay: '1s'}}>
+                  <Palette className="h-16 w-16 text-white" />
+                </div>
+                <h3 className="text-3xl font-oswald font-bold text-seductive mb-3">Lorenzo Paolicchi</h3>
+                <p className="text-lg font-playfair text-primary mb-4">Il Visionario del Desiderio</p>
+                
+                <div className="text-left space-y-4">
+                  <p className="font-playfair text-muted-foreground leading-relaxed">
+                    <strong className="text-accent">Ex designer informatico</strong>, Lorenzo è l'immaginazione selvaggia 
+                    che dà vita alle fantasie più audaci. Appassionato di birra e visionario nato, 
+                    è colui che immagina il futuro provocatorio del birrificio.
+                  </p>
+                  <p className="font-playfair text-muted-foreground leading-relaxed">
+                    "La birra deve raccontare storie che fanno arrossire" - la sua filosofia è che ogni etichetta, 
+                    ogni nome, ogni esperienza deve <em className="text-golden">accendere qualcosa dentro</em> chi la vive.
+                  </p>
+                </div>
+
+                <div className="mt-6 flex items-center justify-center space-x-4">
+                  <a href="tel:3406489563" className="flex items-center space-x-2 text-accent hover:text-seductive transition-colors">
+                    <Phone className="h-4 w-4" />
+                    <span className="font-playfair">340 648 9563</span>
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <Separator className="my-16 bg-gradient-to-r from-transparent via-primary to-transparent h-0.5" />
+
+        {/* Story Section - The Genesis */}
         <section className="py-16">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-display text-psychedelic mb-6">La Nostra Storia</h2>
-              <p className="text-muted-foreground mb-4">
-                Nato dalla passione di giovani mastri birrai che hanno deciso di sfidare le convenzioni, 
-                Golden Shower rappresenta l'essenza della birra artigianale italiana con un twist psichedelico.
-              </p>
-              <p className="text-muted-foreground mb-4">
-                Fondato nel 2019, il nostro birrificio si ispira alla cultura underground degli anni '70, 
-                creando birre uniche che raccontano storie di libertà, creatività e autenticità.
-              </p>
-              <p className="text-muted-foreground">
-                Ogni bottiglia è un'esperienza sensoriale che trasporta in un viaggio di sapori 
-                audaci e inaspettati, perfetti per chi non ha paura di osare.
-              </p>
+              <h2 className="text-4xl font-oswald font-bold text-golden mb-6">La Genesis della Provocazione</h2>
+              <div className="space-y-6 font-playfair text-muted-foreground leading-relaxed">
+                <p>
+                  <strong className="text-primary">Golden Shower</strong> nasce come una provocazione liquida 
+                  nel cuore della Toscana, a <em className="text-accent">Staffoli</em>, dove due amici decidono 
+                  di trasformare l'irriverenza in arte fermentata.
+                </p>
+                <p>
+                  Ispirata al mondo dello <span className="text-seductive">"squirt" femminile</span> e al desiderio 
+                  di creare un'esperienza sensoriale che <strong className="text-golden">accenda tutti i sensi</strong>, 
+                  ogni birra è pensata per chi non ha paura di osare.
+                </p>
+                <p>
+                  La nostra filosofia è semplice: <em className="text-intense">"Non la bevi per ubriacarti, 
+                  ma per ridere, per condividere, per goderti un getto di loquace freschezza che ti sorprende ad ogni sorso."</em>
+                </p>
+              </div>
             </div>
-            <div className="card-psychedelic p-8 text-center">
-              <h3 className="text-2xl font-display text-primary mb-4">La Nostra Filosofia</h3>
-              <p className="text-muted-foreground">
-                "Creare birre che non seguono le regole, ma scrivono le proprie"
-              </p>
+            
+            <div className="card-provocative p-8 text-center">
+              <h3 className="text-3xl font-oswald font-bold text-intense mb-6">La Nostra Filosofia Audace</h3>
+              <blockquote className="font-playfair text-xl text-muted-foreground italic leading-relaxed">
+                "Creare birre che non seguono le regole, ma scrivono le proprie. 
+                Ogni sorso è una <span className="text-golden">provocazione</span>, 
+                ogni bottiglia un <span className="text-seductive">invito al piacere</span> 
+                senza compromessi."
+              </blockquote>
             </div>
           </div>
         </section>
 
-        <Separator className="my-16" />
+        <Separator className="my-16 bg-gradient-to-r from-transparent via-accent to-transparent h-0.5" />
 
-        {/* Process Section */}
+        {/* Location & Contact */}
         <section className="py-16">
-          <h2 className="text-3xl font-display text-psychedelic text-center mb-12">
-            Il Nostro Processo
+          <h2 className="text-4xl font-oswald font-bold text-seductive text-center mb-12">
+            Ci Trovi a Staffoli
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="card-psychedelic">
-              <CardContent className="p-6 text-center">
-                <div className="text-4xl mb-4">🌾</div>
-                <h3 className="text-xl font-display text-primary mb-3">Ingredienti Selezionati</h3>
-                <p className="text-muted-foreground">
-                  Solo malti e luppoli di prima qualità, selezionati da coltivatori locali 
-                  e fornitori di fiducia in Europa e oltre.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="card-psychedelic">
-              <CardContent className="p-6 text-center">
-                <div className="text-4xl mb-4">⚗️</div>
-                <h3 className="text-xl font-display text-primary mb-3">Fermentazione Artigianale</h3>
-                <p className="text-muted-foreground">
-                  Processo di fermentazione controllato con ceppi di lievito selezionati 
-                  per ottenere profili di sapore unici e complessi.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="card-psychedelic">
-              <CardContent className="p-6 text-center">
-                <div className="text-4xl mb-4">🎨</div>
-                <h3 className="text-xl font-display text-primary mb-3">Arte Visiva</h3>
-                <p className="text-muted-foreground">
-                  Ogni etichetta è un'opera d'arte originale che riflette l'anima 
-                  psichedelica e ribelle delle nostre creazioni.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+          <Card className="card-provocative max-w-2xl mx-auto">
+            <CardContent className="p-8 text-center">
+              <div className="flex justify-center mb-6">
+                <div className="p-6 bg-gradient-to-br from-primary to-accent rounded-full">
+                  <MapPin className="h-12 w-12 text-black" />
+                </div>
+              </div>
+              
+              <h3 className="text-2xl font-oswald font-bold text-golden mb-4">Birrificio Golden Shower</h3>
+              <p className="font-playfair text-lg text-muted-foreground mb-6">
+                Nel cuore pulsante di Staffoli, dove la tradizione toscana 
+                incontra l'audacia più provocante.
+              </p>
+              
+              <div className="space-y-4 text-left max-w-md mx-auto">
+                <div className="flex items-center space-x-3">
+                  <Mail className="h-5 w-5 text-primary" />
+                  <span className="font-playfair text-muted-foreground">info@goldenshower.beer</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Phone className="h-5 w-5 text-accent" />
+                  <span className="font-playfair text-muted-foreground">348 072 0786 (Nicolò)</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Phone className="h-5 w-5 text-seductive" />
+                  <span className="font-playfair text-muted-foreground">340 648 9563 (Lorenzo)</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </section>
 
-        <Separator className="my-16" />
-
-        {/* Team Section */}
-        <section className="py-16">
-          <h2 className="text-3xl font-display text-psychedelic text-center mb-12">
-            Il Team
-          </h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="card-psychedelic">
-              <CardContent className="p-6 text-center">
-                <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl text-white">👨‍🍳</span>
-                </div>
-                <h3 className="text-xl font-display text-primary mb-2">Marco "The Alchemist"</h3>
-                <p className="text-muted-foreground text-sm">Mastro Birraio & Fondatore</p>
-                <p className="text-muted-foreground mt-3">
-                  L'anima creativa dietro ogni ricetta. Esperto in fermentazione 
-                  e appassionato di sperimentazione.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="card-psychedelic">
-              <CardContent className="p-6 text-center">
-                <div className="w-24 h-24 bg-gradient-psychedelic rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl text-white">🎨</span>
-                </div>
-                <h3 className="text-xl font-display text-primary mb-2">Sofia "Visual Shaman"</h3>
-                <p className="text-muted-foreground text-sm">Art Director & Co-Fondatrice</p>
-                <p className="text-muted-foreground mt-3">
-                  Responsabile dell'identità visiva e delle etichette psichedeliche 
-                  che rendono uniche le nostre birre.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="card-psychedelic">
-              <CardContent className="p-6 text-center">
-                <div className="w-24 h-24 bg-gradient-retro rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl text-white">🔬</span>
-                </div>
-                <h3 className="text-xl font-display text-primary mb-2">Luca "Quality Guru"</h3>
-                <p className="text-muted-foreground text-sm">Controllo Qualità</p>
-                <p className="text-muted-foreground mt-3">
-                  Garantisce che ogni bottiglia mantenga gli standard di qualità 
-                  e il carattere unico delle nostre creazioni.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* CTA Section */}
+        {/* CTA Section - Seductive */}
         <section className="py-16 text-center">
-          <Card className="card-psychedelic p-8 max-w-2xl mx-auto">
-            <h2 className="text-3xl font-display text-psychedelic mb-4">
-              Unisciti al Viaggio
+          <Card className="card-provocative p-12 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-oswald font-bold text-intense mb-6">
+              Pronto per l'Esperienza?
             </h2>
-            <p className="text-muted-foreground mb-6">
-              Scopri le nostre creazioni uniche e lasciati trasportare 
-              in un'esperienza di gusto senza confini.
+            <p className="text-xl font-playfair text-muted-foreground mb-8 leading-relaxed">
+              Scopri le nostre <span className="text-golden">provocazioni liquide</span> e lasciati trasportare 
+              in un viaggio sensoriale che <em className="text-seductive">accenderà i tuoi sensi</em> 
+              come mai prima d'ora.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link to="/catalogo">
-                <Button size="lg" className="btn-golden">
-                  Esplora il Catalogo
+                <Button size="lg" className="btn-golden text-xl px-12 py-4 hover-lift">
+                  Esplora le Birre Provocanti
                 </Button>
               </Link>
               <Link to="/contatti">
-                <Button size="lg" variant="outline">
-                  Contattaci
+                <Button size="lg" className="btn-seductive text-xl px-12 py-4">
+                  Contattaci Subito
                 </Button>
               </Link>
             </div>

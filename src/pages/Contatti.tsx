@@ -48,28 +48,54 @@ export default function Contatti() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen relative bg-gradient-to-b from-black-glossy via-black-glossy/90 to-bianco-caldo overflow-hidden">
+      {/* Liquid Golden Effects */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-oro-primario/20 rounded-full filter blur-3xl animate-pulse-golden"></div>
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-arancio-caldo/15 rounded-full filter blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-72 h-72 bg-oro-scuro/10 rounded-full filter blur-3xl animate-pulse-golden" style={{animationDelay: '2s'}}></div>
+      </div>
+      
+      {/* Animated Liquid Drops */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(6)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute animate-float opacity-20"
+            style={{
+              left: `${20 + (i * 15)}%`,
+              top: `${10 + (i % 3) * 30}%`,
+              animationDelay: `${i * 0.8}s`,
+              animationDuration: `${4 + (i % 3)}s`
+            }}
+          >
+            <div className="w-4 h-6 bg-oro-primario rounded-full transform rotate-45"></div>
+          </div>
+        ))}
+      </div>
+
       <Header />
       
-      <main className="container mx-auto px-4 py-8">
+      <main className="relative z-10 container mx-auto px-4 py-8">
         {/* Hero Section */}
         <section className="text-center py-16 relative">
-          <div className="absolute inset-0 psychedelic-stripes opacity-10"></div>
           <div className="relative z-10">
-            <h1 className="text-4xl md:text-6xl font-display text-psychedelic mb-6">
-              Contattaci
+            <h1 className="font-anton text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-oro-primario via-arancio-caldo to-oro-scuro mb-6 tracking-wider uppercase">
+              CONTATTACI
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Hai domande sui nostri prodotti? Vuoi visitare il birrificio? Siamo qui per te!
+            <p className="font-lora text-xl text-bianco-caldo/90 max-w-3xl mx-auto leading-relaxed">
+              Hai domande sui nostri <span className="text-oro-primario font-bold">prodotti provocanti</span>? 
+              Vuoi visitare il <span className="text-arancio-caldo">birrificio</span>? 
+              <span className="text-oro-scuro font-bold"> Siamo qui per accendere la tua curiosità!</span>
             </p>
           </div>
         </section>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <Card className="card-psychedelic">
+          <Card className="bg-black-glossy/60 backdrop-blur-xl border border-oro-primario/30 rounded-2xl shadow-2xl">
             <CardHeader>
-              <CardTitle className="text-2xl font-display text-psychedelic">
+              <CardTitle className="font-anton text-2xl text-oro-primario uppercase tracking-wide">
                 Invia un Messaggio
               </CardTitle>
             </CardHeader>
@@ -77,7 +103,7 @@ export default function Contatti() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
+                    <label htmlFor="name" className="block font-montserrat text-sm font-medium text-bianco-caldo mb-2 uppercase tracking-wide">
                       Nome *
                     </label>
                     <Input
@@ -88,10 +114,11 @@ export default function Contatti() {
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="Il tuo nome"
+                      className="bg-black-glossy/50 border-oro-primario/30 text-bianco-caldo placeholder:text-bianco-caldo/50 focus:border-oro-primario"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
+                    <label htmlFor="email" className="block font-montserrat text-sm font-medium text-bianco-caldo mb-2 uppercase tracking-wide">
                       Email *
                     </label>
                     <Input
@@ -102,12 +129,13 @@ export default function Contatti() {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="la-tua-email@esempio.com"
+                      className="bg-black-glossy/50 border-oro-primario/30 text-bianco-caldo placeholder:text-bianco-caldo/50 focus:border-oro-primario"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                  <label htmlFor="subject" className="block font-montserrat text-sm font-medium text-bianco-caldo mb-2 uppercase tracking-wide">
                     Oggetto *
                   </label>
                   <Input
@@ -118,11 +146,12 @@ export default function Contatti() {
                     value={formData.subject}
                     onChange={handleInputChange}
                     placeholder="Di cosa vuoi parlarci?"
+                    className="bg-black-glossy/50 border-oro-primario/30 text-bianco-caldo placeholder:text-bianco-caldo/50 focus:border-oro-primario"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  <label htmlFor="message" className="block font-montserrat text-sm font-medium text-bianco-caldo mb-2 uppercase tracking-wide">
                     Messaggio *
                   </label>
                   <Textarea
@@ -133,12 +162,13 @@ export default function Contatti() {
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder="Scrivi qui il tuo messaggio..."
+                    className="bg-black-glossy/50 border-oro-primario/30 text-bianco-caldo placeholder:text-bianco-caldo/50 focus:border-oro-primario resize-none"
                   />
                 </div>
 
                 <Button 
                   type="submit" 
-                  className="w-full btn-golden" 
+                  className="w-full bg-gradient-to-r from-oro-primario to-arancio-caldo text-nero-lucido font-montserrat font-bold py-3 hover:scale-105 transition-all duration-300 shadow-xl" 
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Invio in corso...' : 'Invia Messaggio'}
@@ -150,49 +180,54 @@ export default function Contatti() {
           {/* Contact Info */}
           <div className="space-y-6">
             {/* Address & Info */}
-            <Card className="card-psychedelic">
+            <Card className="bg-black-glossy/60 backdrop-blur-xl border border-oro-primario/30 rounded-2xl shadow-2xl">
               <CardContent className="p-6">
-                <h3 className="text-xl font-display text-psychedelic mb-6">
+                <h3 className="font-anton text-xl text-oro-primario mb-6 uppercase tracking-wide">
                   Informazioni di Contatto
                 </h3>
                 
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                    <MapPin className="h-5 w-5 text-oro-primario mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-medium">Birrificio Golden Shower</p>
-                      <p className="text-muted-foreground">
-                        Via della Birra Artigianale, 42<br />
-                        00100 Roma (RM), Italia
+                      <p className="font-montserrat font-medium text-bianco-caldo">Birrificio Golden Shower</p>
+                      <p className="font-lora text-nero-lucido/80">
+                        Staffoli, Toscana<br />
+                        Italia
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <Phone className="h-5 w-5 text-primary flex-shrink-0" />
+                    <Phone className="h-5 w-5 text-oro-primario flex-shrink-0" />
                     <div>
-                      <p className="font-medium">Telefono</p>
-                      <a href="tel:+390612345678" className="text-muted-foreground hover:text-primary">
-                        +39 06 1234 5678
-                      </a>
+                      <p className="font-montserrat font-medium text-bianco-caldo">Telefono</p>
+                      <div className="space-y-1">
+                        <a href="tel:+393480720786" className="font-lora text-nero-lucido/80 hover:text-oro-primario transition-colors block">
+                          +39 348 072 0786 (Nicolò)
+                        </a>
+                        <a href="tel:+393406489563" className="font-lora text-nero-lucido/80 hover:text-arancio-caldo transition-colors block">
+                          +39 340 648 9563 (Lorenzo)
+                        </a>
+                      </div>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <Mail className="h-5 w-5 text-primary flex-shrink-0" />
+                    <Mail className="h-5 w-5 text-oro-primario flex-shrink-0" />
                     <div>
-                      <p className="font-medium">Email</p>
-                      <a href="mailto:info@goldenshower.beer" className="text-muted-foreground hover:text-primary">
+                      <p className="font-montserrat font-medium text-bianco-caldo">Email</p>
+                      <a href="mailto:info@goldenshower.beer" className="font-lora text-nero-lucido/80 hover:text-oro-primario transition-colors">
                         info@goldenshower.beer
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Clock className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                    <Clock className="h-5 w-5 text-oro-primario mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-medium">Orari di Apertura</p>
-                      <div className="text-muted-foreground text-sm">
+                      <p className="font-montserrat font-medium text-bianco-caldo">Orari di Apertura</p>
+                      <div className="font-lora text-nero-lucido/80 text-sm">
                         <p>Lun - Ven: 9:00 - 18:00</p>
                         <p>Sabato: 10:00 - 16:00</p>
                         <p>Domenica: Chiuso</p>
@@ -204,9 +239,9 @@ export default function Contatti() {
             </Card>
 
             {/* Social Media */}
-            <Card className="card-psychedelic">
+            <Card className="bg-black-glossy/60 backdrop-blur-xl border border-oro-primario/30 rounded-2xl shadow-2xl">
               <CardContent className="p-6">
-                <h3 className="text-xl font-display text-psychedelic mb-6">
+                <h3 className="font-anton text-xl text-oro-primario mb-6 uppercase tracking-wide">
                   Seguici sui Social
                 </h3>
                 
@@ -215,7 +250,7 @@ export default function Contatti() {
                     href="https://instagram.com/goldenshowerbeer" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-gradient-primary text-white rounded-lg hover:shadow-golden transition-all"
+                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-oro-primario to-arancio-caldo text-nero-lucido rounded-lg hover:scale-105 transition-all duration-300 font-montserrat font-bold"
                   >
                     <Instagram className="h-5 w-5" />
                     Instagram
@@ -224,7 +259,7 @@ export default function Contatti() {
                     href="https://facebook.com/goldenshowerbeer" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-gradient-psychedelic text-white rounded-lg hover:shadow-psychedelic transition-all"
+                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-rosso-intenso to-arancio-caldo text-bianco-caldo rounded-lg hover:scale-105 transition-all duration-300 font-montserrat font-bold"
                   >
                     <Facebook className="h-5 w-5" />
                     Facebook
@@ -234,16 +269,16 @@ export default function Contatti() {
             </Card>
 
             {/* Map Placeholder */}
-            <Card className="card-psychedelic">
+            <Card className="bg-black-glossy/60 backdrop-blur-xl border border-oro-primario/30 rounded-2xl shadow-2xl">
               <CardContent className="p-6">
-                <h3 className="text-xl font-display text-psychedelic mb-4">
+                <h3 className="font-anton text-xl text-oro-primario mb-4 uppercase tracking-wide">
                   Come Raggiungerci
                 </h3>
-                <div className="w-full h-64 bg-muted rounded-lg flex items-center justify-center">
-                  <div className="text-center text-muted-foreground">
-                    <MapPin className="h-12 w-12 mx-auto mb-2" />
-                    <p>Mappa del Birrificio</p>
-                    <p className="text-sm">Via della Birra Artigianale, 42</p>
+                <div className="w-full h-64 bg-gradient-to-b from-black-glossy/80 to-oro-primario/20 rounded-lg flex items-center justify-center border border-oro-primario/20">
+                  <div className="text-center">
+                    <MapPin className="h-12 w-12 text-oro-primario mx-auto mb-2 animate-pulse-golden" />
+                    <p className="font-montserrat font-bold text-bianco-caldo">Mappa del Birrificio</p>
+                    <p className="font-lora text-sm text-nero-lucido/80">Staffoli, Toscana</p>
                   </div>
                 </div>
               </CardContent>
@@ -253,18 +288,18 @@ export default function Contatti() {
 
         {/* Visit Section */}
         <section className="py-16 text-center">
-          <Card className="card-psychedelic p-8 max-w-2xl mx-auto">
-            <h2 className="text-3xl font-display text-psychedelic mb-4">
+          <Card className="bg-gradient-to-r from-oro-primario to-arancio-caldo p-8 max-w-2xl mx-auto rounded-2xl shadow-2xl">
+            <h2 className="font-anton text-3xl font-bold text-nero-lucido mb-4 uppercase tracking-wide">
               Vieni a Trovarci!
             </h2>
-            <p className="text-muted-foreground mb-6">
-              Visita il nostro birrificio per un tour guidato, degustazioni esclusive 
-              e per scoprire da vicino il processo di produzione delle nostre birre artigianali.
+            <p className="font-lora text-nero-lucido/90 mb-6 leading-relaxed">
+              Visita il nostro <span className="font-bold">birrificio provocante</span> per un tour guidato, degustazioni esclusive 
+              e per scoprire da vicino il processo di produzione delle nostre <span className="font-bold">birre artigianali audaci</span>.
             </p>
-            <p className="text-sm text-muted-foreground mb-6">
+            <p className="font-lora text-sm text-nero-lucido/80 mb-6">
               Prenota in anticipo per assicurarti la disponibilità.
             </p>
-            <Button size="lg" className="btn-golden">
+            <Button size="lg" className="bg-nero-lucido text-oro-primario hover:bg-nero-lucido/90 font-montserrat font-bold py-3 px-8 hover:scale-105 transition-all duration-300">
               Prenota una Visita
             </Button>
           </Card>

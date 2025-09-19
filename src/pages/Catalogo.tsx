@@ -92,41 +92,67 @@ const Catalogo = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen relative bg-gradient-to-b from-black-glossy via-black-glossy/90 to-bianco-caldo overflow-hidden">
+      {/* Liquid Golden Effects */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-oro-primario/20 rounded-full filter blur-3xl animate-pulse-golden"></div>
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-arancio-caldo/15 rounded-full filter blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-72 h-72 bg-oro-scuro/10 rounded-full filter blur-3xl animate-pulse-golden" style={{animationDelay: '2s'}}></div>
+      </div>
+      
+      {/* Animated Liquid Drops */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(6)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute animate-float opacity-20"
+            style={{
+              left: `${20 + (i * 15)}%`,
+              top: `${10 + (i % 3) * 30}%`,
+              animationDelay: `${i * 0.8}s`,
+              animationDuration: `${4 + (i % 3)}s`
+            }}
+          >
+            <div className="w-4 h-6 bg-oro-primario rounded-full transform rotate-45"></div>
+          </div>
+        ))}
+      </div>
+
       <Header />
       
-      <main className="container mx-auto px-4 py-8">
+      <main className="relative z-10 container mx-auto px-4 py-8">
         {/* Page Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-psychedelic mb-4">
-            Catalogo Birre
+        <div className="text-center mb-12 pt-12">
+          <h1 className="font-anton text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-oro-primario via-arancio-caldo to-oro-scuro mb-6 tracking-wider uppercase">
+            CATALOGO
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Scopri la nostra selezione di birre artigianali premium. 
-            Ogni birra è una storia, ogni sorso un'esperienza unica.
+          <p className="font-lora text-xl text-bianco-caldo/90 max-w-3xl mx-auto leading-relaxed">
+            Scopri le nostre <span className="text-oro-primario font-bold">provocazioni liquide</span> premium. 
+            Ogni birra è una <span className="text-arancio-caldo">storia audace</span>, ogni sorso un'esperienza che 
+            <span className="text-oro-scuro"> accende i sensi</span>.
           </p>
         </div>
 
         {/* Filters and Search */}
-        <div className="bg-card rounded-2xl p-6 mb-8 shadow-golden">
+        <div className="bg-black-glossy/60 backdrop-blur-xl border border-oro-primario/30 rounded-2xl p-6 mb-8 shadow-2xl">
           <div className="flex flex-col lg:flex-row gap-4 items-center">
             
             {/* Search */}
             <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-oro-primario" />
               <Input
-                placeholder="Cerca birre..."
+                placeholder="Cerca le tue provocazioni..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10"
+                className="pl-10 bg-black-glossy/50 border-oro-primario/30 text-bianco-caldo placeholder:text-bianco-caldo/50 focus:border-oro-primario"
               />
             </div>
 
             {/* Style Filter */}
             <div className="flex items-center gap-2">
-              <Filter className="h-4 w-4 text-muted-foreground" />
+              <Filter className="h-4 w-4 text-oro-primario" />
               <Select value={filterStyle} onValueChange={setFilterStyle}>
-                <SelectTrigger className="w-[180px]">
+                <SelectTrigger className="w-[180px] bg-black-glossy/50 border-oro-primario/30 text-bianco-caldo">
                   <SelectValue placeholder="Stile birra" />
                 </SelectTrigger>
                 <SelectContent>
@@ -142,9 +168,9 @@ const Catalogo = () => {
 
             {/* Sort */}
             <div className="flex items-center gap-2">
-              <SlidersHorizontal className="h-4 w-4 text-muted-foreground" />
+              <SlidersHorizontal className="h-4 w-4 text-oro-primario" />
               <Select value={sortBy} onValueChange={setSortBy}>
-                <SelectTrigger className="w-[180px]">
+                <SelectTrigger className="w-[180px] bg-black-glossy/50 border-oro-primario/30 text-bianco-caldo">
                   <SelectValue placeholder="Ordina per" />
                 </SelectTrigger>
                 <SelectContent>
@@ -161,12 +187,12 @@ const Catalogo = () => {
           {/* Active Filters */}
           <div className="flex flex-wrap gap-2 mt-4">
             {searchTerm && (
-              <Badge variant="secondary" className="gap-1">
+              <Badge className="gap-1 bg-oro-primario/20 text-oro-primario border-oro-primario/30">
                 Ricerca: {searchTerm}
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="h-auto p-0 text-muted-foreground hover:text-foreground"
+                  className="h-auto p-0 text-oro-primario hover:text-arancio-caldo"
                   onClick={() => setSearchTerm('')}
                 >
                   ×
@@ -174,12 +200,12 @@ const Catalogo = () => {
               </Badge>
             )}
             {filterStyle !== 'all' && (
-              <Badge variant="secondary" className="gap-1">
+              <Badge className="gap-1 bg-arancio-caldo/20 text-arancio-caldo border-arancio-caldo/30">
                 Stile: {filterStyle}
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="h-auto p-0 text-muted-foreground hover:text-foreground"
+                  className="h-auto p-0 text-arancio-caldo hover:text-oro-primario"
                   onClick={() => setFilterStyle('all')}
                 >
                   ×
@@ -204,9 +230,9 @@ const Catalogo = () => {
         ) : (
           <div className="text-center py-12">
             <div className="text-6xl mb-4">🍺</div>
-            <h3 className="text-xl font-semibold mb-2">Nessuna birra trovata</h3>
-            <p className="text-muted-foreground mb-4">
-              Prova a modificare i filtri o termini di ricerca
+            <h3 className="font-anton text-2xl text-nero-lucido mb-2 uppercase">Nessuna Provocazione Trovata</h3>
+            <p className="font-lora text-nero-lucido/70 mb-4">
+              Prova a modificare i filtri o termini di ricerca per trovare la tua birra perfetta
             </p>
             <Button 
               onClick={() => {
@@ -214,7 +240,7 @@ const Catalogo = () => {
                 setFilterStyle('all');
                 setSortBy('name');
               }}
-              className="btn-golden"
+              className="bg-gradient-to-r from-oro-primario to-arancio-caldo text-nero-lucido font-montserrat font-bold px-8 py-3 rounded-full hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
             >
               Ripristina filtri
             </Button>
@@ -222,10 +248,10 @@ const Catalogo = () => {
         )}
 
         {/* Results Count */}
-        <div className="text-center mt-8 text-muted-foreground">
+        <div className="text-center mt-8">
           {filteredProducts.length > 0 && (
-            <p>
-              Mostrati {filteredProducts.length} di {products.length} prodotti
+            <p className="font-lora text-nero-lucido/70">
+              Mostrate <span className="text-oro-scuro font-bold">{filteredProducts.length}</span> di <span className="text-oro-scuro font-bold">{products.length}</span> provocazioni
             </p>
           )}
         </div>

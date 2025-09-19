@@ -14,7 +14,285 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      order_items: {
+        Row: {
+          created_at: string
+          id: string
+          order_id: string
+          product_id: string
+          quantity: number
+          total_price: number
+          unit_price: number
+          variant_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          order_id: string
+          product_id: string
+          quantity: number
+          total_price: number
+          unit_price: number
+          variant_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          order_id?: string
+          product_id?: string
+          quantity?: number
+          total_price?: number
+          unit_price?: number
+          variant_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "order_items_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "orders"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "order_items_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "order_items_variant_id_fkey"
+            columns: ["variant_id"]
+            isOneToOne: false
+            referencedRelation: "product_variants"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      orders: {
+        Row: {
+          billing_address: Json | null
+          created_at: string
+          currency: string | null
+          customer_email: string | null
+          customer_phone: string | null
+          discount_amount: number | null
+          id: string
+          promo_code: string | null
+          shipping_address: Json | null
+          shipping_amount: number | null
+          status: string | null
+          stripe_payment_intent_id: string | null
+          subtotal: number
+          tax_amount: number | null
+          total_amount: number
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          billing_address?: Json | null
+          created_at?: string
+          currency?: string | null
+          customer_email?: string | null
+          customer_phone?: string | null
+          discount_amount?: number | null
+          id?: string
+          promo_code?: string | null
+          shipping_address?: Json | null
+          shipping_amount?: number | null
+          status?: string | null
+          stripe_payment_intent_id?: string | null
+          subtotal: number
+          tax_amount?: number | null
+          total_amount: number
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          billing_address?: Json | null
+          created_at?: string
+          currency?: string | null
+          customer_email?: string | null
+          customer_phone?: string | null
+          discount_amount?: number | null
+          id?: string
+          promo_code?: string | null
+          shipping_address?: Json | null
+          shipping_amount?: number | null
+          status?: string | null
+          stripe_payment_intent_id?: string | null
+          subtotal?: number
+          tax_amount?: number | null
+          total_amount?: number
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      product_variants: {
+        Row: {
+          created_at: string
+          id: string
+          is_active: boolean | null
+          name: string
+          price: number
+          product_id: string
+          sku: string | null
+          stock_quantity: number | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          name: string
+          price: number
+          product_id: string
+          sku?: string | null
+          stock_quantity?: number | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          name?: string
+          price?: number
+          product_id?: string
+          sku?: string | null
+          stock_quantity?: number | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "product_variants_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      products: {
+        Row: {
+          abv: number | null
+          created_at: string
+          description: string | null
+          ibu: number | null
+          id: string
+          image_url: string | null
+          is_active: boolean | null
+          name: string
+          price: number
+          style: string | null
+          updated_at: string
+        }
+        Insert: {
+          abv?: number | null
+          created_at?: string
+          description?: string | null
+          ibu?: number | null
+          id?: string
+          image_url?: string | null
+          is_active?: boolean | null
+          name: string
+          price: number
+          style?: string | null
+          updated_at?: string
+        }
+        Update: {
+          abv?: number | null
+          created_at?: string
+          description?: string | null
+          ibu?: number | null
+          id?: string
+          image_url?: string | null
+          is_active?: boolean | null
+          name?: string
+          price?: number
+          style?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          date_of_birth: string | null
+          first_name: string | null
+          id: string
+          is_verified: boolean | null
+          last_name: string | null
+          phone: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          date_of_birth?: string | null
+          first_name?: string | null
+          id: string
+          is_verified?: boolean | null
+          last_name?: string | null
+          phone?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          date_of_birth?: string | null
+          first_name?: string | null
+          id?: string
+          is_verified?: boolean | null
+          last_name?: string | null
+          phone?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      promo_codes: {
+        Row: {
+          code: string
+          created_at: string
+          description: string | null
+          discount_type: string | null
+          discount_value: number
+          expires_at: string | null
+          id: string
+          is_active: boolean | null
+          min_order_amount: number | null
+          updated_at: string
+          usage_limit: number | null
+          used_count: number | null
+        }
+        Insert: {
+          code: string
+          created_at?: string
+          description?: string | null
+          discount_type?: string | null
+          discount_value: number
+          expires_at?: string | null
+          id?: string
+          is_active?: boolean | null
+          min_order_amount?: number | null
+          updated_at?: string
+          usage_limit?: number | null
+          used_count?: number | null
+        }
+        Update: {
+          code?: string
+          created_at?: string
+          description?: string | null
+          discount_type?: string | null
+          discount_value?: number
+          expires_at?: string | null
+          id?: string
+          is_active?: boolean | null
+          min_order_amount?: number | null
+          updated_at?: string
+          usage_limit?: number | null
+          used_count?: number | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

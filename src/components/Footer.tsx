@@ -1,118 +1,103 @@
-import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 
 export const Footer = () => {
   return (
-    <footer className="bg-black-glossy text-white-warm border-t border-gold-dark">
-      <div className="container mx-auto px-4 py-12">
+    <footer className="bg-black-glossy text-white-warm border-t border-gold-primary/20">
+      <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="space-y-4">
-            <h3 className="font-anton text-lg font-semibold text-gold-primary uppercase tracking-wide">
-              Golden Shower
-            </h3>
-            <p className="text-sm font-lora">
+          
+          {/* Brand Section */}
+          <div className="space-y-6">
+            <div className="relative">
+              <h3 className="font-anton text-2xl text-transparent bg-clip-text bg-gradient-to-r from-gold-primary to-orange-warm uppercase tracking-wide">
+                Golden Shower
+              </h3>
+              <div className="w-16 h-0.5 bg-gradient-to-r from-gold-primary to-transparent mt-2" />
+            </div>
+            <p className="font-lora text-white-warm/70 leading-relaxed">
               Birra artigianale provocatoria dal cuore della Toscana. 
               Per palati audaci che non temono di sperimentare.
             </p>
             <div className="flex space-x-3">
-              <Button variant="ghost" size="icon" className="hover:text-primary">
+              <Button variant="ghost" size="icon" className="hover:text-gold-primary hover:bg-gold-primary/10 border border-gold-primary/20">
                 <Facebook className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon" className="hover:text-primary">
+              <Button variant="ghost" size="icon" className="hover:text-gold-primary hover:bg-gold-primary/10 border border-gold-primary/20">
                 <Instagram className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon" className="hover:text-primary">
+              <Button variant="ghost" size="icon" className="hover:text-gold-primary hover:bg-gold-primary/10 border border-gold-primary/20">
                 <Twitter className="h-5 w-5" />
               </Button>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-foreground">Link Rapidi</h3>
-            <div className="space-y-2">
-              <Link to="/catalogo" className="block text-muted-foreground hover:text-primary transition-colors">
+          {/* Navigation Links */}
+          <div className="space-y-6">
+            <h4 className="font-montserrat font-semibold uppercase tracking-wide text-gold-primary">Navigazione</h4>
+            <nav className="flex flex-col space-y-3">
+              <a href="/catalogo" className="font-lora text-white-warm/70 hover:text-gold-primary transition-colors hover:translate-x-1 duration-200">
                 Catalogo
-              </Link>
-              <Link to="/chi-siamo" className="block text-muted-foreground hover:text-primary transition-colors">
+              </a>
+              <a href="/chi-siamo" className="font-lora text-white-warm/70 hover:text-gold-primary transition-colors hover:translate-x-1 duration-200">
                 Chi Siamo
-              </Link>
-              <Link to="/contatti" className="block text-muted-foreground hover:text-primary transition-colors">
+              </a>
+              <a href="/blog" className="font-lora text-white-warm/70 hover:text-gold-primary transition-colors hover:translate-x-1 duration-200">
+                Blog
+              </a>
+              <a href="/contatti" className="font-lora text-white-warm/70 hover:text-gold-primary transition-colors hover:translate-x-1 duration-200">
                 Contatti
-              </Link>
-              <Link to="/carrello" className="block text-muted-foreground hover:text-primary transition-colors">
-                Carrello
-              </Link>
-            </div>
+              </a>
+            </nav>
           </div>
 
-          {/* Legal */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-foreground">Informazioni Legali</h3>
-            <div className="space-y-2">
-              <Link to="/privacy" className="block text-muted-foreground hover:text-primary transition-colors">
+          {/* Legal Links */}
+          <div className="space-y-6">
+            <h4 className="font-montserrat font-semibold uppercase tracking-wide text-gold-primary">Informazioni</h4>
+            <nav className="flex flex-col space-y-3">
+              <a href="/privacy" className="font-lora text-white-warm/70 hover:text-gold-primary transition-colors hover:translate-x-1 duration-200">
                 Privacy Policy
-              </Link>
-              <Link to="/termini" className="block text-muted-foreground hover:text-primary transition-colors">
-                Termini e Condizioni
-              </Link>
-              <Link to="/cookies" className="block text-muted-foreground hover:text-primary transition-colors">
-                Cookie Policy
-              </Link>
-              <Link to="/spedizioni" className="block text-muted-foreground hover:text-primary transition-colors">
-                Spedizioni e Resi
-              </Link>
-            </div>
+              </a>
+              <a href="/terms" className="font-lora text-white-warm/70 hover:text-gold-primary transition-colors hover:translate-x-1 duration-200">
+                Termini di Servizio
+              </a>
+              <a href="/faq" className="font-lora text-white-warm/70 hover:text-gold-primary transition-colors hover:translate-x-1 duration-200">
+                FAQ
+              </a>
+            </nav>
           </div>
 
-          {/* Contact & Newsletter */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-foreground">Contatti</h3>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-2 text-muted-foreground">
-                <Mail className="h-4 w-4" />
-                <span className="text-sm">info@goldenshower.beer</span>
+          {/* Contact Info */}
+          <div className="space-y-6">
+            <h4 className="font-montserrat font-semibold uppercase tracking-wide text-gold-primary">Contatti</h4>
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3">
+                <Mail className="h-5 w-5 text-gold-primary" />
+                <span className="font-lora text-white-warm/70">info@goldenshower.beer</span>
               </div>
-              <div className="flex items-center space-x-2 text-muted-foreground">
-                <Phone className="h-4 w-4" />
-                <span className="text-sm">+39 02 1234 5678</span>
+              <div className="flex items-center space-x-3">
+                <Phone className="h-5 w-5 text-gold-primary" />
+                <div className="flex flex-col space-y-1">
+                  <span className="font-lora text-orange-warm font-medium">+39 348 072 0786</span>
+                  <span className="font-lora text-orange-warm font-medium">+39 340 648 9563</span>
+                </div>
               </div>
-              <div className="flex items-center space-x-2 text-muted-foreground">
-                <MapPin className="h-4 w-4" />
-                <span className="text-sm">Milano, Italia</span>
+              <div className="flex items-center space-x-3">
+                <MapPin className="h-5 w-5 text-gold-primary" />
+                <span className="font-lora text-white-warm/70">Staffoli, Toscana</span>
               </div>
-            </div>
-            
-            <div className="space-y-2">
-              <h4 className="font-medium text-foreground">Newsletter</h4>
-              <div className="flex space-x-2">
-                <Input 
-                  placeholder="La tua email" 
-                  className="flex-1"
-                />
-                <Button className="btn-golden">
-                  Iscriviti
-                </Button>
-              </div>
-              <p className="text-xs text-muted-foreground">
-                Ricevi offerte esclusive e novità sui nostri prodotti.
-              </p>
             </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-border/40 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm text-muted-foreground">
-              © 2024 Golden Shower Brewery. Tutti i diritti riservati.
-            </div>
-            <div className="text-sm text-muted-foreground">
-              Bevi responsabilmente. Vietato ai minori di 18 anni.
-            </div>
+        {/* Bottom Bar */}
+        <div className="border-t border-gold-primary/20 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center">
+          <p className="font-lora text-sm text-white-warm/50 mb-4 md:mb-0">
+            © 2024 Golden Shower Brewery. Tutti i diritti riservati.
+          </p>
+          <div className="flex items-center space-x-6 text-sm">
+            <span className="text-red-intense font-semibold font-marker text-lg">⚠️ Bevi Responsabilmente</span>
+            <span className="text-gold-primary font-montserrat">Vietato ai minori di 18 anni</span>
           </div>
         </div>
       </div>

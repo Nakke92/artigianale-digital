@@ -51,7 +51,9 @@ export const ProductCard = ({
         {/* Product Image */}
         <div className="aspect-[4/5] overflow-hidden">
           <img
-            src={product.image_url}
+            src={product.image_url.startsWith('/src/') 
+              ? product.image_url.replace('/src/', '/') 
+              : product.image_url}
             alt={product.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />

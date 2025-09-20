@@ -112,18 +112,27 @@ export default function FAQ() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black relative overflow-hidden">
+      {/* Animated Liquid Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-amber-950/30 to-orange-900/40"></div>
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-gold-primary/30 to-orange-500/30 rounded-full mix-blend-multiply filter blur-xl animate-float opacity-70"></div>
+          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-gradient-to-r from-red-intense/30 to-pink-500/30 rounded-full mix-blend-multiply filter blur-xl animate-float animation-delay-2000 opacity-60"></div>
+          <div className="absolute bottom-1/3 left-1/3 w-72 h-72 bg-gradient-to-r from-orange-400/30 to-yellow-500/30 rounded-full mix-blend-multiply filter blur-xl animate-float animation-delay-4000 opacity-50"></div>
+        </div>
+      </div>
+
       <Header />
       
-      <main className="container mx-auto px-4 py-8">
+      <main className="relative z-10 container mx-auto px-4 py-8">
         {/* Hero Section */}
         <section className="text-center py-16 relative">
-          <div className="absolute inset-0 retro-dots opacity-20"></div>
           <div className="relative z-10">
-            <h1 className="text-4xl md:text-6xl font-display text-psychedelic mb-6">
+            <h1 className="text-4xl md:text-6xl font-display text-golden mb-6 animate-pulse-golden">
               Domande Frequenti
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
               Trova risposta alle domande più comuni su spedizioni, prodotti e ordini
             </p>
           </div>
@@ -132,22 +141,22 @@ export default function FAQ() {
         {/* FAQ Sections */}
         <section className="max-w-4xl mx-auto">
           {faqSections.map((section, index) => (
-            <Card key={index} className="card-psychedelic mb-8">
+            <Card key={index} className="bg-black/40 backdrop-blur-sm border border-gold-primary/30 mb-8 hover:border-gold-primary/50 transition-all duration-300">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="text-3xl">{section.icon}</span>
-                  <h2 className="text-2xl font-display text-psychedelic">
+                  <span className="text-3xl filter drop-shadow-glow">{section.icon}</span>
+                  <h2 className="text-2xl font-display text-golden">
                     {section.title}
                   </h2>
                 </div>
 
                 <Accordion type="single" collapsible>
                   {section.faqs.map((faq, faqIndex) => (
-                    <AccordionItem key={faqIndex} value={`${index}-${faqIndex}`}>
-                      <AccordionTrigger className="text-left font-medium hover:text-primary">
+                    <AccordionItem key={faqIndex} value={`${index}-${faqIndex}`} className="border-gold-primary/20">
+                      <AccordionTrigger className="text-left font-medium text-white hover:text-golden transition-colors">
                         {faq.question}
                       </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground">
+                      <AccordionContent className="text-white/80">
                         {faq.answer}
                       </AccordionContent>
                     </AccordionItem>
@@ -160,11 +169,11 @@ export default function FAQ() {
 
         {/* Contact CTA */}
         <section className="py-16 text-center">
-          <Card className="card-psychedelic p-8 max-w-2xl mx-auto">
-            <h2 className="text-3xl font-display text-psychedelic mb-4">
+          <Card className="bg-black/60 backdrop-blur-sm border border-red-intense/50 p-8 max-w-2xl mx-auto hover:border-red-intense/70 transition-all duration-300">
+            <h2 className="text-3xl font-display text-seductive mb-4">
               Non hai trovato la risposta?
             </h2>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-white/90 mb-6">
               Il nostro team è qui per aiutarti. Contattaci per qualsiasi domanda 
               o dubbio sui nostri prodotti e servizi.
             </p>
@@ -175,7 +184,7 @@ export default function FAQ() {
                 </Button>
               </Link>
               <a href="mailto:info@goldenshower.beer">
-                <Button size="lg" variant="outline">
+                <Button size="lg" className="border-white/50 text-white hover:bg-white/10 hover:border-white transition-all">
                   Scrivi una Email
                 </Button>
               </a>

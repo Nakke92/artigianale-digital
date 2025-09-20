@@ -5,18 +5,27 @@ import { Separator } from '@/components/ui/separator';
 
 export default function Terms() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black relative overflow-hidden">
+      {/* Animated Liquid Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-amber-950/30 to-orange-900/40"></div>
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-gold-primary/30 to-orange-500/30 rounded-full mix-blend-multiply filter blur-xl animate-float opacity-70"></div>
+          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-gradient-to-r from-red-intense/30 to-pink-500/30 rounded-full mix-blend-multiply filter blur-xl animate-float animation-delay-2000 opacity-60"></div>
+          <div className="absolute bottom-1/3 left-1/3 w-72 h-72 bg-gradient-to-r from-orange-400/30 to-yellow-500/30 rounded-full mix-blend-multiply filter blur-xl animate-float animation-delay-4000 opacity-50"></div>
+        </div>
+      </div>
+
       <Header />
       
-      <main className="container mx-auto px-4 py-8">
+      <main className="relative z-10 container mx-auto px-4 py-8">
         <section className="max-w-4xl mx-auto">
           <div className="text-center py-16 relative">
-            <div className="absolute inset-0 psychedelic-stripes opacity-10"></div>
             <div className="relative z-10">
-              <h1 className="text-4xl md:text-6xl font-display text-psychedelic mb-6">
+              <h1 className="text-4xl md:text-6xl font-display text-golden mb-6 animate-pulse-golden">
                 Termini e Condizioni
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-white/90">
                 Condizioni generali di vendita
               </p>
             </div>

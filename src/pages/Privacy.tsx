@@ -5,47 +5,56 @@ import { Separator } from '@/components/ui/separator';
 
 export default function Privacy() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black relative overflow-hidden">
+      {/* Animated Liquid Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-amber-950/30 to-orange-900/40"></div>
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-gold-primary/30 to-orange-500/30 rounded-full mix-blend-multiply filter blur-xl animate-float opacity-70"></div>
+          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-gradient-to-r from-red-intense/30 to-pink-500/30 rounded-full mix-blend-multiply filter blur-xl animate-float animation-delay-2000 opacity-60"></div>
+          <div className="absolute bottom-1/3 left-1/3 w-72 h-72 bg-gradient-to-r from-orange-400/30 to-yellow-500/30 rounded-full mix-blend-multiply filter blur-xl animate-float animation-delay-4000 opacity-50"></div>
+        </div>
+      </div>
+
       <Header />
       
-      <main className="container mx-auto px-4 py-8">
+      <main className="relative z-10 container mx-auto px-4 py-8">
         <section className="max-w-4xl mx-auto">
           <div className="text-center py-16 relative">
-            <div className="absolute inset-0 retro-dots opacity-20"></div>
             <div className="relative z-10">
-              <h1 className="text-4xl md:text-6xl font-display text-psychedelic mb-6">
+              <h1 className="text-4xl md:text-6xl font-display text-golden mb-6 animate-pulse-golden">
                 Informativa Privacy
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-white/90">
                 La tua privacy è importante per noi
               </p>
             </div>
           </div>
 
-          <Card className="card-psychedelic">
+          <Card className="bg-black/40 backdrop-blur-sm border border-gold-primary/30 hover:border-gold-primary/50 transition-all duration-300">
             <CardContent className="p-8 space-y-8">
               <section>
-                <h2 className="text-2xl font-display text-psychedelic mb-4">1. Titolare del Trattamento</h2>
-                <p className="text-muted-foreground">
+                <h2 className="text-2xl font-display text-golden mb-4">1. Titolare del Trattamento</h2>
+                <p className="text-white/80">
                   Il Titolare del trattamento dei dati è Golden Shower Brewery S.r.l., 
                   con sede in Via della Birra Artigianale, 42 - 00100 Roma (RM), 
                   P.IVA: 12345678901, email: privacy@goldenshower.beer
                 </p>
               </section>
 
-              <Separator />
+              <Separator className="bg-gold-primary/30" />
 
               <section>
-                <h2 className="text-2xl font-display text-psychedelic mb-4">2. Tipi di Dati Raccolti</h2>
-                <p className="text-muted-foreground mb-4">
+                <h2 className="text-2xl font-display text-golden mb-4">2. Tipi di Dati Raccolti</h2>
+                <p className="text-white/80 mb-4">
                   Raccogliamo i seguenti tipi di dati personali:
                 </p>
-                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                  <li><strong>Dati di registrazione:</strong> nome, cognome, email, data di nascita</li>
-                  <li><strong>Dati di fatturazione:</strong> indirizzo, codice fiscale, partita IVA</li>
-                  <li><strong>Dati di spedizione:</strong> indirizzo di consegna, numero di telefono</li>
-                  <li><strong>Dati di navigazione:</strong> cookie, IP, pagine visitate</li>
-                  <li><strong>Dati di pagamento:</strong> gestiti da Stripe, non conserviamo dati delle carte</li>
+                <ul className="list-disc list-inside space-y-2 text-white/70">
+                  <li><strong className="text-red-intense">Dati di registrazione:</strong> nome, cognome, email, data di nascita</li>
+                  <li><strong className="text-red-intense">Dati di fatturazione:</strong> indirizzo, codice fiscale, partita IVA</li>
+                  <li><strong className="text-red-intense">Dati di spedizione:</strong> indirizzo di consegna, numero di telefono</li>
+                  <li><strong className="text-red-intense">Dati di navigazione:</strong> cookie, IP, pagine visitate</li>
+                  <li><strong className="text-red-intense">Dati di pagamento:</strong> gestiti da Stripe, non conserviamo dati delle carte</li>
                 </ul>
               </section>
 

@@ -46,27 +46,35 @@ export const ProductCard = ({
   };
 
   return (
-    <Card className="card-psychedelic group overflow-hidden hover:shadow-retro transition-all duration-300 hover:-translate-y-1">
+    <Card className="group bg-black-glossy/80 backdrop-blur-xl border-2 border-gold-primary/40 hover:border-gold-primary/70 transition-all duration-500 hover:scale-105 overflow-hidden shadow-2xl hover:shadow-gold-primary/30">
       <div className="relative overflow-hidden">
         {/* Product Image */}
-        <div className="aspect-[4/5] overflow-hidden">
+        <div className="aspect-[4/5] overflow-hidden bg-gradient-to-br from-gold-primary/20 to-red-intense/20">
           <img
             src={product.image_url.startsWith('/src/') 
               ? product.image_url.replace('/src/', '/') 
               : product.image_url}
             alt={product.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+              const parent = target.parentElement;
+              if (parent) {
+                parent.innerHTML = '<div class="w-full h-full flex items-center justify-center"><div class="text-center"><div class="text-4xl mb-2">🍺</div><p class="text-gold-primary text-sm font-anton uppercase">Golden Shower</p></div></div>';
+              }
+            }}
           />
         </div>
         
         {/* Overlay Actions */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute inset-0 bg-gradient-to-t from-black-glossy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <div className="absolute bottom-4 left-4 right-4 flex gap-2">
             <Link to={`/prodotto/${product.id}`} className="flex-1">
               <Button 
                 size="sm" 
-                variant="secondary"
-                className="w-full bg-primary-foreground/20 backdrop-blur-sm border-primary-foreground/30"
+                variant="outline"
+                className="w-full bg-black-glossy/50 backdrop-blur-sm border-gold-primary/50 text-gold-primary hover:bg-gold-primary hover:text-black-glossy transition-all duration-300"
               >
                 <Eye className="h-4 w-4 mr-1" />
                 Dettagli
@@ -76,9 +84,9 @@ export const ProductCard = ({
               size="sm"
               variant="ghost"
               onClick={handleToggleWishlist}
-              className={`bg-primary-foreground/20 backdrop-blur-sm ${
-                isInWishlist ? 'text-red-500' : 'text-primary-foreground'
-              }`}
+              className={`bg-black-glossy/50 backdrop-blur-sm border border-red-intense/50 ${
+                isInWishlist ? 'text-red-intense bg-red-intense/20' : 'text-red-intense'
+              } hover:bg-red-intense hover:text-white-warm transition-all duration-300`}
             >
               <Heart className={`h-4 w-4 ${isInWishlist ? 'fill-current' : ''}`} />
             </Button>
@@ -87,53 +95,53 @@ export const ProductCard = ({
 
         {/* Status Badge */}
         {!product.is_active && (
-          <Badge variant="destructive" className="absolute top-2 left-2">
+          <Badge className="absolute top-2 left-2 bg-red-intense text-white-warm border border-red-intense">
             Esaurito
           </Badge>
         )}
         
         {/* Style Badge */}
-        <Badge variant="secondary" className="absolute top-2 right-2 bg-primary/80 text-primary-foreground">
+        <Badge className="absolute top-2 right-2 bg-orange-warm/90 text-black-glossy font-montserrat uppercase tracking-wide border border-orange-warm">
           {product.style}
         </Badge>
       </div>
 
-      <CardContent className="p-4 space-y-3">
+      <CardContent className="p-6 space-y-4 bg-black-glossy/60 border-t border-gold-primary/30">
         {/* Product Name */}
-        <div>
-          <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-1">
+        <div className="border border-gold-primary/20 rounded-lg p-4 bg-gold-primary/5">
+          <h3 className="font-anton text-xl text-gold-primary group-hover:text-orange-warm transition-colors uppercase tracking-wide">
             {product.name}
           </h3>
-          <p className="text-sm text-muted-foreground line-clamp-2 mt-1">
+          <p className="text-sm text-white-warm/90 line-clamp-2 mt-2 font-lora leading-relaxed">
             {product.description}
           </p>
         </div>
 
-        {/* Product Specs */}
-        <div className="flex justify-between items-center text-sm">
-          <div className="flex gap-4">
-            <span className="text-muted-foreground">
-              <strong className="text-foreground">{product.abv}%</strong> ABV
+        {/* Product Specs with Golden Borders */}
+        <div className="flex justify-between items-center text-sm bg-gold-primary/10 rounded-lg p-3 border border-gold-primary/30">
+          <div className="flex gap-6">
+            <span className="text-orange-warm font-semibold">
+              ABV: <strong className="text-gold-primary">{product.abv}%</strong>
             </span>
-            <span className="text-muted-foreground">
-              <strong className="text-foreground">{product.ibu}</strong> IBU
+            <span className="text-red-intense font-semibold">
+              IBU: <strong className="text-pink-transgressive">{product.ibu}</strong>
             </span>
           </div>
         </div>
 
         {/* Price */}
-        <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-primary">
+        <div className="flex items-center justify-between border-t border-gold-primary/30 pt-4">
+          <div className="text-3xl font-anton text-gold-primary">
             €{product.price.toFixed(2)}
           </div>
         </div>
       </CardContent>
 
-      <CardFooter className="p-4 pt-0">
+      <CardFooter className="p-6 pt-0 bg-black-glossy/60">
         <Button 
           onClick={handleAddToCart}
           disabled={!product.is_active || isLoading}
-          className="w-full btn-golden"
+          className="w-full bg-gradient-to-r from-gold-primary to-orange-warm text-black-glossy font-montserrat font-bold py-3 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-gold-primary/50 disabled:opacity-50 disabled:hover:scale-100"
         >
           <ShoppingCart className="h-4 w-4 mr-2" />
           {isLoading ? 'Aggiungendo...' : 'Aggiungi al Carrello'}

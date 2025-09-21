@@ -230,8 +230,8 @@ const Catalogo = () => {
         ) : (
           <div className="text-center py-12">
             <div className="text-6xl mb-4">🍺</div>
-            <h3 className="font-anton text-2xl text-nero-lucido mb-2 uppercase">Nessuna Provocazione Trovata</h3>
-            <p className="font-lora text-nero-lucido/70 mb-4">
+            <h3 className="font-anton text-2xl text-gold-primary mb-2 uppercase">Nessuna Provocazione Trovata</h3>
+            <p className="font-lora text-white-warm/80 mb-4">
               Prova a modificare i filtri o termini di ricerca per trovare la tua birra perfetta
             </p>
             <Button 
@@ -240,7 +240,7 @@ const Catalogo = () => {
                 setFilterStyle('all');
                 setSortBy('name');
               }}
-              className="bg-gradient-to-r from-oro-primario to-arancio-caldo text-nero-lucido font-montserrat font-bold px-8 py-3 rounded-full hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
+              className="bg-gradient-to-r from-gold-primary to-orange-warm text-black-glossy font-montserrat font-bold px-8 py-3 rounded-full hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
             >
               Ripristina filtri
             </Button>
@@ -250,8 +250,8 @@ const Catalogo = () => {
         {/* Results Count */}
         <div className="text-center mt-8">
           {filteredProducts.length > 0 && (
-            <p className="font-lora text-nero-lucido/70">
-              Mostrate <span className="text-oro-scuro font-bold">{filteredProducts.length}</span> di <span className="text-oro-scuro font-bold">{products.length}</span> provocazioni
+            <p className="font-lora text-white-warm/80">
+              Mostrate <span className="text-gold-primary font-bold">{filteredProducts.length}</span> di <span className="text-gold-primary font-bold">{products.length}</span> provocazioni
             </p>
           )}
         </div>

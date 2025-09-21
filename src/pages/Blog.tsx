@@ -84,19 +84,22 @@ export default function Blog() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black-glossy">
       <Header />
       
       <main className="container mx-auto px-4 py-8">
         {/* Hero Section */}
         <section className="text-center py-16 relative">
-          <div className="absolute inset-0 psychedelic-stripes opacity-10"></div>
+          <div className="absolute inset-0">
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-gold-primary/20 rounded-full filter blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-red-intense/15 rounded-full filter blur-3xl animate-float"></div>
+          </div>
           <div className="relative z-10">
-            <h1 className="text-4xl md:text-6xl font-display text-psychedelic mb-6">
+            <h1 className="font-anton text-6xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-gold-primary via-orange-warm to-red-intense mb-6 uppercase">
               News & Eventi
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Resta aggiornato sulle nostre ultime creazioni, eventi e storie dal mondo Golden Shower
+            <p className="font-lora text-xl text-white-warm max-w-2xl mx-auto">
+              Resta aggiornato sulle nostre <span className="text-gold-primary">ultime creazioni</span>, eventi e storie dal mondo <span className="text-red-intense">Golden Shower</span>
             </p>
           </div>
         </section>
@@ -120,16 +123,16 @@ export default function Blog() {
         {/* Blog Posts */}
         {filteredPosts.length === 0 ? (
           <section className="text-center py-16">
-            <div className="card-psychedelic p-8 max-w-md mx-auto">
-              <h2 className="text-2xl font-display text-psychedelic mb-4">
+            <div className="bg-black-glossy/60 backdrop-blur-xl border-2 border-gold-primary/30 rounded-2xl p-8 max-w-md mx-auto shadow-2xl">
+              <h2 className="font-anton text-3xl text-gold-primary mb-4 uppercase">
                 Prossimamente...
               </h2>
-              <p className="text-muted-foreground mb-6">
-                Stiamo preparando contenuti esclusivi per te. 
-                Torna presto per scoprire le nostre ultime news!
+              <p className="font-lora text-white-warm mb-6">
+                Stiamo preparando <span className="text-red-intense">contenuti esclusivi</span> per te. 
+                Torna presto per scoprire le nostre <span className="text-pink-transgressive">ultime news provocanti</span>!
               </p>
               <Link to="/newsletter">
-                <Button className="btn-golden">
+                <Button className="bg-gradient-to-r from-gold-primary to-orange-warm text-black-glossy font-montserrat font-bold hover:scale-105 transition-all">
                   Iscriviti alla Newsletter
                 </Button>
               </Link>
@@ -138,10 +141,10 @@ export default function Blog() {
         ) : (
           <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post) => (
-              <Card key={post.id} className="card-psychedelic group hover:shadow-retro transition-all duration-300 hover:-translate-y-1">
+              <Card key={post.id} className="bg-black-glossy/60 backdrop-blur-xl border-2 border-gold-primary/30 rounded-2xl group hover:scale-105 transition-all duration-300 shadow-2xl">
                 <CardHeader className="p-0">
                   {post.featured_image && (
-                    <div className="aspect-video overflow-hidden rounded-t-lg">
+                    <div className="aspect-video overflow-hidden rounded-t-xl border-b-2 border-gold-primary/20">
                       <img
                         src={post.featured_image}
                         alt={post.title}
@@ -151,23 +154,23 @@ export default function Blog() {
                   )}
                 </CardHeader>
                 <CardContent className="p-6">
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
+                  <div className="flex items-center gap-4 text-sm text-orange-warm mb-3">
                     <div className="flex items-center gap-1">
-                      <Calendar className="h-4 w-4" />
+                      <Calendar className="h-4 w-4 text-gold-primary" />
                       {formatDate(post.published_at || post.created_at)}
                     </div>
                   </div>
                   
-                  <h3 className="text-xl font-display text-foreground mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="font-anton text-xl text-gold-primary mb-3 group-hover:text-orange-warm transition-colors uppercase">
                     {post.title}
                   </h3>
                   
-                  <p className="text-muted-foreground text-sm line-clamp-3 mb-4">
+                  <p className="font-lora text-white-warm text-sm line-clamp-3 mb-4 leading-relaxed">
                     {post.excerpt}
                   </p>
                   
                   <Link to={`/blog/${post.slug}`}>
-                    <Button variant="outline" size="sm" className="w-full">
+                    <Button className="w-full bg-gradient-to-r from-red-intense to-pink-transgressive text-white-warm font-montserrat font-bold hover:scale-105 transition-all">
                       Leggi di più
                     </Button>
                   </Link>
@@ -179,16 +182,16 @@ export default function Blog() {
 
         {/* Newsletter CTA */}
         <section className="py-16 text-center">
-          <Card className="card-psychedelic p-8 max-w-2xl mx-auto">
-            <h2 className="text-3xl font-display text-psychedelic mb-4">
+          <Card className="bg-gradient-to-br from-gold-primary/10 to-red-intense/10 backdrop-blur-xl border-2 border-gold-primary/30 rounded-2xl p-8 max-w-2xl mx-auto shadow-2xl">
+            <h2 className="font-anton text-4xl text-transparent bg-clip-text bg-gradient-to-r from-gold-primary to-red-intense mb-4 uppercase">
               Non Perdere le Novità
             </h2>
-            <p className="text-muted-foreground mb-6">
+            <p className="font-lora text-white-warm mb-6 leading-relaxed">
               Iscriviti alla nostra newsletter per ricevere aggiornamenti 
-              su nuove birre, eventi esclusivi e promozioni speciali.
+              su <span className="text-gold-primary">nuove birre provocanti</span>, <span className="text-red-intense">eventi esclusivi</span> e <span className="text-pink-transgressive">promozioni speciali</span>.
             </p>
             <Link to="/newsletter">
-              <Button size="lg" className="btn-golden">
+              <Button size="lg" className="bg-gradient-to-r from-gold-primary via-orange-warm to-red-intense text-black-glossy font-montserrat font-bold px-12 py-6 hover:scale-105 transition-all uppercase tracking-wide">
                 Iscriviti Ora
               </Button>
             </Link>

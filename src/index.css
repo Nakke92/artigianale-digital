@@ -2,65 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Golden Shower Palette - Bold and Provocative */
+/* Golden Shower Palette - Nero Metallizzato Provocante */
 @layer base {
   :root {
-    /* Golden Shower Palette Colors */
-    --primary: 51 100% 50%;           /* #FFD700 Gold */
-    --primary-foreground: 0 0% 5%;    /* Black for contrast */
+    /* Sistema Colori Metallizzato Nero */
+    --primary: 51 100% 50%;           /* #FFD700 Oro Brillante */
+    --primary-foreground: 0 0% 0%;    /* Nero assoluto */
     
-    --secondary: 43 82% 39%;          /* #B8860B Dark Goldenrod */
-    --secondary-foreground: 48 100% 94%;
+    --secondary: 0 0% 10%;            /* Nero metallizzato */
+    --secondary-foreground: 51 100% 50%;
     
-    --accent: 0 68% 42%;              /* #B22222 Firebrick */
-    --accent-foreground: 48 100% 94%;
+    --accent: 0 100% 50%;             /* #FF0000 Rosso Intenso */
+    --accent-foreground: 0 0% 100%;
     
-    --muted: 0 0% 5%;                 /* #0D0D0D Near black */
-    --muted-foreground: 48 100% 94%;
+    --muted: 0 0% 5%;                 /* Nero profondo */
+    --muted-foreground: 0 0% 100%;
     
-    --card: 48 100% 94%;              /* #FFF8E1 Warm white */
-    --card-foreground: 0 0% 5%;
+    --card: 0 0% 3%;                  /* Nero metallizzato per card */
+    --card-foreground: 0 0% 100%;
     
-    --border: 43 82% 39%;
-    --input: 43 82% 39%;
+    --border: 51 100% 50%;            /* Bordi oro */
+    --input: 0 0% 8%;
     --ring: 51 100% 50%;
     
-    --background: 48 100% 94%;        /* Warm white base */
-    --foreground: 0 0% 5%;            /* Dark text */
+    --background: 0 0% 0%;            /* Sfondo nero assoluto */
+    --foreground: 0 0% 100%;          /* Testo bianco */
     
-    --destructive: 0 68% 42%;
-    --destructive-foreground: 48 100% 94%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
     
-    --popover: 48 100% 94%;
-    --popover-foreground: 0 0% 5%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
     
-    /* Custom Golden Shower Colors */
-    --gold-primary: 51 100% 50%;      /* #FFD700 Gold */
-    --gold-dark: 43 82% 39%;          /* #B8860B Dark Goldenrod */
-    --orange-warm: 33 100% 50%;       /* #FF8C00 Dark Orange */
-    --red-intense: 0 68% 42%;         /* #B22222 Firebrick */
-    --black-glossy: 0 0% 5%;          /* #0D0D0D */
-    --white-warm: 48 100% 94%;        /* #FFF8E1 Champagne White */
+    /* Colori Custom Metallizzati */
+    --gold-primary: 51 100% 50%;      /* #FFD700 Oro Brillante */
+    --gold-dark: 43 85% 45%;          /* Oro Scuro */
+    --orange-warm: 20 100% 50%;       /* Arancio Caldo */
+    --red-intense: 0 100% 50%;        /* #FF0000 Rosso Intenso */
+    --black-glossy: 0 0% 0%;          /* Nero Assoluto */
+    --white-warm: 0 0% 100%;          /* Bianco Puro */
     --pink-transgressive: 330 100% 71%; /* #FF69B4 Hot Pink */
     
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--gold-primary)), hsl(var(--orange-warm)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--white-warm)), hsl(var(--gold-primary) / 0.1)));
+    /* Gradienti Metallizzati */
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 0%), hsl(0 0% 8%), hsl(0 0% 3%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 5%), hsl(0 0% 10%), hsl(0 0% 3%));
+    --gradient-metallic: linear-gradient(135deg, hsl(0 0% 0%), hsl(0 0% 15%), hsl(0 0% 5%));
     
     --radius: 0.5rem;
     
-    /* Provocative gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--amber-intense)));
-    --gradient-intense: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--red-intense)), hsl(var(--orange-fire)));
-    --gradient-golden: linear-gradient(135deg, hsl(43 100% 58%), hsl(25 100% 50%), hsl(20 100% 55%));
+    /* Gradienti Provocanti Metallizzati */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--gold-primary)), hsl(var(--red-intense)));
+    --gradient-intense: linear-gradient(45deg, hsl(var(--gold-primary)), hsl(var(--red-intense)), hsl(var(--pink-transgressive)));
+    --gradient-golden: linear-gradient(135deg, hsl(51 100% 50%), hsl(20 100% 50%), hsl(0 100% 50%));
     --gradient-seductive: linear-gradient(135deg, hsl(var(--black-glossy)), hsl(var(--red-intense)));
-    --gradient-hero: linear-gradient(135deg, hsl(210 40% 2%), hsl(var(--black-glossy)), hsl(var(--gold-deep)));
+    --gradient-metallic-bg: linear-gradient(135deg, hsl(0 0% 0%), hsl(0 0% 8%), hsl(0 0% 3%));
     
-    /* Sensual shadows with golden intensity */
-    --shadow-golden: 0 15px 35px -10px hsl(var(--primary) / 0.4);
-    --shadow-intense: 0 20px 40px -15px hsl(var(--red-intense) / 0.3);
-    --shadow-glow: 0 0 50px hsl(var(--primary-glow) / 0.8);
-    --shadow-seductive: 0 25px 50px -20px hsl(var(--black-glossy) / 0.6);
+    /* Ombre Metallizzate con Intensità Dorata */
+    --shadow-golden: 0 15px 35px -10px hsl(51 100% 50% / 0.4);
+    --shadow-intense: 0 20px 40px -15px hsl(0 100% 50% / 0.3);
+    --shadow-glow: 0 0 50px hsl(51 100% 50% / 0.8);
+    --shadow-seductive: 0 25px 50px -20px hsl(0 0% 0% / 0.9);
     
     /* Smooth provocative transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -68,35 +69,34 @@
   }
 
   .dark {
-    /* Dark mode - intensified provocation for night owls */
-    --background: 0 0% 3%;
-    --foreground: 43 100% 92%;
+    /* Dark mode - Metallizzato Intensificato */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
     
-    --card: 0 0% 5%;
-    --card-foreground: 43 100% 92%;
+    --card: 0 0% 3%;
+    --card-foreground: 0 0% 100%;
     
     --popover: 0 0% 5%;
-    --popover-foreground: 43 100% 92%;
+    --popover-foreground: 0 0% 100%;
     
-    --primary: 43 100% 65%;
+    --primary: 51 100% 50%;
     --primary-foreground: 0 0% 0%;
-    --primary-glow: 43 100% 75%;
     
-    --secondary: 33 100% 60%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 51 100% 50%;
     
-    --muted: 0 0% 8%;
-    --muted-foreground: 43 60% 80%;
+    --muted: 0 0% 5%;
+    --muted-foreground: 0 0% 100%;
     
-    --accent: 0 90% 55%;
-    --accent-foreground: 43 100% 92%;
+    --accent: 0 100% 50%;
+    --accent-foreground: 0 0% 100%;
     
-    --destructive: 0 90% 55%;
-    --destructive-foreground: 43 100% 92%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
     
-    --border: 43 50% 25%;
-    --input: 43 50% 15%;
-    --ring: 43 100% 65%;
+    --border: 51 100% 50%;
+    --input: 0 0% 8%;
+    --ring: 51 100% 50%;
   }
 }
 

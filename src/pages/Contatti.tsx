@@ -48,7 +48,7 @@ export default function Contatti() {
   };
 
   return (
-    <div className="min-h-screen relative bg-gradient-to-b from-black-glossy via-black-glossy/90 to-bianco-caldo overflow-hidden">
+    <div className="min-h-screen relative bg-gradient-to-b from-black-glossy via-black-glossy/95 to-black-glossy overflow-hidden">
       {/* Liquid Golden Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-oro-primario/20 rounded-full filter blur-3xl animate-pulse-golden"></div>
@@ -83,7 +83,7 @@ export default function Contatti() {
             <h1 className="font-anton text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-oro-primario via-arancio-caldo to-oro-scuro mb-6 tracking-wider uppercase">
               CONTATTACI
             </h1>
-            <p className="font-lora text-xl text-bianco-caldo/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="font-lora text-xl text-white-warm max-w-3xl mx-auto leading-relaxed">
               Hai domande sui nostri <span className="text-oro-primario font-bold">prodotti provocanti</span>? 
               Vuoi visitare il <span className="text-arancio-caldo">birrificio</span>? 
               <span className="text-oro-scuro font-bold"> Siamo qui per accendere la tua curiosità!</span>

@@ -39,9 +39,15 @@ export const HomeHero = () => {
             <Sparkles className="w-4 h-4 text-gold-primary" />
           </div>
 
-          {/* Main Title - Massive and Bold */}
-          <h1 className="font-anton text-7xl md:text-9xl lg:text-[12rem] leading-none uppercase text-transparent bg-clip-text bg-gradient-to-br from-gold-primary via-orange-warm to-red-intense mb-6 tracking-tight">
-            Golden<br />Shower
+          {/* Main Title - Massive and Bold with Enhanced Gold Effect */}
+          <h1 className="font-anton text-7xl md:text-9xl lg:text-[12rem] leading-none uppercase text-transparent bg-clip-text bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] mb-6 tracking-tight relative">
+            <span className="relative inline-block bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] bg-clip-text text-transparent animate-pulse drop-shadow-[0_0_20px_rgba(255,215,0,0.8)] filter brightness-125 contrast-125">
+              Golden<br />Shower
+            </span>
+            {/* Glow effect overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] bg-clip-text text-transparent opacity-50 blur-sm animate-pulse" style={{animationDuration: '3s'}}>
+              Golden<br />Shower
+            </div>
           </h1>
 
           {/* Subtitle with Attitude */}

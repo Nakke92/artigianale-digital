@@ -57,43 +57,14 @@ export default function ChiSiamo() {
         {/* Founders Section - The Provocateurs */}
         <section className="py-16">
           <h2 className="font-anton text-5xl font-bold text-oro-primario text-center mb-12 uppercase tracking-wider">
-            I Protagonisti della Provocazione
+            Il Team
           </h2>
           
           <div className="grid md:grid-cols-2 gap-12">
-            {/* Nicolò - The Alchemist */}
-            <Card className="bg-black-glossy/60 backdrop-blur-xl border border-oro-primario/30 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300">
-              <CardContent className="p-8 text-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-oro-primario to-arancio-caldo rounded-full mx-auto mb-6 flex items-center justify-center animate-float">
-                  <Beaker className="h-16 w-16 text-nero-lucido" />
-                </div>
-                <h3 className="font-anton text-3xl font-bold text-gold-primary mb-3 uppercase">Nicolò Boschi</h3>
-                <p className="font-montserrat text-lg text-orange-warm mb-4 uppercase tracking-wide">L'Alchimista delle Provocazioni</p>
-                
-                <div className="text-left space-y-4 border-2 border-gold-primary/30 rounded-lg p-4 bg-black-glossy/40">
-                  <p className="font-lora text-white-warm leading-relaxed">
-                    <strong className="text-gold-primary">Laureato in chimica alimentare</strong>, Nicolò è l'anima tecnica del progetto. 
-                    La sua esperienza da mastro birraio si fonde con una passione irrefrenabile per la sperimentazione audace.
-                  </p>
-                  <p className="font-lora text-white-warm leading-relaxed">
-                    "Ogni ricetta è una <span className="text-red-intense">provocazione scientifica</span>" - dice mentre mescola ingredienti che altri considererebbero impossibili. 
-                    È lui che trasforma le visioni più maliziose in liquidi che seducono il palato.
-                  </p>
-                </div>
-
-                <div className="mt-6 flex items-center justify-center space-x-4">
-                  <a href="tel:3480720786" className="flex items-center space-x-2 text-oro-primario hover:text-arancio-caldo transition-colors">
-                    <Phone className="h-4 w-4" />
-                    <span className="font-lora">348 072 0786</span>
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Lorenzo - The Visionary */}
+            {/* Lorenzo - The Visionary - Now First */}
             <Card className="bg-black-glossy/60 backdrop-blur-xl border border-rosso-intenso/50 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300">
               <CardContent className="p-8 text-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-rosso-intenso to-arancio-caldo rounded-full mx-auto mb-6 flex items-center justify-center animate-float" style={{animationDelay: '1s'}}>
+                <div className="w-32 h-32 bg-gradient-to-br from-rosso-intenso to-arancio-caldo rounded-full mx-auto mb-6 flex items-center justify-center animate-float">
                   <Palette className="h-16 w-16 text-bianco-caldo" />
                 </div>
                 <h3 className="font-anton text-3xl font-bold text-red-intense mb-3 uppercase">Lorenzo Paolicchi</h3>
@@ -115,6 +86,35 @@ export default function ChiSiamo() {
                   <a href="tel:3406489563" className="flex items-center space-x-2 text-arancio-caldo hover:text-rosso-intenso transition-colors">
                     <Phone className="h-4 w-4" />
                     <span className="font-lora">340 648 9563</span>
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Nicolò - The Alchemist - Now Second */}
+            <Card className="bg-black-glossy/60 backdrop-blur-xl border border-oro-primario/30 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300">
+              <CardContent className="p-8 text-center">
+                <div className="w-32 h-32 bg-gradient-to-br from-oro-primario to-arancio-caldo rounded-full mx-auto mb-6 flex items-center justify-center animate-float" style={{animationDelay: '1s'}}>
+                  <Beaker className="h-16 w-16 text-nero-lucido" />
+                </div>
+                <h3 className="font-anton text-3xl font-bold text-gold-primary mb-3 uppercase">Nicolò Boschi</h3>
+                <p className="font-montserrat text-lg text-orange-warm mb-4 uppercase tracking-wide">L'Alchimista delle Provocazioni</p>
+                
+                <div className="text-left space-y-4 border-2 border-gold-primary/30 rounded-lg p-4 bg-black-glossy/40">
+                  <p className="font-lora text-white-warm leading-relaxed">
+                    <strong className="text-gold-primary">Laureato in chimica alimentare</strong>, Nicolò è l'anima tecnica del progetto. 
+                    La sua esperienza da mastro birraio si fonde con una passione irrefrenabile per la sperimentazione audace.
+                  </p>
+                  <p className="font-lora text-white-warm leading-relaxed">
+                    "Ogni ricetta è una <span className="text-red-intense">provocazione scientifica</span>" - dice mentre mescola ingredienti che altri considererebbero impossibili. 
+                    È lui che trasforma le visioni più maliziose in liquidi che seducono il palato.
+                  </p>
+                </div>
+
+                <div className="mt-6 flex items-center justify-center space-x-4">
+                  <a href="tel:3480720786" className="flex items-center space-x-2 text-oro-primario hover:text-arancio-caldo transition-colors">
+                    <Phone className="h-4 w-4" />
+                    <span className="font-lora">348 072 0786</span>
                   </a>
                 </div>
               </CardContent>
@@ -193,6 +193,45 @@ export default function ChiSiamo() {
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-rosso-intenso" />
                   <span className="font-lora text-nero-lucido/80">340 648 9563 (Lorenzo)</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Il Team Section */}
+        <section className="py-16">
+          <h2 className="font-anton text-4xl font-bold text-oro-primario text-center mb-12 uppercase tracking-wider">
+            Il Team
+          </h2>
+          
+          <Card className="bg-black-glossy/60 backdrop-blur-xl border border-oro-primario/30 rounded-2xl max-w-4xl mx-auto shadow-2xl">
+            <CardContent className="p-8">
+              <div className="space-y-6 font-lora text-bianco-caldo/90 leading-relaxed text-lg">
+                <div className="border-2 border-oro-primario/30 rounded-lg p-6 bg-oro-primario/5">
+                  <p>
+                    <strong className="text-oro-primario">Lorenzo e Nicolò</strong> rappresentano l'unione perfetta tra 
+                    <span className="text-rosso-intenso font-semibold"> visione creativa</span> e 
+                    <span className="text-arancio-caldo font-semibold"> maestria tecnica</span>. Insieme hanno dato vita a 
+                    Golden Shower, un progetto che va oltre la semplice produzione di birra.
+                  </p>
+                </div>
+                
+                <div className="border-2 border-oro-primario/30 rounded-lg p-6 bg-oro-primario/5">
+                  <p>
+                    La loro <span className="text-oro-primario font-semibold">collaborazione simbiotica</span> permette di 
+                    creare prodotti che non solo soddisfano il palato, ma raccontano una storia di 
+                    <span className="text-pink-transgressive font-semibold"> audacia e autenticità</span>.
+                  </p>
+                </div>
+                
+                <div className="border-2 border-oro-primario/30 rounded-lg p-6 bg-oro-primario/5">
+                  <p>
+                    Ogni birra Golden Shower nasce dall'incontro tra la 
+                    <span className="text-rosso-intenso font-semibold"> creatività visionaria</span> di Lorenzo e la 
+                    <span className="text-arancio-caldo font-semibold"> precisione alchemica</span> di Nicolò, 
+                    risultando in esperienze gustative che sfidano le convenzioni e celebrano l'individualità.
+                  </p>
                 </div>
               </div>
             </CardContent>

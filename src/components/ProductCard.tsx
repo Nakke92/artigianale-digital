@@ -51,9 +51,20 @@ export const ProductCard = ({
         {/* Product Image */}
         <div className="aspect-[4/5] overflow-hidden bg-gradient-to-br from-gold-primary/20 to-red-intense/20">
           <img
-            src={product.image_url.startsWith('/src/') 
-              ? product.image_url.replace('/src/', '/') 
-              : product.image_url}
+            src={(() => {
+              // Use new images based on product name
+              if (product.name.includes('Golden Shower')) {
+                return '/src/assets/golden-shower-new-2.png';
+              } else if (product.name.includes('Red Head')) {
+                return '/src/assets/red-head-new-2.png';
+              } else if (product.name.includes('Bella Negra')) {
+                return '/src/assets/bella-negra-new.png';
+              }
+              // Fallback to existing image_url
+              return product.image_url.startsWith('/src/') 
+                ? product.image_url.replace('/src/', '/') 
+                : product.image_url;
+            })()}
             alt={product.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             onError={(e) => {
@@ -107,9 +118,14 @@ export const ProductCard = ({
       </div>
 
       <CardContent className="p-6 space-y-4 bg-black-glossy/60 border-t border-gold-primary/30">
-        {/* Product Name */}
+        {/* Product Name with Custom Colors */}
         <div className="border border-gold-primary/20 rounded-lg p-4 bg-gold-primary/5">
-          <h3 className="font-anton text-xl text-gold-primary group-hover:text-orange-warm transition-colors uppercase tracking-wide">
+          <h3 className={`font-anton text-xl group-hover:text-orange-warm transition-colors uppercase tracking-wide ${
+            product.name.includes('Golden Shower') ? 'text-[#FFD700]' :
+            product.name.includes('Red Head') ? 'text-[#FF0000]' :
+            product.name.includes('Bella Negra') ? 'text-[#8B4513]' :
+            'text-gold-primary'
+          }`}>
             {product.name}
           </h3>
           <p className="text-sm text-white-warm/90 line-clamp-2 mt-2 font-lora leading-relaxed">

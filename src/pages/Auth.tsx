@@ -7,11 +7,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Separator } from '@/components/ui/separator';
 import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Mail, Lock, User, Phone } from 'lucide-react';
-import { supabase } from '@/integrations/supabase/client';
+import { useAuth } from '@/contexts/AuthContext';
 import { toast } from 'sonner';
 
 const Auth = () => {
   const navigate = useNavigate();
+  const { signIn, signUp } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
@@ -20,6 +21,11 @@ const Auth = () => {
     firstName: '',
     lastName: '',
     phone: '',
+    dateOfBirth: '',
+    address: '',
+    city: '',
+    postalCode: '',
+    country: 'IT'
   });
 
   const handleInputChange = (field: string, value: string) => {
@@ -35,10 +41,7 @@ const Auth = () => {
 
     setIsLoading(true);
     try {
-      const { error } = await supabase.auth.signInWithPassword({
-        email: formData.email,
-        password: formData.password,
-      });
+      const { error } = await signIn(formData.email, formData.password);
 
       if (error) {
         if (error.message.includes('Invalid login credentials')) {
@@ -60,7 +63,9 @@ const Auth = () => {
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.email || !formData.password || !formData.confirmPassword) {
+    if (!formData.email || !formData.password || !formData.confirmPassword || 
+        !formData.firstName || !formData.lastName || !formData.dateOfBirth ||
+        !formData.address || !formData.city || !formData.postalCode) {
       toast.error('Compila tutti i campi obbligatori');
       return;
     }
@@ -75,24 +80,34 @@ const Auth = () => {
       return;
     }
 
+    // Check age (client-side validation)
+    const birthDate = new Date(formData.dateOfBirth);
+    const minDate = new Date();
+    minDate.setFullYear(minDate.getFullYear() - 18);
+    
+    if (birthDate > minDate) {
+      toast.error('Devi avere almeno 18 anni per registrarti');
+      return;
+    }
+
     setIsLoading(true);
     try {
-      const { error } = await supabase.auth.signUp({
-        email: formData.email,
-        password: formData.password,
-        options: {
-          emailRedirectTo: `${window.location.origin}/`,
-          data: {
-            first_name: formData.firstName,
-            last_name: formData.lastName,
-            phone: formData.phone,
-          }
-        }
+      const { error } = await signUp(formData.email, formData.password, {
+        first_name: formData.firstName,
+        last_name: formData.lastName,
+        phone: formData.phone,
+        date_of_birth: formData.dateOfBirth,
+        address: formData.address,
+        city: formData.city,
+        postal_code: formData.postalCode,
+        country: formData.country
       });
 
       if (error) {
         if (error.message.includes('User already registered')) {
           toast.error('Un account con questa email esiste già');
+        } else if (error.message.includes('18 years old')) {
+          toast.error('Devi avere almeno 18 anni per registrarti');
         } else {
           toast.error(error.message);
         }
@@ -193,7 +208,7 @@ const Auth = () => {
                 <form onSubmit={handleSignUp} className="space-y-4">
                   <div className="grid grid-cols-2 gap-2">
                     <div className="space-y-2">
-                      <Label htmlFor="firstName">Nome</Label>
+                      <Label htmlFor="firstName">Nome *</Label>
                       <div className="relative">
                         <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                         <Input
@@ -202,16 +217,18 @@ const Auth = () => {
                           value={formData.firstName}
                           onChange={(e) => handleInputChange('firstName', e.target.value)}
                           className="pl-10"
+                          required
                         />
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="lastName">Cognome</Label>
+                      <Label htmlFor="lastName">Cognome *</Label>
                       <Input
                         id="lastName"
                         placeholder="Cognome"
                         value={formData.lastName}
                         onChange={(e) => handleInputChange('lastName', e.target.value)}
+                        required
                       />
                     </div>
                   </div>
@@ -244,6 +261,60 @@ const Auth = () => {
                         onChange={(e) => handleInputChange('phone', e.target.value)}
                         className="pl-10"
                       />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="dateOfBirth">Data di Nascita *</Label>
+                    <Input
+                      id="dateOfBirth"
+                      type="date"
+                      value={formData.dateOfBirth}
+                      onChange={(e) => handleInputChange('dateOfBirth', e.target.value)}
+                      max={new Date(new Date().setFullYear(new Date().getFullYear() - 18)).toISOString().split('T')[0]}
+                      required
+                    />
+                    <p className="text-xs text-muted-foreground">
+                      Devi avere almeno 18 anni per registrarti
+                    </p>
+                  </div>
+
+                  <Separator />
+
+                  <div className="space-y-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="address">Indirizzo *</Label>
+                      <Input
+                        id="address"
+                        placeholder="Via/Piazza e numero civico"
+                        value={formData.address}
+                        onChange={(e) => handleInputChange('address', e.target.value)}
+                        required
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="space-y-2">
+                        <Label htmlFor="city">Città *</Label>
+                        <Input
+                          id="city"
+                          placeholder="Città"
+                          value={formData.city}
+                          onChange={(e) => handleInputChange('city', e.target.value)}
+                          required
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="postalCode">CAP *</Label>
+                        <Input
+                          id="postalCode"
+                          placeholder="12345"
+                          value={formData.postalCode}
+                          onChange={(e) => handleInputChange('postalCode', e.target.value)}
+                          pattern="[0-9]{5}"
+                          required
+                        />
+                      </div>
                     </div>
                   </div>
 

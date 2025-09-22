@@ -8,9 +8,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Badge } from '@/components/ui/badge';
 import { Search, Filter, SlidersHorizontal } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
+import { useCart } from '@/contexts/CartContext';
 import { toast } from 'sonner';
 
 const Catalogo = () => {
+  const { addItem } = useCart();
   const [products, setProducts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
@@ -40,8 +42,7 @@ const Catalogo = () => {
   };
 
   const handleAddToCart = (product: any) => {
-    // This will be implemented with cart context
-    toast.success(`${product.name} aggiunto al carrello!`);
+    addItem(product);
   };
 
   const handleToggleWishlist = (product: any) => {

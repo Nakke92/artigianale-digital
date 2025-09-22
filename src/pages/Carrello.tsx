@@ -10,44 +10,23 @@ import { Footer } from '@/components/Footer';
 import { ShoppingCart, Minus, Plus, Trash2, Tag, CreditCard } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
+import { useCart } from '@/contexts/CartContext';
+import { useAuth } from '@/contexts/AuthContext';
 import { toast } from 'sonner';
 
 const Carrello = () => {
-  const [cartItems, setCartItems] = useState<any[]>([]);
+  const { items: cartItems, updateQuantity, removeItem } = useCart();
+  const { user, profile } = useAuth();
   const [promoCode, setPromoCode] = useState('');
   const [appliedPromo, setAppliedPromo] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Mock cart items - this would come from cart context
-  useEffect(() => {
-    // This is mock data - in real implementation, this would come from cart context/localStorage
-    setCartItems([
-      {
-        id: '1',
-        name: 'Golden Shower IPA',
-        description: 'Bottiglia 33cl',
-        price: 8.50,
-        quantity: 2,
-        image_url: '/src/assets/golden-shower-label.jpeg'
-      }
-    ]);
-  }, []);
-
-  const updateQuantity = (id: string, newQuantity: number) => {
-    if (newQuantity <= 0) {
-      removeItem(id);
-      return;
-    }
-    setCartItems(items => 
-      items.map(item => 
-        item.id === id ? { ...item, quantity: newQuantity } : item
-      )
-    );
+  const handleUpdateQuantity = (productId: string, newQuantity: number) => {
+    updateQuantity(productId, newQuantity);
   };
 
-  const removeItem = (id: string) => {
-    setCartItems(items => items.filter(item => item.id !== id));
-    toast.success('Prodotto rimosso dal carrello');
+  const handleRemoveItem = (productId: string) => {
+    removeItem(productId);
   };
 
   const applyPromoCode = async () => {

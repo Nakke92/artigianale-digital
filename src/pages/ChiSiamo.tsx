@@ -199,44 +199,6 @@ export default function ChiSiamo() {
           </Card>
         </section>
 
-        {/* Il Team Section */}
-        <section className="py-16">
-          <h2 className="font-anton text-4xl font-bold text-oro-primario text-center mb-12 uppercase tracking-wider">
-            Il Team
-          </h2>
-          
-          <Card className="bg-black-glossy/60 backdrop-blur-xl border border-oro-primario/30 rounded-2xl max-w-4xl mx-auto shadow-2xl">
-            <CardContent className="p-8">
-              <div className="space-y-6 font-lora text-bianco-caldo/90 leading-relaxed text-lg">
-                <div className="border-2 border-oro-primario/30 rounded-lg p-6 bg-oro-primario/5">
-                  <p>
-                    <strong className="text-oro-primario">Lorenzo e Nicolò</strong> rappresentano l'unione perfetta tra 
-                    <span className="text-rosso-intenso font-semibold"> visione creativa</span> e 
-                    <span className="text-arancio-caldo font-semibold"> maestria tecnica</span>. Insieme hanno dato vita a 
-                    Golden Shower, un progetto che va oltre la semplice produzione di birra.
-                  </p>
-                </div>
-                
-                <div className="border-2 border-oro-primario/30 rounded-lg p-6 bg-oro-primario/5">
-                  <p>
-                    La loro <span className="text-oro-primario font-semibold">collaborazione simbiotica</span> permette di 
-                    creare prodotti che non solo soddisfano il palato, ma raccontano una storia di 
-                    <span className="text-pink-transgressive font-semibold"> audacia e autenticità</span>.
-                  </p>
-                </div>
-                
-                <div className="border-2 border-oro-primario/30 rounded-lg p-6 bg-oro-primario/5">
-                  <p>
-                    Ogni birra Golden Shower nasce dall'incontro tra la 
-                    <span className="text-rosso-intenso font-semibold"> creatività visionaria</span> di Lorenzo e la 
-                    <span className="text-arancio-caldo font-semibold"> precisione alchemica</span> di Nicolò, 
-                    risultando in esperienze gustative che sfidano le convenzioni e celebrano l'individualità.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
 
         {/* CTA Section - Seductive */}
         <section className="py-16 text-center">

@@ -116,9 +116,9 @@ const Carrello = () => {
         body: {
           items: cartItems,
           customerInfo: {
-            email: '', // This would come from auth context
-            name: '',
-            phone: ''
+            email: user?.email || '',
+            name: profile ? `${profile.first_name} ${profile.last_name}` : '',
+            phone: profile?.phone || ''
           },
           promoCode: appliedPromo?.code
         }
@@ -203,7 +203,7 @@ const Carrello = () => {
                         <Button
                           variant="outline"
                           size="icon"
-                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                          onClick={() => updateQuantity(item.product_id, item.quantity - 1)}
                           className="h-8 w-8"
                         >
                           <Minus className="h-3 w-3" />
@@ -212,7 +212,7 @@ const Carrello = () => {
                         <Button
                           variant="outline"
                           size="icon"
-                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          onClick={() => updateQuantity(item.product_id, item.quantity + 1)}
                           className="h-8 w-8"
                         >
                           <Plus className="h-3 w-3" />
@@ -222,7 +222,7 @@ const Carrello = () => {
                       <Button
                         variant="ghost"
                         size="icon"
-                        onClick={() => removeItem(item.id)}
+                        onClick={() => removeItem(item.product_id)}
                         className="text-destructive hover:text-destructive h-8 w-8"
                       >
                         <Trash2 className="h-4 w-4" />

@@ -57,39 +57,44 @@ serve(async (req) => {
       }
     }
 
-    // Calculate totals
+    // Get products with Stripe price IDs and calculate totals
     let subtotal = 0;
-    const lineItems = items.map((item: any) => {
-      subtotal += item.price * item.quantity;
-      return {
-        price_data: {
-          currency: 'eur',
-          product_data: {
-            name: item.name,
-            description: item.description,
-            images: item.image_url ? [item.image_url] : [],
-          },
-          unit_amount: Math.round(item.price * 100), // Convert to cents
-        },
-        quantity: item.quantity,
-      };
-    });
-
-    // Add shipping if needed
-    const shippingCost = subtotal >= 50 ? 0 : 5; // Free shipping over €50
-    if (shippingCost > 0) {
+    const lineItems = [];
+    
+    for (const item of items) {
+      // Get product from database to retrieve Stripe price_id
+      const { data: product, error: productError } = await supabaseClient
+        .from('products')
+        .select('stripe_price_id, name, price')
+        .eq('id', item.product_id)
+        .single();
+      
+      if (productError || !product?.stripe_price_id) {
+        throw new Error(`Product not found or missing Stripe price ID for item: ${item.name}`);
+      }
+      
+      subtotal += product.price * item.quantity;
+      
       lineItems.push({
-        price_data: {
-          currency: 'eur',
-          product_data: {
-            name: 'Spedizione',
-            description: 'Costi di spedizione',
-          },
-          unit_amount: shippingCost * 100,
-        },
-        quantity: 1,
+        price: product.stripe_price_id,
+        quantity: item.quantity,
       });
     }
+
+    // Create shipping options based on cart total
+    const shippingCost = subtotal >= 50 ? 0 : 5; // Free shipping over €50
+    const shippingOptions = [
+      {
+        shipping_rate_data: {
+          type: 'fixed_amount',
+          fixed_amount: {
+            amount: shippingCost * 100, // Convert to cents
+            currency: 'eur',
+          },
+          display_name: shippingCost === 0 ? 'Spedizione Gratuita' : 'Spedizione Standard',
+        },
+      },
+    ];
 
     // Create checkout session
     const session = await stripe.checkout.sessions.create({
@@ -104,8 +109,12 @@ serve(async (req) => {
       },
       billing_address_collection: 'required',
       payment_method_types: ['card'],
+      shipping_options: shippingOptions,
+      allow_promotion_codes: true,
       metadata: {
         promo_code: promoCode || '',
+        items_count: items.length.toString(),
+        subtotal: subtotal.toString(),
       },
     });
 

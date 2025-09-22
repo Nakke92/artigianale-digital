@@ -52,10 +52,10 @@ serve(async (req) => {
       }
     }
 
-    // Calculate totals
+    // Calculate totals from session
     const subtotal = session.amount_subtotal! / 100;
     const totalAmount = session.amount_total! / 100;
-    const taxAmount = 0; // Can be calculated if needed
+    const taxAmount = (session.total_details?.amount_tax || 0) / 100;
     const shippingAmount = session.shipping_cost?.amount_total ? session.shipping_cost.amount_total / 100 : 0;
 
     // Create order in database
@@ -87,19 +87,38 @@ serve(async (req) => {
       });
     }
 
-    // Create order items (this would need to be expanded with actual product data)
-    // For now, we'll create basic items from line items
+    // Create order items with real product mapping
     if (session.line_items?.data) {
       for (const item of session.line_items.data) {
-        await supabaseClient
+        // Skip if this is not a product line item (could be shipping, tax, etc.)
+        if (!item.price?.id) continue;
+        
+        // Find the product by Stripe price ID
+        const { data: product, error: productError } = await supabaseClient
+          .from('products')
+          .select('id, name, price')
+          .eq('stripe_price_id', item.price.id)
+          .single();
+        
+        if (productError || !product) {
+          console.warn(`Product not found for Stripe price ID: ${item.price.id}`);
+          continue;
+        }
+        
+        // Insert order item with real product data
+        const { error: itemError } = await supabaseClient
           .from('order_items')
           .insert({
             order_id: order.id,
-            product_id: '00000000-0000-0000-0000-000000000000', // This should be mapped from product data
-            quantity: item.quantity,
-            unit_price: (item.amount_total || 0) / 100 / (item.quantity || 1),
-            total_price: (item.amount_total || 0) / 100,
+            product_id: product.id,
+            quantity: item.quantity || 1,
+            unit_price: product.price,
+            total_price: product.price * (item.quantity || 1),
           });
+        
+        if (itemError) {
+          console.error(`Error creating order item for product ${product.id}:`, itemError);
+        }
       }
     }
 

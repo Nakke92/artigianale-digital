@@ -2,10 +2,13 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { ShoppingCart, Menu, User, Heart } from 'lucide-react';
+import { ShoppingCart, Menu, User, Heart, LogOut } from 'lucide-react';
+import { useCart } from '@/contexts/CartContext';
+import { useAuth } from '@/contexts/AuthContext';
 
 export const Header = () => {
-  const [cartItemsCount] = useState(0);
+  const { totalItems } = useCart();
+  const { user, signOut } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
@@ -40,20 +43,33 @@ export const Header = () => {
 
         {/* Action Buttons */}
         <div className="flex items-center space-x-4">
-          <Button
-            variant="ghost"
-            size="sm"
-            className="hidden sm:flex font-montserrat uppercase tracking-wide text-white-warm hover:text-gold-primary hover:bg-gold-primary/10 transition-all"
-            onClick={() => window.location.href = '/auth'}
-          >
-            Login
-          </Button>
+          {user ? (
+            <Button
+              variant="ghost"
+              size="sm"
+              className="hidden sm:flex font-montserrat uppercase tracking-wide text-white-warm hover:text-gold-primary hover:bg-gold-primary/10 transition-all"
+              onClick={() => signOut()}
+            >
+              <LogOut className="h-4 w-4 mr-2" />
+              Logout
+            </Button>
+          ) : (
+            <Button
+              variant="ghost"
+              size="sm"
+              className="hidden sm:flex font-montserrat uppercase tracking-wide text-white-warm hover:text-gold-primary hover:bg-gold-primary/10 transition-all"
+              onClick={() => window.location.href = '/auth'}
+            >
+              <User className="h-4 w-4 mr-2" />
+              Login
+            </Button>
+          )}
           
           <Button
             className="group relative overflow-hidden bg-gradient-to-r from-gold-primary to-orange-warm text-black-glossy font-montserrat uppercase tracking-wide px-6 py-2 hover:scale-105 transition-all duration-300"
             onClick={() => window.location.href = '/carrello'}
           >
-            <span className="relative z-10">Carrello ({cartItemsCount})</span>
+            <span className="relative z-10">Carrello ({totalItems})</span>
           </Button>
           
           {/* Mobile Menu */}
@@ -83,13 +99,28 @@ export const Header = () => {
                 </div>
 
                 <div className="border-t border-gold-primary/20 pt-4 space-y-2">
-                  <Button variant="outline" className="w-full justify-start border-gold-primary/30 text-white-warm hover:bg-gold-primary hover:text-black-glossy" onClick={() => window.location.href = '/auth'}>
-                    <User className="h-4 w-4 mr-2" />
-                    Account
-                  </Button>
+                  {user ? (
+                    <Button 
+                      variant="outline" 
+                      className="w-full justify-start border-gold-primary/30 text-white-warm hover:bg-gold-primary hover:text-black-glossy" 
+                      onClick={() => signOut()}
+                    >
+                      <LogOut className="h-4 w-4 mr-2" />
+                      Logout
+                    </Button>
+                  ) : (
+                    <Button 
+                      variant="outline" 
+                      className="w-full justify-start border-gold-primary/30 text-white-warm hover:bg-gold-primary hover:text-black-glossy" 
+                      onClick={() => window.location.href = '/auth'}
+                    >
+                      <User className="h-4 w-4 mr-2" />
+                      Account
+                    </Button>
+                  )}
                   <Button variant="outline" className="w-full justify-start border-gold-primary/30 text-white-warm hover:bg-gold-primary hover:text-black-glossy" onClick={() => window.location.href = '/carrello'}>
                     <ShoppingCart className="h-4 w-4 mr-2" />
-                    Carrello ({cartItemsCount})
+                    Carrello ({totalItems})
                   </Button>
                 </div>
               </div>

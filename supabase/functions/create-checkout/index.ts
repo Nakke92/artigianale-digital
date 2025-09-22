@@ -97,9 +97,7 @@ serve(async (req) => {
     ];
 
     // Create checkout session
-    const session = await stripe.checkout.sessions.create({
-      customer: customerId,
-      customer_email: customerId ? undefined : customerInfo.email,
+    const sessionConfig: any = {
       line_items: lineItems,
       mode: "payment",
       success_url: `${req.headers.get("origin")}/successo?session_id={CHECKOUT_SESSION_ID}`,
@@ -116,7 +114,16 @@ serve(async (req) => {
         items_count: items.length.toString(),
         subtotal: subtotal.toString(),
       },
-    });
+    };
+
+    // Add customer info - only one of customer or customer_email, not both
+    if (customerId) {
+      sessionConfig.customer = customerId;
+    } else {
+      sessionConfig.customer_email = customerInfo.email;
+    }
+
+    const session = await stripe.checkout.sessions.create(sessionConfig);
 
     return new Response(JSON.stringify({ url: session.url }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },

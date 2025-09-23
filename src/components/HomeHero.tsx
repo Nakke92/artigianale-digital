@@ -40,7 +40,7 @@ export const HomeHero = () => {
           </div>
 
           {/* Main Title - Massive and Bold with Enhanced Gold Effect */}
-          <h1 className="font-anton text-5xl sm:text-6xl md:text-8xl lg:text-[10rem] leading-none uppercase text-transparent bg-clip-text bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] mb-6 tracking-tight relative">
+          <h1 className="font-anton text-hero-mobile lg:text-hero-lg 2xl:text-[10rem] leading-none uppercase text-transparent bg-clip-text bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] mb-6 tracking-tight relative">
             <span className="relative inline-block bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] bg-clip-text text-transparent animate-pulse drop-shadow-[0_0_20px_rgba(255,215,0,0.8)] filter brightness-125 contrast-125">
               Golden<br />Shower
             </span>

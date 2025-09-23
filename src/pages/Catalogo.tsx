@@ -32,7 +32,14 @@ const Catalogo = () => {
         .order('created_at', { ascending: false });
 
       if (error) throw error;
-      setProducts(data || []);
+
+      // Trasforma featured_image in URL pubblico
+      const productsWithPublicImage = (data || []).map(p => ({
+        ...p,
+        featured_image: `https://xchwmgqejzyvnfzfdlhz.supabase.co/storage/v1/object/public/images/${p.image_url}
+      }));
+
+      setProducts(productsWithPublicImage);
     } catch (error) {
       console.error('Error fetching products:', error);
       toast.error('Errore nel caricamento dei prodotti');
@@ -45,7 +52,6 @@ const Catalogo = () => {
     addItem(product);
   };
 
-
   const filteredProducts = products
     .filter(product => 
       product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -56,27 +62,17 @@ const Catalogo = () => {
     )
     .sort((a, b) => {
       switch (sortBy) {
-        case 'price-low':
-          return a.price - b.price;
-        case 'price-high':
-          return b.price - a.price;
-        case 'abv':
-          return b.abv - a.abv;
-        case 'ibu':
-          return b.ibu - a.ibu;
+        case 'price-low': return a.price - b.price;
+        case 'price-high': return b.price - a.price;
+        case 'abv': return b.abv - a.abv;
+        case 'ibu': return b.ibu - a.ibu;
         default:
-          // Custom order: Golden Shower, Red Head, Bella Negra, then alphabetical
           const customOrder = ['golden shower', 'red head', 'bella negra'];
           const aIndex = customOrder.findIndex(name => a.name.toLowerCase().includes(name));
           const bIndex = customOrder.findIndex(name => b.name.toLowerCase().includes(name));
-          
-          if (aIndex !== -1 && bIndex !== -1) {
-            return aIndex - bIndex;
-          } else if (aIndex !== -1) {
-            return -1;
-          } else if (bIndex !== -1) {
-            return 1;
-          }
+          if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
+          if (aIndex !== -1) return -1;
+          if (bIndex !== -1) return 1;
           return a.name.localeCompare(b.name);
       }
     });
@@ -145,8 +141,6 @@ const Catalogo = () => {
         {/* Filters and Search */}
         <div className="bg-black-glossy/60 backdrop-blur-xl border border-oro-primario/30 rounded-2xl p-6 mb-8 shadow-2xl">
           <div className="flex flex-col lg:flex-row gap-4 items-center">
-            
-            {/* Search */}
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-oro-primario" />
               <Input
@@ -156,8 +150,6 @@ const Catalogo = () => {
                 className="pl-10 bg-black-glossy/50 border-oro-primario/30 text-bianco-caldo placeholder:text-bianco-caldo/50 focus:border-oro-primario"
               />
             </div>
-
-            {/* Style Filter */}
             <div className="flex items-center gap-2">
               <Filter className="h-4 w-4 text-oro-primario" />
               <Select value={filterStyle} onValueChange={setFilterStyle}>
@@ -167,15 +159,11 @@ const Catalogo = () => {
                 <SelectContent>
                   <SelectItem value="all">Tutti gli stili</SelectItem>
                   {uniqueStyles.map(style => (
-                    <SelectItem key={style} value={style}>
-                      {style}
-                    </SelectItem>
+                    <SelectItem key={style} value={style}>{style}</SelectItem>
                   ))}
                 </SelectContent>
               </Select>
             </div>
-
-            {/* Sort */}
             <div className="flex items-center gap-2">
               <SlidersHorizontal className="h-4 w-4 text-oro-primario" />
               <Select value={sortBy} onValueChange={setSortBy}>
@@ -193,7 +181,6 @@ const Catalogo = () => {
             </div>
           </div>
 
-          {/* Active Filters */}
           <div className="flex flex-wrap gap-2 mt-4">
             {searchTerm && (
               <Badge className="gap-1 bg-oro-primario/20 text-oro-primario border-oro-primario/30">
@@ -203,9 +190,7 @@ const Catalogo = () => {
                   size="sm"
                   className="h-auto p-0 text-oro-primario hover:text-arancio-caldo"
                   onClick={() => setSearchTerm('')}
-                >
-                  ×
-                </Button>
+                >×</Button>
               </Badge>
             )}
             {filterStyle !== 'all' && (
@@ -216,18 +201,15 @@ const Catalogo = () => {
                   size="sm"
                   className="h-auto p-0 text-arancio-caldo hover:text-oro-primario"
                   onClick={() => setFilterStyle('all')}
-                >
-                  ×
-                </Button>
+                >×</Button>
               </Badge>
             )}
           </div>
         </div>
 
-        {/* Products Grid */}
         {filteredProducts.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredProducts.map((product) => (
+            {filteredProducts.map(product => (
               <ProductCard
                 key={product.id}
                 product={product}
@@ -243,11 +225,7 @@ const Catalogo = () => {
               Prova a modificare i filtri o termini di ricerca per trovare la tua birra perfetta
             </p>
             <Button 
-              onClick={() => {
-                setSearchTerm('');
-                setFilterStyle('all');
-                setSortBy('name');
-              }}
+              onClick={() => { setSearchTerm(''); setFilterStyle('all'); setSortBy('name'); }}
               className="bg-gradient-to-r from-gold-primary to-orange-warm text-black-glossy font-montserrat font-bold px-8 py-3 rounded-full hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
             >
               Ripristina filtri
@@ -255,7 +233,6 @@ const Catalogo = () => {
           </div>
         )}
 
-        {/* Results Count */}
         <div className="text-center mt-8">
           {filteredProducts.length > 0 && (
             <p className="font-lora text-white-warm/80">

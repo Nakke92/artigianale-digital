@@ -10,7 +10,7 @@ const articles = {
   'segreto-fermentazione-perfetta': {
     title: 'Golden Shower IPA – La Leggenda',
     date: '2024-03-15',
-    image: '/src/assets/golden-shower-label.jpeg',
+    image: '/src/assets/golden-shower-new.jpeg',
     content: `Si racconta che, in un paesino polveroso del Vecchio West, il governatore di Dodge City si fosse smarrito durante un viaggio tra deserti e colline assolate. La sua figura elegante e fiera dominava la strada principale, e ogni raggio di luce dorata illuminava i suoi capelli e il volto scolpito.
 
               Una sera, tra bagliori dorati e sussurri ovattati dei saloon, i suoi occhi si persero in quelli di una giovane donna bionda e radiosa, dalle curve armoniose e dalle piccole rotondità che rifrangevano ogni scintilla di luce. I suoi occhi celesti cristallino brillavano come un cielo d’estate terso e infinito, la bocca delicata e sinuosa pareva scolpita dalla luce, il naso perfetto e gli zigomi alti: un’epifania di bellezza pura e celestiale.

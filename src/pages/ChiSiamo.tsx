@@ -97,16 +97,16 @@ export default function ChiSiamo() {
                   <Beaker className="h-16 w-16 text-nero-lucido" />
                 </div>
                 <h3 className="font-anton text-3xl font-bold text-gold-primary mb-3 uppercase">Nicolò Boschi</h3>
-                <p className="font-montserrat text-lg text-orange-warm mb-4 uppercase tracking-wide">L'Alchimista delle Provocazioni</p>
+                <p className="font-montserrat text-lg text-orange-warm mb-4 uppercase tracking-wide">Il MastroBirraio Alchimista</p>
                 
                 <div className="text-left space-y-4 border-2 border-gold-primary/30 rounded-lg p-4 bg-black-glossy/40">
                   <p className="font-lora text-white-warm leading-relaxed">
-                    <strong className="text-gold-primary">Laureato in chimica alimentare</strong>, Nicolò è l'anima tecnica del progetto. 
+                    <strong className="text-gold-primary">Laureato in chimica</strong>, Nicolò è l’artefice che trasforma la visione in realtà.
                     La sua esperienza da mastro birraio si fonde con una passione irrefrenabile per la sperimentazione audace.
                   </p>
                   <p className="font-lora text-white-warm leading-relaxed">
-                    "Ogni ricetta è una <span className="text-red-intense">provocazione scientifica</span>" - dice mentre mescola ingredienti che altri considererebbero impossibili. 
-                    È lui che trasforma le visioni più maliziose in liquidi che seducono il palato.
+                    "Ogni ricetta è una <span className="text-red-intense">sfida scientifica</span>" - dice mentre mescola ingredienti che altri considererebbero impossibili. 
+                    È lui che prende le visioni più folli e le distilla in birre che stuzzicano i sensi e conquistano il palato.
                   </p>
                 </div>
 

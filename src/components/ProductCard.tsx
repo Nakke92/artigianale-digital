@@ -121,7 +121,7 @@ export const ProductCard = ({
           }`}>
             {product.name}
           </h3>
-          <p className="text-sm text-white-warm/90 line-clamp-2 mt-2 font-lora leading-relaxed">
+          <p className="text-sm text-white-warm/90 mt-2 font-lora leading-relaxed">
             {product.description}
           </p>
         </div>

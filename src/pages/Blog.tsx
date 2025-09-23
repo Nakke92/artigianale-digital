@@ -44,6 +44,15 @@ export default function Blog() {
         featured_image: '/src/assets/red-head-label.jpeg',
         published_at: '2024-03-10',
         created_at: '2024-03-10'
+      },
+      {
+        id: '3',
+        title: 'Bella Negra: Il Mistero della Notte',
+        slug: 'bella-negra-mistero',
+        excerpt: 'Nel cuore della notte più buia nasce Bella Negra IPA, una birra dal carattere profondo e misterioso.',
+        featured_image: '/src/assets/bella-negra-new.png',
+        published_at: '2024-03-20',
+        created_at: '2024-03-20'
       }
     ];
     

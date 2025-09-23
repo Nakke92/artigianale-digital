@@ -203,7 +203,7 @@ export default function ChiSiamo() {
         {/* CTA Section - Seductive */}
         <section className="py-16 text-center">
           <Card className="bg-gradient-to-r from-oro-primario to-arancio-caldo p-12 max-w-3xl mx-auto rounded-2xl shadow-2xl">
-            <h2 className="font-anton text-4xl font-bold text-nero-lucido mb-6 uppercase tracking-wide">
+            <h2 className="font-anton text-2xl sm:text-3xl md:text-4xl font-bold text-nero-lucido mb-6 uppercase tracking-wide">
               Pronto per l'Esperienza?
             </h2>
             <p className="font-lora text-xl text-nero-lucido/90 mb-8 leading-relaxed">

@@ -34,7 +34,7 @@ export const HomeHero = () => {
           <div className="inline-flex items-center gap-2 bg-red-intense/20 backdrop-blur-sm border border-red-intense/30 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-8">
             <Flame className="w-4 h-4 sm:w-5 sm:h-5 text-red-intense animate-pulse" />
             <span className="font-marker text-red-intense text-xs sm:text-sm uppercase tracking-wide">
-              Provocazione
+              Provocazione Liquida
             </span>
             <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-gold-primary" />
           </div>
@@ -217,7 +217,7 @@ export const HomeFeatures = () => {
         <div className="text-center">
           <Card className="inline-block bg-gradient-to-br from-gold-primary/10 to-red-intense/10 backdrop-blur-sm border border-gold-primary/30 p-12 hover:scale-105 transition-all duration-300">
             <CardContent className="p-0">
-              <h3 className="font-anton text-4xl text-transparent bg-clip-text bg-gradient-to-r from-gold-primary to-red-intense mb-6 uppercase">
+              <h3 className="font-anton text-2xl sm:text-3xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-gold-primary to-red-intense mb-6 uppercase">
                 Pronto per la Provocazione?
               </h3>
               <p className="font-lora text-lg text-white-warm/80 mb-8 max-w-md">

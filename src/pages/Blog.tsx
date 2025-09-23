@@ -29,7 +29,7 @@ export default function Blog() {
     const mockPosts: BlogPost[] = [
       {
         id: '1',
-        title: 'Il Segreto della Fermentazione Perfetta',
+        title: 'Golden Shower IPA – La Leggenda',
         slug: 'segreto-fermentazione-perfetta',
         excerpt: 'Scopri i trucchi del mestiere che rendono uniche le nostre birre artigianali.',
         featured_image: '/src/assets/golden-shower-label.jpeg',

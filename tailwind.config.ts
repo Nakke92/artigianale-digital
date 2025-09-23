@@ -18,6 +18,11 @@ export default {
         'montserrat': ['Montserrat', 'sans-serif'], // Sottotitoli & CTA: SemiBold
         'lora': ['Lora', 'serif'],           // Corpo testo: Regular
         'marker': ['Permanent Marker', 'cursive'], // Accenti grafici: piccole frasi, badge
+      },  
+    fontSize: {
+        'hero-mobile': '4.5rem', // mobile
+        'hero-md': '6rem',        // tablet
+        'hero-lg': '8rem',        // desktop
       },
       colors: {
         border: "hsl(var(--border))",

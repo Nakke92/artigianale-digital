@@ -24,16 +24,15 @@ export const Hero = () => {
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-primary-foreground leading-tight">
-                Golden
-                <span className="block text-psychedelic animate-psychedelic-flow">
+             <h1 className="text-hero-mobile md:text-hero-md lg:text-hero-lg font-display font-bold text-primary-foreground leading-tight">
+                  Golden
+              <span className="block text-psychedelic animate-psychedelic-flow">
                   Shower
-                </span>
-                <span className="text-3xl md:text-4xl lg:text-5xl block mt-2">
+              </span>
+              <span className="text-2xl md:text-3xl lg:text-4xl block mt-2">
                   IPA
                 </span>
               </h1>
-            </div>
             
             <p className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl">
               Un'esperienza psichedelica di sapori unici. Birra IPA artigianale 

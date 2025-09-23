@@ -8,14 +8,16 @@ import { ArrowLeft, Calendar } from 'lucide-react';
 
 const articles = {
   'segreto-fermentazione-perfetta': {
-    title: 'Il Segreto della Fermentazione Perfetta',
+    title: 'Golden Shower IPA – La Leggenda',
     date: '2024-03-15',
     image: '/src/assets/golden-shower-label.jpeg',
     content: ` Si racconta che, in un polveroso saloon ai confini del West, un poeta vagabondo trovò rifugio dopo giorni di cavalcate sotto il sole cocente. Lì incontrò una donna dal sorriso selvaggio e dagli occhi di fuoco. La loro fu un’unione dirompente, una notte di passione che incendiò l’aria, fatta di risate, sorsi di whiskey e sudore.
 
               Quando l’alba sorse, il poeta fu investito da un’ultima, travolgente cascata di emozioni, un lampo dorato che gli rimase impresso nella memoria come il ricordo di un tuono nella prateria. Tornato alla sua fattoria, ancora ebbro di quella notte, si chiuse nel suo granaio e mescolò luppoli e malti, guidato solo dall’istinto.
 
-Ogni nostro mastro birraio segue antiche tradizioni combinate con tecniche moderne per creare sapori unici e indimenticabili.`
+              Nacque così la ricetta della Golden Shower IPA: una birra dorata come il sole del deserto, carica di aromi che ricordano frutti maturi e agrumi freschi, e con un finale amaro che pizzica come un bacio rubato.
+
+              Da allora, ogni sorso è un ritorno a quella notte di libertà, di desiderio e di sfida alle regole. È più di una birra: è una leggenda che scorre nel bicchiere, una provocazione che accende i sensi e lascia il segno.`
   },
   'red-head-nascita-ribelle': {
     title: 'Red Head: La Nascita di una Ribelle',

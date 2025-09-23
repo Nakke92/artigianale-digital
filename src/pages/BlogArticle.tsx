@@ -59,9 +59,17 @@ Nata dalla passione per i sapori intensi e dal desiderio di creare qualcosa di v
     title: 'Bella Negra: Il Mistero della Notte',
     date: '2024-03-20',
     image: '/src/assets/bella-negra-new.png', 
-    content: `Nel cuore della notte più buia, quando le stelle sembrano sussurrare segreti antichi, nasce Bella Negra IPA. Una birra dal carattere profondo e misterioso, come una bella donna dalla pelle scura che danza sotto la luna.
+    content: `Nella polverosa Tombstone in Arizona, il sole tramontava dietro le colline e il vento portava con sé l’odore del fieno secco e del fumo dei camini. Quel giorno il marshal aveva catturato una delle bande più temute del West, uomini senza paura che avevano terrorizzato la regione per mesi. Ma quando la polvere si posò, tra i fuorilegge incatenati c’era lei: Bella Negra.
 
-La sua essenza racchiude il fascino dell'ignoto e la seduzione dell'oscurità, un sapore intenso che avvolge i sensi in un abbraccio vellutato e provocante.`,
+              La sua presenza era diversa. Alta, fiera, con i capelli corvini che le scendevano fino ai fianchi e uno sguardo che sfidava il mondo. Non disse una parola mentre la rinchiudevano nella cella di isolamento, ma negli occhi le brillava un fuoco indomabile.
+
+              Quella notte, la luna piena illuminava il piccolo ufficio dello sceriffo. Il silenzio era rotto solo dal frinire dei grilli e dallo scricchiolio del legno vecchio. Il marshal non riusciva a staccare gli occhi da quella cella: la figura della donna, immobile sotto la luce argentea, sembrava una statua scolpita da un artista greco. Eppure, c’era qualcosa di selvaggio in lei, qualcosa che lo attirava come una fiamma attira la polvere.
+
+              Si avvicinò, quasi senza rendersene conto. Bella Negra lo fissò, e in quello sguardo c’era un intero deserto: sabbia, vento e tempesta. In un istante il marshal sentì il cuore battergli nel petto come un tamburo di guerra. Fu un momento sospeso nel tempo, un sortilegio che nessuno dei due avrebbe mai dimenticato.
+
+              Al mattino la cella era vuota. Nessuno seppe dire come fosse fuggita, ma l’unica traccia che lasciò fu il ricordo di quella notte e il profumo della sua pelle che sembrava ancora fluttuare nell’aria. Il marshal, incapace di tornare alla vita di sempre, decise di rendere eterna quella memoria.
+
+Convocò il miglior mastro birraio del West e gli raccontò ogni dettaglio: il buio della cella, la luce della luna, il calore di quello sguardo. Così nacque Bella Negra IPA, una birra intensa, oscura e seducente, capace di riportare chiunque a quella notte carica di magia.`,
     specifications: [
       { parameter: 'ABV (Alcohol By Volume)', description: 'Percentuale di alcol. Indica il corpo e la forza della birra.', value: '6.8%' },
       { parameter: 'IBU (International Bitterness Units)', description: 'Unità di amaro. Più è alto, più la birra è amara.', value: '55' },

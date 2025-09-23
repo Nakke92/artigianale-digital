@@ -99,6 +99,7 @@ export const Hero = () => {
               <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-psychedelic-cyan rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
             </div>
           </div>
+          </div>
         </div>
       </div>
       

@@ -74,12 +74,10 @@ export default function ChiSiamo() {
                   <p className="font-lora text-white-warm leading-relaxed">
                     <strong className="text-orange-warm">Appassionato di birra e visionario nato</strong>, l’uomo che ha visto il futuro in un bicchiere di birra. 
                     Ha lasciato il design per seguire l’istinto e creare qualcosa di unico. Lorenzo immagina il futuro del birrificio. 
-                    Le sue idee non sono semplici ricette: sono storie, provocazioni, emozioni liquide.
-                    "Io immagino, creo e accendo il desiderio. Questa è la mia birra."
                   </p>
                   <p className="font-lora text-white-warm leading-relaxed">
-                    "La birra deve raccontare storie che fanno arrossire" - la sua filosofia è che ogni etichetta, 
-                    ogni nome, ogni esperienza deve <em className="text-pink-transgressive">accendere qualcosa dentro</em> chi la vive.
+                    "Io immagino, creo e accendo il desiderio. Questa è la mia birra." - la sua filosofia è che ogni etichetta, 
+                    Le sue idee non sono semplici ricette: <em className="text-pink-transgressive">sono storie, provocazioni,</em> emozioni liquide.
                   </p>
                 </div>
 

@@ -129,7 +129,7 @@ export default function ChiSiamo() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="font-anton text-4xl font-bold text-oro-primario mb-6 uppercase tracking-wide">La Genesis</h2>
-              <div className="space-y-4 font-lora text-bianco-caldo/90 leading-relaxed">
+              <div className="space-y-2 font-lora text-bianco-caldo/90 leading-relaxed">
                 <p>
                   <strong className="text-oro-primario">Golden Shower</strong> nasce come una provocazione liquida 
                   nel cuore della Toscana, a <em className="text-arancio-caldo">Staffoli</em>, dove due amici decidono 

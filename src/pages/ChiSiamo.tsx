@@ -218,7 +218,7 @@ export default function ChiSiamo() {
           size="lg"
           className="w-full sm:w-auto bg-nero-lucido text-oro-primario hover:bg-nero-lucido/90 text-xl px-8 sm:px-12 py-4 font-montserrat font-bold uppercase tracking-wide hover:scale-105 transition-all duration-300"
         >
-          Esplora le Birre Provocanti
+          Esplora le Birre
         </Button>
       </Link>
       <Link to="/contatti" className="w-full sm:w-auto">

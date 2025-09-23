@@ -102,7 +102,7 @@ export default function ChiSiamo() {
                 <div className="text-left space-y-4 border-2 border-gold-primary/30 rounded-lg p-4 bg-black-glossy/40">
                   <p className="font-lora text-white-warm leading-relaxed">
                     <strong className="text-gold-primary">Laureato in chimica</strong>, Nicolò è l’artefice che trasforma la visione in realtà.
-                    La sua esperienza da mastro birraio si fonde con una passione irrefrenabile per la sperimentazione audace.
+                    La sua esperienza da mastro birraio si fonde con una passione irrefrenabile per la sperimentazione.
                   </p>
                   <p className="font-lora text-white-warm leading-relaxed">
                     "Ogni ricetta è una <span className="text-red-intense">sfida scientifica</span>" - Sorride mentre mescola l’impossibile e lo rende <em className="text-pink-transgressive"> irresistibile.</em> 

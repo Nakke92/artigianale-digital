@@ -202,35 +202,33 @@ export default function ChiSiamo() {
 
 
         {/* CTA Section - Seductive */}
-<section className="py-16 text-center">
-  <Card className="bg-gradient-to-r from-oro-primario to-arancio-caldo p-12 max-w-3xl mx-auto rounded-2xl shadow-2xl">
-    <h2 className="font-anton text-2xl sm:text-3xl md:text-4xl font-bold text-nero-lucido mb-6 uppercase tracking-wide">
-      Pronto per l'Esperienza?
-    </h2>
-    <p className="font-lora text-xl text-nero-lucido/90 mb-8 leading-relaxed">
-      Scopri le nostre <span className="text-nero-lucido font-bold">provocazioni liquide</span> e lasciati trasportare 
-      in un viaggio sensoriale che <em className="text-rosso-intenso font-bold">accenderà i tuoi sensi</em> 
-      come mai prima d'ora.
-    </p>
-    <div className="flex flex-col sm:flex-row gap-6 items-center justify-center">
-      <Link to="/catalogo" className="w-full sm:w-auto">
-        <Button
-          size="lg"
-          className="w-full sm:w-auto bg-nero-lucido text-oro-primario hover:bg-nero-lucido/90 text-xl px-8 sm:px-12 py-4 font-montserrat font-bold uppercase tracking-wide hover:scale-105 transition-all duration-300"
-        >
-          Esplora le Birre Provocanti
-        </Button>
-      </Link>
-      <Link to="/contatti" className="w-full sm:w-auto">
-        <Button
-          size="lg"
-          className="w-full sm:w-auto bg-rosso-intenso text-bianco-caldo hover:bg-rosso-intenso/90 text-xl px-8 sm:px-12 py-4 font-montserrat font-bold uppercase tracking-wide hover:scale-105 transition-all duration-300"
-        >
-          Contattaci Subito
-        </Button>
-      </Link>
-    </div>
-  </Card>
-</section>
+      <section className="py-16 text-center">
+        <Card className="bg-gradient-to-r from-oro-primario to-arancio-caldo p-12 max-w-3xl mx-auto rounded-2xl shadow-2xl">
+          <h2 className="font-anton text-2xl sm:text-3xl md:text-4xl font-bold text-nero-lucido mb-6 uppercase tracking-wide">
+            Pronto per l'Esperienza?
+          </h2>
+          <p className="font-lora text-xl text-nero-lucido/90 mb-8 leading-relaxed">
+            Scopri le nostre <span className="text-nero-lucido font-bold">provocazioni liquide</span> e lasciati trasportare 
+            in un viaggio sensoriale che <em className="text-rosso-intenso font-bold">accenderà i tuoi sensi</em> 
+            come mai prima d'ora.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 items-center justify-center">
+            <Link to="/catalogo" className="w-full sm:w-auto">
+              <Button size="lg" className="w-full sm:w-auto bg-nero-lucido text-oro-primario hover:bg-nero-lucido/90 text-xl px-8 sm:px-12 py-4 font-montserrat font-bold uppercase tracking-wide hover:scale-105 transition-all duration-300">
+                Esplora le Birre Provocanti
+              </Button>
+            </Link>
+            <Link to="/contatti" className="w-full sm:w-auto">
+              <Button size="lg" className="w-full sm:w-auto bg-rosso-intenso text-bianco-caldo hover:bg-rosso-intenso/90 text-xl px-8 sm:px-12 py-4 font-montserrat font-bold uppercase tracking-wide hover:scale-105 transition-all duration-300">
+                Contattaci Subito
+              </Button>
+            </Link>
+          </div>
+        </Card>
+      </section>
 
-<Footer />
+      <Footer />
+
+    </div>
+  );
+}

@@ -72,7 +72,7 @@ export default function ChiSiamo() {
                 
                 <div className="text-left space-y-4 border-2 border-red-intense/30 rounded-lg p-4 bg-black-glossy/40">
                   <p className="font-lora text-white-warm leading-relaxed">
-                    <strong className="text-orange-warm">Appassionato di birra e visionario nato</strong>, l’uomo che ha visto il futuro in un bicchiere di birra. 
+                    <strong className="text-orange-warm">Devoto alla birra. Profeta del gusto. Architetto di mondi liquidi.</strong>, l’uomo che ha visto il futuro in un bicchiere di birra.<br/> 
                     Ha lasciato il design per seguire l’istinto e creare qualcosa di unico. Lorenzo immagina il futuro del birrificio. 
                   </p>
                   <p className="font-lora text-white-warm leading-relaxed">

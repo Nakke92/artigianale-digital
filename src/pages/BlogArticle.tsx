@@ -11,28 +11,25 @@ const articles = {
     title: 'Golden Shower IPA – La Leggenda',
     date: '2024-03-15',
     image: '/src/assets/golden-shower-label.jpeg',
-    content: ` Si racconta che, in un polveroso saloon ai confini del West, un poeta vagabondo trovò rifugio dopo giorni di cavalcate sotto il sole cocente. Lì incontrò una donna dal sorriso selvaggio e dagli occhi di fuoco. La loro fu un’unione dirompente, una notte di passione che incendiò l’aria, fatta di risate, sorsi di whiskey e sudore.
+    content: ` Si racconta che, in un paesino polveroso del Vecchio West, il governatore di Dodge City, un ragazzo alto e biondo, con baffi curati e occhi celeste intenso, si fosse smarrito durante un viaggio tra deserti e colline assolate. 
 
-              Quando l’alba sorse, il poeta fu investito da un’ultima, travolgente cascata di emozioni, un lampo dorato che gli rimase impresso nella memoria come il ricordo di un tuono nella prateria. Tornato alla sua fattoria, ancora ebbro di quella notte, si chiuse nel suo granaio e mescolò luppoli e malti, guidato solo dall’istinto.
+               Una sera, tra bagliori dorati e sussurri ovattati dei saloon, i suoi occhi si persero in quelli di una donna bionda e radiosa, dalle curve armoniose e dalle piccole rotondità che rifrangevano ogni scintilla di luce. I suoi occhi celeste cristallino brillavano come un cielo d’estate terso e infinito, la bocca delicata e sinuosa pareva scolpita dalla luce, il naso perfetto e gli zigomi alti: un’epifania di bellezza pura e celestiale. 
 
-              Nacque così la ricetta della Golden Shower IPA: una birra dorata come il sole del deserto, carica di aromi che ricordano frutti maturi e agrumi freschi, e con un finale amaro che pizzica come un bacio rubato.
+               Quella notte, tra sorsi di birra e risate dorate, la passione esplose. Il cielo sopra Dodge City lampeggiava di emozioni luminose, e ogni gesto, ogni sorriso, ogni carezza diventava un bagliore intenso nel cuore del governatore. Un ricordo indelebile rimase impresso sui suoi baffi: uno schizzo improvviso lo segnò per mesi, come un segno irriverente e luminoso di quella notte unica. 
 
-              Da allora, ogni sorso è un ritorno a quella notte di libertà, di desiderio e di sfida alle regole. È più di una birra: è una leggenda che scorre nel bicchiere, una provocazione che accende i sensi e lascia il segno.`
+               Tornato alla sua residenza, ancora avvolto dalla memoria di quella donna e dalla luce dorata della notte, il governatore mescolò luppoli e malti, guidato solo dall’istinto e dall’eco di quel cielo giallo e celeste.
+
+               Così nacque la Golden Shower IPA: una birra dorata come il sole del deserto, aromi di frutti maturi e agrumi freschi, con un finale amaro che pizzica come un bacio rubato.
+
+               Ogni sorso è un viaggio indietro a quella notte di libertà e desiderio, un ricordo luminoso che accende i sensi e lascia il segno. Non è solo birra: è leggenda che scorre nel bicchiere, intensa, provocante e indimenticabile.
   },
   'red-head-nascita-ribelle': {
     title: 'Red Head: La Nascita di una Ribelle',
     date: '2024-03-10', 
     image: '/src/assets/red-head-label.jpeg',
-    content: `Nelle praterie polverose del vecchio West in Texas, due banditi ricercati a lungo dalla legge trovarono rifugio una calda notte d’estate. Il loro piano era semplice: razziare il raccolto di un vecchio fattore e sparire prima dell’alba. 
+    content: `Red Head non è solo una birra, è un manifesto di ribellione contro l'ordinario. 
 
-              Ma nel fienile trovarono qualcosa di inaspettato: la giovane figlia del fattore, una ragazza dai capelli rossi come il tramonto e la pelle chiara come la schiuma di una pinta fresca. La tensione si trasformò in un gioco di sguardi, risate e provocazioni, finché la notte non divenne un turbine di passione selvaggia.
-
-              L’aria sapeva di paglia, sudore e desiderio. Il silenzio della prateria fu rotto solo dai respiri affannosi e dal frinire dei grilli. Quando il sole si alzò, i due banditi non pensarono più a rubare: se ne andarono con il cuore in fiamme e un’idea fissa in testa.
-
-              Quella notte li ispirò a creare una birra che fosse fuoco liquido: la Red Head IPA, rossa e vibrante come i capelli della ragazza, con profumi di frutti maturi e un amaro deciso che pizzica come un bacio rubato.
-
-              Ogni sorso è un ritorno a quella notte proibita nella stalla, un invito a sfidare le regole e lasciarsi incendiare dai sensi.
-`
+Nata dalla passione per i sapori intensi e dal desiderio di creare qualcosa di veramente provocatorio, questa ale rossa rappresenta il coraggio di osare.`
   }
 };
 

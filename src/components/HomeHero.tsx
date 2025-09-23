@@ -31,16 +31,16 @@ export const HomeHero = () => {
         <div className="text-center max-w-6xl mx-auto">
           
           {/* Provocative Badge */}
-          <div className="inline-flex items-center gap-2 bg-red-intense/20 backdrop-blur-sm border border-red-intense/30 rounded-full px-6 py-3 mb-8">
-            <Flame className="w-5 h-5 text-red-intense animate-pulse" />
-            <span className="font-marker text-red-intense text-sm uppercase tracking-wide">
-              Provocazione Liquida
+          <div className="inline-flex items-center gap-2 bg-red-intense/20 backdrop-blur-sm border border-red-intense/30 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-8">
+            <Flame className="w-4 h-4 sm:w-5 sm:h-5 text-red-intense animate-pulse" />
+            <span className="font-marker text-red-intense text-xs sm:text-sm uppercase tracking-wide">
+              Provocazione
             </span>
-            <Sparkles className="w-4 h-4 text-gold-primary" />
+            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-gold-primary" />
           </div>
 
           {/* Main Title - Massive and Bold with Enhanced Gold Effect */}
-          <h1 className="font-anton text-7xl md:text-9xl lg:text-[12rem] leading-none uppercase text-transparent bg-clip-text bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] mb-6 tracking-tight relative">
+          <h1 className="font-anton text-5xl sm:text-6xl md:text-8xl lg:text-[10rem] leading-none uppercase text-transparent bg-clip-text bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] mb-6 tracking-tight relative">
             <span className="relative inline-block bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] bg-clip-text text-transparent animate-pulse drop-shadow-[0_0_20px_rgba(255,215,0,0.8)] filter brightness-125 contrast-125">
               Golden<br />Shower
             </span>
@@ -93,36 +93,36 @@ export const HomeHero = () => {
           </div>
 
           {/* Stats Cards */}
-          <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto">
+          <div className="grid grid-cols-3 gap-3 sm:gap-6 max-w-2xl mx-auto">
             <Card className="bg-white-warm/10 backdrop-blur-sm border border-gold-primary/20 hover:bg-white-warm/20 transition-all duration-300 group">
-              <CardContent className="p-6 text-center">
-                <div className="text-3xl font-anton text-gold-primary mb-2 group-hover:scale-110 transition-transform">
+              <CardContent className="p-3 sm:p-6 text-center">
+                <div className="text-xl sm:text-3xl font-anton text-gold-primary mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
                   3+
                 </div>
-                <div className="text-sm font-montserrat text-white-warm/70 uppercase tracking-wide">
-                  Birre Audaci
+                <div className="text-xs sm:text-sm font-montserrat text-white-warm/70 uppercase tracking-wide">
+                  Birre
                 </div>
               </CardContent>
             </Card>
 
             <Card className="bg-white-warm/10 backdrop-blur-sm border border-red-intense/20 hover:bg-white-warm/20 transition-all duration-300 group">
-              <CardContent className="p-6 text-center">
-                <div className="text-3xl font-anton text-red-intense mb-2 group-hover:scale-110 transition-transform">
+              <CardContent className="p-3 sm:p-6 text-center">
+                <div className="text-xl sm:text-3xl font-anton text-red-intense mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
                   100%
                 </div>
-                <div className="text-sm font-montserrat text-white-warm/70 uppercase tracking-wide">
-                  Irriverente
+                <div className="text-xs sm:text-sm font-montserrat text-white-warm/70 uppercase tracking-wide">
+                  Audace
                 </div>
               </CardContent>
             </Card>
 
             <Card className="bg-white-warm/10 backdrop-blur-sm border border-orange-warm/20 hover:bg-white-warm/20 transition-all duration-300 group">
-              <CardContent className="p-6 text-center">
-                <div className="text-3xl font-anton text-orange-warm mb-2 group-hover:scale-110 transition-transform">
+              <CardContent className="p-3 sm:p-6 text-center">
+                <div className="text-xl sm:text-3xl font-anton text-orange-warm mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
                   ∞
                 </div>
-                <div className="text-sm font-montserrat text-white-warm/70 uppercase tracking-wide">
-                  Provocazione
+                <div className="text-xs sm:text-sm font-montserrat text-white-warm/70 uppercase tracking-wide">
+                  Gusto
                 </div>
               </CardContent>
             </Card>

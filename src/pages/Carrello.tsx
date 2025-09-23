@@ -180,8 +180,8 @@ const Carrello = () => {
               {cartItems.map((item) => (
                 <Card key={item.id} className="card-psychedelic">
                   <CardContent className="p-6">
-                    <div className="flex items-center gap-4">
-                      <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                    <div className="flex items-center gap-3 sm:gap-4">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden flex-shrink-0">
                         <img
                           src={item.image_url}
                           alt={item.name}
@@ -191,7 +191,6 @@ const Carrello = () => {
                       
                       <div className="flex-1 min-w-0">
                         <h3 className="font-semibold text-foreground">{item.name}</h3>
-                        <p className="text-sm text-muted-foreground">{item.description}</p>
                         <div className="flex items-center justify-between mt-2">
                           <span className="text-lg font-bold text-primary">
                             €{item.price.toFixed(2)}
@@ -199,34 +198,36 @@ const Carrello = () => {
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-2">
+                      <div className="flex flex-col sm:flex-row items-end sm:items-center gap-2">
+                        <div className="flex items-center gap-1 sm:gap-2">
+                          <Button
+                            variant="outline"
+                            size="icon"
+                            onClick={() => updateQuantity(item.product_id, item.quantity - 1)}
+                            className="h-7 w-7 sm:h-8 sm:w-8"
+                          >
+                            <Minus className="h-3 w-3" />
+                          </Button>
+                          <span className="w-6 sm:w-8 text-center font-medium text-sm sm:text-base">{item.quantity}</span>
+                          <Button
+                            variant="outline"
+                            size="icon"
+                            onClick={() => updateQuantity(item.product_id, item.quantity + 1)}
+                            className="h-7 w-7 sm:h-8 sm:w-8"
+                          >
+                            <Plus className="h-3 w-3" />
+                          </Button>
+                        </div>
+
                         <Button
-                          variant="outline"
+                          variant="ghost"
                           size="icon"
-                          onClick={() => updateQuantity(item.product_id, item.quantity - 1)}
-                          className="h-8 w-8"
+                          onClick={() => removeItem(item.product_id)}
+                          className="text-destructive hover:text-destructive h-7 w-7 sm:h-8 sm:w-8"
                         >
-                          <Minus className="h-3 w-3" />
-                        </Button>
-                        <span className="w-8 text-center font-medium">{item.quantity}</span>
-                        <Button
-                          variant="outline"
-                          size="icon"
-                          onClick={() => updateQuantity(item.product_id, item.quantity + 1)}
-                          className="h-8 w-8"
-                        >
-                          <Plus className="h-3 w-3" />
+                          <Trash2 className="h-3 w-3 sm:h-4 sm:w-4" />
                         </Button>
                       </div>
-
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        onClick={() => removeItem(item.product_id)}
-                        className="text-destructive hover:text-destructive h-8 w-8"
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </Button>
                     </div>
                   </CardContent>
                 </Card>

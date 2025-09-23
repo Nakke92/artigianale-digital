@@ -24,12 +24,12 @@ export const Hero = () => {
                 </span>
               </div>
               
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-primary-foreground leading-tight">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-primary-foreground leading-tight">
                 Golden
                 <span className="block text-psychedelic animate-psychedelic-flow">
                   Shower
                 </span>
-                <span className="text-2xl md:text-3xl lg:text-4xl block mt-2">
+                <span className="text-3xl md:text-4xl lg:text-5xl block mt-2">
                   IPA
                 </span>
               </h1>

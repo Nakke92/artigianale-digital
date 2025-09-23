@@ -105,8 +105,8 @@ export default function ChiSiamo() {
                     La sua esperienza da mastro birraio si fonde con una passione irrefrenabile per la sperimentazione audace.
                   </p>
                   <p className="font-lora text-white-warm leading-relaxed">
-                    "Ogni ricetta è una <span className="text-red-intense">sfida scientifica</span>" - dice mentre mescola ingredienti che altri considererebbero impossibili. 
-                    È lui che prende le visioni più folli e le distilla in birre che stuzzicano i sensi e conquistano il palato.
+                    "Ogni ricetta è una <span className="text-red-intense">sfida scientifica</span>" - Sorride mentre mescola l’impossibile e lo rende <em className="text-pink-transgressive"> irresistibile.</em> 
+                    È lui che prende le visioni più folli e le distilla in sensi che conquistano il palato.
                   </p>
                 </div>
 

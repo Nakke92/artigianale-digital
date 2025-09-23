@@ -28,17 +28,17 @@ Ogni sorso è un viaggio indietro a quella notte di libertà e desiderio, un ric
     title: 'Red Head: La Nascita di una Ribelle',
     date: '2024-03-10', 
     image: '/src/assets/red-head-label.jpeg',
-    content: `Nelle vaste praterie intorno ad Abilene, nel cuore del Vecchio West, due viaggiatori si persero tra sentieri polverosi , fino a incrociare un villaggio di nativi americani, nascosto tra campi di grano infuocati e fuochi che tremolavano nel crepuscolo. Lì, tra i tamburi lontani e le voci cantilenanti, tutto sembrava sospeso nel tempo, avvolto da un’aura di mistero e serenità primordiale.
+    content: `Nelle vaste praterie intorno ad Abilene, nel cuore del Vecchio West, due viaggiatori si persero tra sentieri polverosi , fino a incrociare un villaggio di nativi americani, nascosto tra campi di grano e fuochi che tremolavano nel crepuscolo. Lì, tra i tamburi lontani e le voci cantilenanti, tutto sembrava sospeso nel tempo, avvolto da un’aura di mistero e serenità primordiale.
 
-              Vicino al fiume, dove le acque lambivano le rive e riflettevano il tramonto, lavando i panni dei villaggi, apparve lei: una ragazza nativa, pelle rossa e capelli color rubino come il fuoco dei campi al tramonto, con una piuma che danzava tra le ciocche. Sembrava un miraggio, sospesa tra il cielo e le onde scarlatte del tramonto. I suoi occhi catturavano la luce come piccole stelle liquide, e ogni movimento era un gioco di bagliori e riflessi che incantava chiunque la guardasse.
+              Vicino al fiume, dove le acque lambivano le rive e riflettevano il tramonto, lavando i panni dei villaggi, apparve lei: una ragazza nativa, pelle di un rosa tenue e capelli color rubino come il fuoco dei campi al tramonto. Sembrava un miraggio, sospesa tra il cielo e le onde scarlatte del tramonto. I suoi occhi catturavano la luce come piccole stelle liquide, e ogni movimento era un gioco di bagliori e riflessi che incantava chiunque la guardasse.
 
-              I due si avvicinarono folgorati verso di lei con sorrisi audaci e mani irrequiete e desiderio palpabile. La ragazza ridacchiava e si lasciava prendere dal gioco, i capelli rossi come fiamme vive che si fondevano ai riflessi rossi e aranci del tramonto e al luccichio del fiume.
+              I due si avvicinarono folgorati verso di lei con sorrisi audaci e mani irrequiete e desiderio palpabile. La ragazza ridacchiava e si lasciava prendere dal gioco, i capelli rossi come fiamme vive si fondevano ai riflessi arancio del tramonto e al luccichio del fiume.
 
               Ogni tocco era un invito, ogni sguardo una provocazione ardente. Correva tra i campi di grano, tra i fumi dei fuochi e le ombre delle tende del villaggio, intrecciandosi in un vortice di risate, calore e desiderio. L’aria vibrava di passione, i profumi della terra umida e della paglia si mescolavano a quello della ragazza, creando un turbine sensoriale che li avvolgeva completamente.
 
-              Il tramonto tingeva tutto di un rosso cosi intenso che i suoi capelli sembravano un vero e proprio falò. Ogni gesto, ogni rincorsa, ogni carezza li faceva sentire sospesi in un mondo tutto loro, un inferno dorato e celeste dove il tempo si piegava e il desiderio bruciava come brace viva. Era gioco, era fuoco, era passione che li consumava insieme.
+              Il tramonto tingeva tutto di un rosso cosi intenso che i suoi capelli sembravano un vero e proprio falò. Ogni gesto, ogni carezza li faceva sentire sospesi in un mondo tutto loro, un inferno dorato e celeste dove il tempo si piegava e il desiderio bruciava come brace viva. Era gioco, era fuoco, era passione che li consumava insieme.
 
-              I due ancora rapiti dal ricordo di quella notte, decisero di catturare quell’essenza di passione e fuoco in una birra: nacque così la Red Head IPA, rossa e vibrante come i capelli della ragazza, con aromi di frutti maturi e un amaro deciso che pizzica come un bacio rubato.
+              I due, ancora rapiti dal ricordo di quella notte, decisero di catturare quell’essenza di passione e fuoco in una birra: nacque così la Red Head IPA, rossa e vibrante come i capelli della ragazza, con aromi di frutti maturi e un amaro deciso che pizzica come un bacio rubato.
 
 Nata dalla passione per i sapori intensi e dal desiderio di creare qualcosa di veramente provocatorio, questa ale rossa rappresenta il coraggio di osare.`
   }

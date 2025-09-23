@@ -20,7 +20,7 @@ export default {
         'marker': ['Permanent Marker', 'cursive'], // Accenti grafici: piccole frasi, badge
       },  
     fontSize: {
-        'hero-mobile': '5.5rem', // mobile - increased from 4.5rem
+        'hero-mobile': '7rem', // mobile - increased from 5.5rem
         'hero-md': '6rem',        // tablet
         'hero-lg': '8rem',        // desktop
       },

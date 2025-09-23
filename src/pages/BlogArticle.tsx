@@ -22,18 +22,6 @@ const articles = {
               Così nacque la Golden Shower IPA: una birra dorata come il sole del deserto, aromi di frutti maturi e agrumi freschi, con un finale amaro che pizzica come un bacio rubato.
 
 Ogni sorso è un viaggio indietro a quella notte di libertà e desiderio, un ricordo luminoso che accende i sensi e lascia il segno. Non è solo birra: è leggenda che scorre nel bicchiere, intensa e indimenticabile.`
-  specifications: [
-      { parameter: 'ABV (Alcohol By Volume)', description: 'Percentuale di alcol. Indica il corpo e la forza della birra.', value: '6.2%' },
-      { parameter: 'IBU (International Bitterness Units)', description: 'Unità di amaro. Più è alto, più la birra è amara.', value: '45' },
-      { parameter: 'EBC / SRM (Colore)', description: 'Scala del colore della birra (giallo paglierino → nero).', value: 'EBC 25 (rosso rubino)' },
-      { parameter: 'OG (Original Gravity)', description: 'Densità iniziale del mosto, indica zuccheri fermentabili.', value: '1.065' },
-      { parameter: 'FG (Final Gravity)', description: 'Densità finale dopo fermentazione, indica corpo residuo.', value: '1.012' },
-      { parameter: 'Carbonazione', description: 'Livello di frizzantezza, espresso in volumi di CO₂.', value: '2.2 vol.' },
-      { parameter: 'Luppoli', description: 'Varietà di luppolo usati', value: 'Cascade, Centennial, Chinook' },
-      { parameter: 'Malti', description: 'Tipi di malto usati', value: 'Crystal, Munich, Caramel' },
-      { parameter: 'Fermentazione', description: 'Tipo di lievito / fermentazione.', value: 'Alta fermentazione (English Ale Yeast)' },
-      { parameter: 'Note di Degustazione', description: 'Aromi e sapori percepiti.', value: 'Frutti rossi, caramello, spezie, finale caldo e persistente.' }
-    ]
   },
 
   'red-head-nascita-ribelle': {

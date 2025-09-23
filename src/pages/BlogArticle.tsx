@@ -11,13 +11,17 @@ const articles = {
     title: 'Golden Shower IPA – La Leggenda',
     date: '2024-03-15',
     image: '/src/assets/golden-shower-label.jpeg',
-    content: `Si racconta che, in un polveroso saloon ai confini del West, un poeta vagabondo trovò rifugio dopo giorni di cavalcate sotto il sole cocente. Lì incontrò una donna dal sorriso selvaggio e dagli occhi di fuoco. La loro fu un’unione dirompente, una notte di passione che incendiò l’aria, fatta di risate, sorsi di whiskey e sudore.
+    content: `Si racconta che, in un paesino polveroso del Vecchio West, il governatore di Dodge City alto e biondo, con baffi curati e occhi celeste intenso, si fosse smarrito durante un viaggio tra deserti e colline assolate. La sua figura elegante e fiera dominava la strada principale, e ogni raggio di luce dorata illuminava i suoi capelli e il volto scolpito.
 
-Quando l’alba sorse, il poeta fu investito da un’ultima, travolgente cascata di emozioni, un lampo dorato che gli rimase impresso nella memoria come il ricordo di un tuono nella prateria. Tornato alla sua fattoria, ancora ebbro di quella notte, si chiuse nel suo granaio e mescolò luppoli e malti, guidato solo dall’istinto.
+              Una sera, tra luci tremolanti e risate ovattate dei saloon, i suoi occhi incontrarono quelli di una donna bionda e luminosa, dalle linee sinuose e dalle piccole rotondità che catturavano la luce. I suoi occhi celeste brillante ricordavano un cielo limpido d’estate, la bocca delicata e sinuosa, il naso perfetto e gli zigomi alti: la quintessenza della bellezza.
 
-Nacque così la ricetta della Golden Shower IPA: una birra dorata come il sole del deserto, carica di aromi che ricordano frutti maturi e agrumi freschi, e con un finale amaro che pizzica come un bacio rubato.
+              Quella notte, tra sorsi di birra e risate dorate, la passione esplose. Il cielo lampeggiava di emozioni luminose, e ogni gesto, ogni sorriso, ogni carezza diventava un bagliore intenso nel cuore del governatore. Un ricordo indelebile rimase impresso sui suoi baffi: uno schizzo improvviso lo segnò per mesi, come un segno irriverente e luminoso di quella notte unica.
 
-Da allora, ogni sorso è un ritorno a quella notte di libertà, di desiderio e di sfida alle regole. È più di una birra: è una leggenda che scorre nel bicchiere, una provocazione che accende i sensi e lascia il segno.`
+              Tornato alla sua residenza, ancora avvolto dalla memoria di quella donna e dalla luce dorata della notte, il governatore mescolò luppoli e malti, guidato solo dall’istinto e dall’eco di quel cielo giallo e celeste.
+
+              Così nacque la Golden Shower IPA: una birra dorata come il sole del deserto, aromi di frutti maturi e agrumi freschi, con un finale amaro che pizzica come un bacio rubato.
+
+Ogni sorso è un viaggio indietro a quella notte di libertà e desiderio, un ricordo luminoso che accende i sensi e lascia il segno. Non è solo birra: è leggenda che scorre nel bicchiere, intensa e indimenticabile.`
   },
 
   'red-head-nascita-ribelle': {

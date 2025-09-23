@@ -24,9 +24,19 @@ Da allora, ogni sorso è un ritorno a quella notte di libertà, di desiderio e d
     title: 'Red Head: La Nascita di una Ribelle',
     date: '2024-03-10', 
     image: '/src/assets/red-head-label.jpeg',
-    content: `Red Head non è solo una birra, è un manifesto di ribellione contro l'ordinario. 
+    content: `Nelle praterie polverose intorno ad Abilene, nel vecchio West, due banditi ricercati a lungo dalla legge trovarono rifugio una calda notte d’estate. Il loro piano era semplice: razziare un piccolo villaggio di nativi americani indifesi e sparire prima dell’alba. Lì, tra i tamburi lontani e le voci cantilenanti, tutto sembrava sospeso nel tempo, avvolto da un’aura di mistero e serenità primordiale.  
 
-Nata dalla passione per i sapori intensi e dal desiderio di creare qualcosa di veramente provocatorio, questa ale rossa rappresenta il coraggio di osare.`
+              Vicino al fiume, dove le acque lambivano le rive e riflettevano il tramonto, lavando i panni dei villaggi, apparve lei: una ragazza nativa, con pelle olivastra e capelli rossi accesi come il fuoco dei campi al tramonto, con una piuma che danzava tra le ciocche. Sembrava un miraggio, sospesa tra il cielo e le onde infuocate dei campi. I suoi occhi catturavano la luce come piccole stelle liquide, e ogni movimento era un gioco di bagliori e riflessi che incantava chiunque la guardasse.
+
+              I due si avvicinarono a lei con sorrisi audaci e mani irrequiete, occhi infuocati e desiderio palpabile. La ragazza ridacchiava e si lasciava prendere dal gioco, i capelli rossi come fiamme vive che si fondevano ai riflessi rossi e aranci del tramonto e al luccichio del fiume.
+
+              Ogni tocco era un invito, ogni sguardo una provocazione ardente. Correva tra i campi di grano, tra i fumi dei fuochi e le ombre delle tende del villaggio, intrecciandosi in un vortice di risate, calore e desiderio. L’aria vibrava di passione, i profumi della terra umida e della paglia si mescolavano a quello della ragazza, creando un turbine sensoriale che li avvolgeva completamente.
+
+              Il tramonto tingeva tutto di rossi e aranci così intensi che i suoi capelli sembravano veri e propri falò. Ogni gesto, ogni rincorsa, ogni carezza li faceva sentire sospesi in un mondo tutto loro, un inferno dorato e celeste dove il tempo si piegava e il desiderio bruciava come brace viva.
+
+              I due ancora rapiti dal ricordo di quella notte, decisero di catturare quell’essenza di passione e fuoco in una birra: nacque così la Red Head IPA, rossa e vibrante come i capelli della ragazza, con aromi di frutti maturi e un amaro deciso che pizzica come un bacio rubato.
+
+Ogni sorso è un viaggio indietro a quel villaggio al tramonto, tra campi infuocati e falò ardenti, un invito a lasciarsi travolgere dai sensi, a sfidare le regole e accendere il cuore. Non è solo birra: è leggenda che brucia nel bicchiere.`
   }
 };
 

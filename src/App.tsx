@@ -20,6 +20,7 @@ import Auth from "./pages/Auth";
 import Carrello from "./pages/Carrello";
 import Successo from "./pages/Successo";
 import NotFound from "./pages/NotFound";
+import BlogArticle from "./pages/BlogArticle";
 
 const TestPage = lazy(() => import("./pages/TestPage"));
 
@@ -38,6 +39,7 @@ const App = () => (
               <Route path="/catalogo" element={<Catalogo />} />
               <Route path="/chi-siamo" element={<ChiSiamo />} />
               <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogArticle />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/contatti" element={<Contatti />} />
               <Route path="/newsletter" element={<Newsletter />} />

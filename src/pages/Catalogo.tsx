@@ -69,6 +69,18 @@ const Catalogo = () => {
         case 'ibu':
           return b.ibu - a.ibu;
         default:
+          // Custom order: Golden Shower, Red Head, Bella Negra, then alphabetical
+          const customOrder = ['golden shower', 'red head', 'bella negra'];
+          const aIndex = customOrder.findIndex(name => a.name.toLowerCase().includes(name));
+          const bIndex = customOrder.findIndex(name => b.name.toLowerCase().includes(name));
+          
+          if (aIndex !== -1 && bIndex !== -1) {
+            return aIndex - bIndex;
+          } else if (aIndex !== -1) {
+            return -1;
+          } else if (bIndex !== -1) {
+            return 1;
+          }
           return a.name.localeCompare(b.name);
       }
     });

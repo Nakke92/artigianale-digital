@@ -23,9 +23,16 @@ const articles = {
     title: 'Red Head: La Nascita di una Ribelle',
     date: '2024-03-10', 
     image: '/src/assets/red-head-label.jpeg',
-    content: `Red Head non è solo una birra, è un manifesto di ribellione contro l'ordinario. 
+    content: `Nelle praterie polverose del vecchio West in Texas, due banditi ricercati a lungo dalla legge trovarono rifugio una calda notte d’estate. Il loro piano era semplice: razziare il raccolto di un vecchio fattore e sparire prima dell’alba. 
 
-Nata dalla passione per i sapori intensi e dal desiderio di creare qualcosa di veramente provocatorio, questa ale rossa rappresenta il coraggio di osare.`
+              Ma nel fienile trovarono qualcosa di inaspettato: la giovane figlia del fattore, una ragazza dai capelli rossi come il tramonto e la pelle chiara come la schiuma di una pinta fresca. La tensione si trasformò in un gioco di sguardi, risate e provocazioni, finché la notte non divenne un turbine di passione selvaggia.
+
+              L’aria sapeva di paglia, sudore e desiderio. Il silenzio della prateria fu rotto solo dai respiri affannosi e dal frinire dei grilli. Quando il sole si alzò, i due banditi non pensarono più a rubare: se ne andarono con il cuore in fiamme e un’idea fissa in testa.
+
+              Quella notte li ispirò a creare una birra che fosse fuoco liquido: la Red Head IPA, rossa e vibrante come i capelli della ragazza, con profumi di frutti maturi e un amaro deciso che pizzica come un bacio rubato.
+
+              Ogni sorso è un ritorno a quella notte proibita nella stalla, un invito a sfidare le regole e lasciarsi incendiare dai sensi.
+`
   }
 };
 

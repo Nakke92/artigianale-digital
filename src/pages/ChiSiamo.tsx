@@ -103,7 +103,6 @@ export default function ChiSiamo() {
                 <div className="text-left space-y-4 border-2 border-gold-primary/30 rounded-lg p-4 bg-black-glossy/40">
                   <p className="font-lora text-white-warm leading-relaxed">
                     Alchimista del malto. <strong className="text-gold-primary"> Signore del luppolo.</strong><br/>
-                    Nicolò è l’artefice che trasforma la visione in realtà.<br/>
                     La sua esperienza da mastro birraio si fonde con una passione irrefrenabile per la sperimentazione.
                   </p>
                   <p className="font-lora text-white-warm leading-relaxed">

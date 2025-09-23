@@ -33,10 +33,10 @@ const Catalogo = () => {
 
       if (error) throw error;
 
-      // Trasforma featured_image in URL pubblico
+      // Trasforma image_url in URL pubblico
       const productsWithPublicImage = (data || []).map(p => ({
         ...p,
-        featured_image: `https://xchwmgqejzyvnfzfdlhz.supabase.co/storage/v1/object/public/images/${p.image_url}
+        featured_image: `https://xchwmgqejzyvnfzfdlhz.supabase.co/storage/v1/object/public/images/${p.image_url}`
       }));
 
       setProducts(productsWithPublicImage);
@@ -102,7 +102,7 @@ const Catalogo = () => {
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-oro-primario/20 rounded-full filter blur-3xl animate-pulse-golden"></div>
         <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-arancio-caldo/15 rounded-full filter blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-72 h-72 bg-oro-scuro/10 rounded-full filter blur-3xl animate-pulse-golden" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-1/3 left-1/3 w-72 h-72 bg-oro-scuro/10 rounded-full filter blur-3xl animate-pulse-golden" style={{ animationDelay: '2s' }}></div>
       </div>
       
       {/* Animated Liquid Drops */}
@@ -112,10 +112,10 @@ const Catalogo = () => {
             key={i}
             className="absolute animate-float opacity-20"
             style={{
-              left: `${20 + (i * 15)}%`,
+              left: `${20 + i * 15}%`,
               top: `${10 + (i % 3) * 30}%`,
               animationDelay: `${i * 0.8}s`,
-              animationDuration: `${4 + (i % 3)}s`
+              animationDuration: `${4 + (i % 3)}s`,
             }}
           >
             <div className="w-4 h-6 bg-oro-primario rounded-full transform rotate-45"></div>
@@ -124,7 +124,7 @@ const Catalogo = () => {
       </div>
 
       <Header />
-      
+
       <main className="relative z-10 container mx-auto px-4 py-8">
         {/* Page Header */}
         <div className="text-center mb-12 pt-12">
@@ -150,6 +150,7 @@ const Catalogo = () => {
                 className="pl-10 bg-black-glossy/50 border-oro-primario/30 text-bianco-caldo placeholder:text-bianco-caldo/50 focus:border-oro-primario"
               />
             </div>
+
             <div className="flex items-center gap-2">
               <Filter className="h-4 w-4 text-oro-primario" />
               <Select value={filterStyle} onValueChange={setFilterStyle}>
@@ -164,6 +165,7 @@ const Catalogo = () => {
                 </SelectContent>
               </Select>
             </div>
+
             <div className="flex items-center gap-2">
               <SlidersHorizontal className="h-4 w-4 text-oro-primario" />
               <Select value={sortBy} onValueChange={setSortBy}>
@@ -207,6 +209,7 @@ const Catalogo = () => {
           </div>
         </div>
 
+        {/* Products Grid */}
         {filteredProducts.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredProducts.map(product => (
@@ -248,3 +251,4 @@ const Catalogo = () => {
 };
 
 export default Catalogo;
+

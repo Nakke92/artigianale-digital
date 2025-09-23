@@ -11,10 +11,6 @@ import { supabase } from '@/integrations/supabase/client';
 import { useCart } from '@/contexts/CartContext';
 import { toast } from 'sonner';
 
-import goldenShower from '@/assets/golden-shower-new.jpeg';
-import redHead from '@/assets/red-head-new.jpeg';
-import bellaNegra from '@/assets/bella-negra-new.jpeg';
-
 const Catalogo = () => {
   const { addItem } = useCart();
   const [products, setProducts] = useState<any[]>([]);

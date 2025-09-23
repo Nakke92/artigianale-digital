@@ -68,13 +68,14 @@ export default function ChiSiamo() {
                   <Palette className="h-16 w-16 text-bianco-caldo" />
                 </div>
                 <h3 className="font-anton text-3xl font-bold text-red-intense mb-3 uppercase">Lorenzo Paolicchi</h3>
-                <p className="font-montserrat text-lg text-gold-primary mb-4 uppercase tracking-wide">Il Visionario del Desiderio</p>
+                <p className="font-montserrat text-lg text-gold-primary mb-4 uppercase tracking-wide">Il MastroBirraio Visionario</p>
                 
                 <div className="text-left space-y-4 border-2 border-red-intense/30 rounded-lg p-4 bg-black-glossy/40">
                   <p className="font-lora text-white-warm leading-relaxed">
-                    <strong className="text-orange-warm">Ex designer informatico</strong>, Lorenzo è l'immaginazione selvaggia 
-                    che dà vita alle fantasie più audaci. Appassionato di birra e visionario nato, 
-                    è colui che immagina il futuro provocatorio del birrificio.
+                    <strong className="text-orange-warm">Appassionato di birra e visionario nato</strong>, l’uomo che ha visto il futuro in un bicchiere di birra. 
+                    Ha lasciato il design per seguire l’istinto e creare qualcosa di unico. Lorenzo immagina il futuro del birrificio. 
+                    Le sue idee non sono semplici ricette: sono storie, provocazioni, emozioni liquide.
+                    "Io immagino, creo e accendo il desiderio. Questa è la mia birra."
                   </p>
                   <p className="font-lora text-white-warm leading-relaxed">
                     "La birra deve raccontare storie che fanno arrossire" - la sua filosofia è che ogni etichetta, 

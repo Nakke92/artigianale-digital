@@ -20,7 +20,8 @@ const articles = {
               Da allora, ogni sorso è un ritorno a quella notte di libertà, di desiderio e di sfida alle regole. È più di una birra: è una leggenda che scorre nel bicchiere, una provocazione che accende i sensi e lascia il segno.`
      }
   },
-  const articles = {
+
+const articles = {
   'red-head-nascita-ribelle': {
     title: 'Red Head: La Nascita di una Ribelle',
     date: '2024-03-10', 

@@ -74,7 +74,7 @@ export default function ChiSiamo() {
                   <p className="white-space-nowrap">
                     Profeta del gusto.<strong className="text-orange-warm"> Creatore di mondi liquidi.</strong><br/> 
                     L’uomo che ha visto il futuro in un bicchiere di birra.<br/> 
-                    Forgiato nel mondo del design. Lorenzo immagina il futuro del birrificio. 
+                    Forgiato nel mondo del design: Lorenzo immagina il futuro del birrificio. 
                   </p>
                   <p className="font-lora text-white-warm leading-relaxed">
                     "Io sogno, creo e plasmo il desiderio. <strong className="text-gold-primary"> Questa è la mia birra."</strong><br/>
@@ -129,7 +129,7 @@ export default function ChiSiamo() {
         <section className="py-16">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="font-anton text-4xl font-bold text-oro-primario mb-6 uppercase tracking-wide">La Genesis della Provocazione</h2>
+              <h2 className="font-anton text-4xl font-bold text-oro-primario mb-6 uppercase tracking-wide">La Genesis</h2>
               <div className="space-y-6 font-lora text-bianco-caldo/90 leading-relaxed">
                 <p>
                   <strong className="text-oro-primario">Golden Shower</strong> nasce come una provocazione liquida 
@@ -149,7 +149,7 @@ export default function ChiSiamo() {
             </div>
             
             <div className="bg-black-glossy/60 backdrop-blur-xl border border-oro-primario/30 rounded-2xl p-8 text-center shadow-2xl">
-              <h3 className="font-anton text-3xl font-bold text-rosso-intenso mb-6 uppercase">La Nostra Filosofia Audace</h3>
+              <h3 className="font-anton text-3xl font-bold text-rosso-intenso mb-6 uppercase">La Nostra Filosofia</h3>
               <blockquote className="font-lora text-xl text-bianco-caldo/90 italic leading-relaxed">
                 "Creare birre che non seguono le regole, ma scrivono le proprie. 
                 Ogni sorso è una <span className="text-oro-primario">provocazione</span>, 

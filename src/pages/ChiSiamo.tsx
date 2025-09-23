@@ -78,7 +78,7 @@ export default function ChiSiamo() {
                     Lorenzo immagina il futuro del birrificio. 
                   </p>
                   <p className="font-lora text-white-warm leading-relaxed">
-                    "Io immagino, creo e accendo il desiderio. <strong className="text-gold-primary"> Questa è la mia birra."</strong>
+                    "Io immagino, creo e plasmo il desiderio. <strong className="text-gold-primary"> Questa è la mia birra."</strong><br/>
                      Le sue idee non sono semplici ricette: <em className="text-pink-transgressive">sono storie, provocazioni,</em> emozioni liquide.
                   </p>
                 </div>

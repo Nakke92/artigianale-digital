@@ -72,7 +72,7 @@ export default function ChiSiamo() {
                 
                 <div className="text-left space-y-4 border-2 border-red-intense/30 rounded-lg p-4 bg-black-glossy/40">
                   <p className="font-lora text-white-warm leading-relaxed">
-                    Devoto alla birra. Profeta del gusto. <strong className="text-orange-warm">Architetto di mondi liquidi.</strong> 
+                    Devoto alla birra. Profeta del gusto. <strong className="text-orange-warm">Creatore di mondi liquidi.</strong><br/> 
                     L’uomo che ha visto il futuro in un bicchiere di birra.<br/> 
                     Ha lasciato il design per seguire l’istinto. Lorenzo immagina il futuro del birrificio. 
                   </p>

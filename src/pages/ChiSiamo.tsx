@@ -76,7 +76,7 @@ export default function ChiSiamo() {
                     Ha lasciato il design per seguire l’istinto e creare qualcosa di unico. Lorenzo immagina il futuro del birrificio. 
                   </p>
                   <p className="font-lora text-white-warm leading-relaxed">
-                    "Io immagino, creo e accendo il desiderio. Questa è la mia birra." - la sua filosofia è che ogni etichetta, 
+                    "Io immagino, creo e accendo il desiderio. Questa è la mia birra."
                     Le sue idee non sono semplici ricette: <em className="text-pink-transgressive">sono storie, provocazioni,</em> emozioni liquide.
                   </p>
                 </div>

@@ -74,11 +74,10 @@ export default function ChiSiamo() {
                   <p className="white-space-nowrap">
                     Profeta del gusto.<strong className="text-orange-warm"> Creatore di mondi liquidi.</strong><br/> 
                     L’uomo che ha visto il futuro in un bicchiere di birra.<br/> 
-                    Forgiato nel mondo del design, porta ora la sua visione nell’universo della birra.<br/>
-                    Lorenzo immagina il futuro del birrificio. 
+                    Forgiato nel mondo del design. Lorenzo immagina il futuro del birrificio. 
                   </p>
                   <p className="font-lora text-white-warm leading-relaxed">
-                    "Io immagino, creo e plasmo il desiderio. <strong className="text-gold-primary"> Questa è la mia birra."</strong><br/>
+                    "Io sogno, creo e plasmo il desiderio. <strong className="text-gold-primary"> Questa è la mia birra."</strong><br/>
                      Le sue idee non sono semplici ricette: <em className="text-pink-transgressive">sono storie, provocazioni,</em> emozioni liquide.
                   </p>
                 </div>

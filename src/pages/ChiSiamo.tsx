@@ -232,8 +232,5 @@ export default function ChiSiamo() {
     </div>
   </Card>
 </section>
-        
-      <Footer />
-    </div>
-  );
-}
+
+<Footer />

@@ -13,58 +13,34 @@ const articles = {
     image: '/src/assets/golden-shower-new.jpeg',
     content: `Si racconta che, in un paesino polveroso del Vecchio West, il governatore di Dodge City si fosse smarrito durante un viaggio tra deserti e colline assolate. La sua figura elegante e fiera dominava la strada principale, e ogni raggio di luce dorata illuminava i suoi capelli e il volto scolpito.
 
-              Una sera, tra bagliori dorati e sussurri ovattati dei saloon, i suoi occhi si persero in quelli di una giovane donna bionda e radiosa, dalle curve armoniose e dalle piccole rotondità che rifrangevano ogni scintilla di luce. I suoi occhi celesti cristallino brillavano come un cielo d'estate terso e infinito, la bocca delicata e sinuosa pareva scolpita dalla luce, il naso perfetto e gli zigomi alti: un'epifania di bellezza pura e celestiale.
+              Una sera, tra bagliori dorati e sussurri ovattati dei saloon, i suoi occhi si persero in quelli di una giovane donna bionda e radiosa, dalle curve armoniose e dalle piccole rotondità che rifrangevano ogni scintilla di luce. I suoi occhi celesti cristallino brillavano come un cielo d’estate terso e infinito, la bocca delicata e sinuosa pareva scolpita dalla luce, il naso perfetto e gli zigomi alti: un’epifania di bellezza pura e celestiale.
 
               Quella notte, tra sorsi di birra e risate dorate, la passione esplose. Il cielo lampeggiava di emozioni luminose, e ogni gesto, ogni sorriso, ogni carezza diventava un bagliore intenso nel cuore del governatore. Un ricordo indelebile rimase impresso sui suoi baffi: uno schizzo improvviso lo segnò per mesi, come un segno irriverente e luminoso di quella notte unica.
 
-              Tornato alla sua residenza, ancora avvolto dalla memoria di quella donna e dalla luce dorata della notte, il governatore mescolò luppoli e malti, guidato solo dall'istinto e dall'eco di quel cielo giallo e celeste.
+              Tornato alla sua residenza, ancora avvolto dalla memoria di quella donna e dalla luce dorata della notte, il governatore mescolò luppoli e malti, guidato solo dall’istinto e dall’eco di quel cielo giallo e celeste.
 
               Così nacque la Golden Shower IPA: una birra dorata come il sole del deserto, aromi di frutti maturi e agrumi freschi, con un finale amaro che pizzica come un bacio rubato.
 
-Ogni sorso è un viaggio indietro a quella notte di libertà e desiderio, un ricordo luminoso che accende i sensi e lascia il segno. Non è solo birra: è leggenda che scorre nel bicchiere, intensa e indimenticabile.`,
-    specs: {
-      'ABV (Alcohol By Volume)': { description: 'Percentuale di alcol. Indica il corpo e la forza della birra.', value: '5.8%' },
-      'IBU (International Bitterness Units)': { description: 'Unità di amaro. Più è alto, più la birra è amara.', value: '65' },
-      'EBC / SRM (Colore)': { description: 'Scala del colore della birra (giallo paglierino → nero).', value: 'EBC 12 (dorato brillante)' },
-      'OG (Original Gravity)': { description: 'Densità iniziale del mosto, indica zuccheri fermentabili.', value: '1.060' },
-      'FG (Final Gravity)': { description: 'Densità finale dopo fermentazione, indica corpo residuo.', value: '1.010' },
-      'Carbonazione': { description: 'Livello di frizzantezza, espresso in volumi di CO₂.', value: '2.4 vol.' },
-      'Luppoli': { description: 'Varietà di luppolo usati', value: 'Citra, Mosaic, Simcoe' },
-      'Malti': { description: 'Tipi di malto usati', value: 'Pale Ale, Carapils' },
-      'Fermentazione': { description: 'Tipo di lievito / fermentazione.', value: 'Alta fermentazione (American Ale Yeast)' },
-      'Note di Degustazione': { description: 'Aromi e sapori percepiti.', value: 'Agrumi, frutta tropicale, resina di pino, finale secco e amaro.' }
-    }
+Ogni sorso è un viaggio indietro a quella notte di libertà e desiderio, un ricordo luminoso che accende i sensi e lascia il segno. Non è solo birra: è leggenda che scorre nel bicchiere, intensa e indimenticabile.`
   },
 
   'red-head-nascita-ribelle': {
     title: 'Red Head: La Nascita di una Ribelle',
     date: '2024-03-10', 
     image: '/src/assets/red-head-new.jpeg',
-    content: `Nelle vaste praterie intorno ad Abilene, nel cuore del Vecchio West, due viaggiatori si persero tra sentieri polverosi , fino a incrociare un villaggio di nativi americani, nascosto tra campi di grano e fuochi che tremolavano nel crepuscolo. Lì, tra i tamburi lontani e le voci cantilenanti, tutto sembrava sospeso nel tempo, avvolto da un'aura di mistero e serenità primordiale.
+    content: `Nelle vaste praterie intorno ad Abilene, nel cuore del Vecchio West, due viaggiatori si persero tra sentieri polverosi , fino a incrociare un villaggio di nativi americani, nascosto tra campi di grano e fuochi che tremolavano nel crepuscolo. Lì, tra i tamburi lontani e le voci cantilenanti, tutto sembrava sospeso nel tempo, avvolto da un’aura di mistero e serenità primordiale.
 
-              Vicino al fiume, dove le acque lambivano le rive e riflettevano il tramonto, lavando i panni dei villaggi, apparve lei: una ragazza nativa, pelle di un rosa tenue e capelli color rubino come il fuoco dei campi al tramonto. Sembrava un miraggio, sospesa tra il cielo e le onde scarlatte del tramonto. I suoi occhi catturavano la luce come piccole stelle liquide, e ogni movimento era un gioco di bagliori e riflessi che incantava chiunque la guardasse.
+              Vicino al fiume, dove le acque lambivano le rive e riflettevano il tramonto, lavando i panni dei villaggi, apparve lei: una ragazza nativa, pelle di un rosa tenue e capelli color rubino come il fuoco al tramonto. Sembrava un miraggio, sospesa tra il cielo e le onde scarlatte dei campi di grando. I suoi occhi catturavano la luce come piccole stelle liquide, e ogni movimento era un gioco di bagliori e riflessi che incantava chiunque la guardasse.
 
               I due si avvicinarono folgorati verso di lei con sorrisi audaci e mani irrequiete e desiderio palpabile. La ragazza ridacchiava e si lasciava prendere dal gioco, i capelli rossi come fiamme vive si fondevano ai riflessi arancio del tramonto e al luccichio del fiume.
 
-              Ogni tocco era un invito, ogni sguardo una provocazione ardente. Correva tra i campi di grano, tra i fumi dei fuochi e le ombre delle tende del villaggio, intrecciandosi in un vortice di risate, calore e desiderio. L'aria vibrava di passione, i profumi della terra umida e della paglia si mescolavano a quello della ragazza, creando un turbine sensoriale che li avvolgeva completamente.
+              Ogni tocco era un invito, ogni sguardo una provocazione ardente. Correva tra i campi di grano, tra i fumi dei fuochi e le ombre delle tende del villaggio, intrecciandosi in un vortice di risate, calore e desiderio. L’aria vibrava di passione, i profumi della terra umida e della paglia si mescolavano a quello della ragazza, creando un turbine sensoriale che li avvolgeva completamente.
 
               Il tramonto tingeva tutto di un rosso cosi intenso che i suoi capelli sembravano un vero e proprio falò. Ogni gesto, ogni carezza li faceva sentire sospesi in un mondo tutto loro, un inferno dorato e celeste dove il tempo si piegava e il desiderio bruciava come brace viva. Era gioco, era fuoco, era passione che li consumava insieme.
 
-              I due, ancora rapiti dal ricordo di quella notte, decisero di catturare quell'essenza di passione e fuoco in una birra: nacque così la Red Head IPA, rossa e vibrante come i capelli della ragazza, con aromi di frutti maturi e un amaro deciso che pizzica come un bacio rubato.
+              I due, ancora rapiti dal ricordo di quella notte, decisero di catturare quell’essenza di passione e fuoco in una birra: nacque così la Red Head IPA, rossa e vibrante come i capelli della ragazza, con aromi di frutti maturi e un amaro deciso che pizzica come un bacio rubato.
 
-Nata dalla passione per i sapori intensi e dal desiderio di creare qualcosa di veramente provocatorio, questa ale rossa rappresenta il coraggio di osare.`,
-    specs: {
-      'ABV (Alcohol By Volume)': { description: 'Percentuale di alcol. Indica il corpo e la forza della birra.', value: '6.2%' },
-      'IBU (International Bitterness Units)': { description: 'Unità di amaro. Più è alto, più la birra è amara.', value: '70' },
-      'EBC / SRM (Colore)': { description: 'Scala del colore della birra (giallo paglierino → nero).', value: 'EBC 25 (rosso ambrato)' },
-      'OG (Original Gravity)': { description: 'Densità iniziale del mosto, indica zuccheri fermentabili.', value: '1.065' },
-      'FG (Final Gravity)': { description: 'Densità finale dopo fermentazione, indica corpo residuo.', value: '1.012' },
-      'Carbonazione': { description: 'Livello di frizzantezza, espresso in volumi di CO₂.', value: '2.5 vol.' },
-      'Luppoli': { description: 'Varietà di luppolo usati', value: 'Centennial, Cascade, Columbus' },
-      'Malti': { description: 'Tipi di malto usati', value: 'Pale Ale, Crystal 60L, Munich' },
-      'Fermentazione': { description: 'Tipo di lievito / fermentazione.', value: 'Alta fermentazione (American Ale Yeast)' },
-      'Note di Degustazione': { description: 'Aromi e sapori percepiti.', value: 'Caramello, frutti rossi, spezie, finale maltato e piccante.' }
-    }
+Nata dalla passione per i sapori intensi e dal desiderio di creare qualcosa di veramente provocatorio, questa ale rossa rappresenta il coraggio di osare.`
   },
 
   'bella-negra-mistero': {
@@ -73,19 +49,7 @@ Nata dalla passione per i sapori intensi e dal desiderio di creare qualcosa di v
     image: '/src/assets/bella-negra-new.png', 
     content: `Nel cuore della notte più buia, quando le stelle sembrano sussurrare segreti antichi, nasce Bella Negra IPA. Una birra dal carattere profondo e misterioso, come una bella donna dalla pelle scura che danza sotto la luna.
 
-La sua essenza racchiude il fascino dell'ignoto e la seduzione dell'oscurità, un sapore intenso che avvolge i sensi in un abbraccio vellutato e provocante.`,
-    specs: {
-      'ABV (Alcohol By Volume)': { description: 'Percentuale di alcol. Indica il corpo e la forza della birra.', value: '7.0%' },
-      'IBU (International Bitterness Units)': { description: 'Unità di amaro. Più è alto, più la birra è amara.', value: '80' },
-      'EBC / SRM (Colore)': { description: 'Scala del colore della birra (giallo paglierino → nero).', value: 'EBC 75 (nero intenso)' },
-      'OG (Original Gravity)': { description: 'Densità iniziale del mosto, indica zuccheri fermentabili.', value: '1.072' },
-      'FG (Final Gravity)': { description: 'Densità finale dopo fermentazione, indica corpo residuo.', value: '1.015' },
-      'Carbonazione': { description: 'Livello di frizzantezza, espresso in volumi di CO₂.', value: '2.3 vol.' },
-      'Luppoli': { description: 'Varietà di luppolo usati', value: 'Magnum, Chinook, Warrior' },
-      'Malti': { description: 'Tipi di malto usati', value: 'Pale Ale, Chocolate, Black Patent' },
-      'Fermentazione': { description: 'Tipo di lievito / fermentazione.', value: 'Alta fermentazione (American Ale Yeast)' },
-      'Note di Degustazione': { description: 'Aromi e sapori percepiti.', value: 'Cioccolato fondente, caffè tostato, liquirizia, finale secco e intenso.' }
-    }
+La sua essenza racchiude il fascino dell'ignoto e la seduzione dell'oscurità, un sapore intenso che avvolge i sensi in un abbraccio vellutato e provocante.`
   }
 };
 
@@ -161,45 +125,6 @@ export default function BlogArticle() {
                   </p>
                 ))}
               </div>
-
-              {/* Specifiche */}
-              {'specs' in article && (
-                <div className="mt-12">
-                  <h2 className="font-anton text-3xl text-gold-primary mb-6 uppercase">Specifiche</h2>
-                  <div className="overflow-x-auto">
-                    <table className="w-full border-collapse border border-gold-primary/30 rounded-lg overflow-hidden">
-                      <thead>
-                        <tr className="bg-gradient-to-r from-gold-primary/20 to-orange-warm/20">
-                          <th className="border border-gold-primary/30 px-4 py-3 text-left font-anton text-gold-primary uppercase text-sm">
-                            Parametro
-                          </th>
-                          <th className="border border-gold-primary/30 px-4 py-3 text-left font-anton text-gold-primary uppercase text-sm">
-                            Descrizione
-                          </th>
-                          <th className="border border-gold-primary/30 px-4 py-3 text-left font-anton text-gold-primary uppercase text-sm">
-                            Valore
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {Object.entries(article.specs).map(([param, data]) => (
-                          <tr key={param} className="hover:bg-gold-primary/5 transition-colors">
-                            <td className="border border-gold-primary/30 px-4 py-3 font-montserrat font-semibold text-orange-warm text-sm">
-                              {param}
-                            </td>
-                            <td className="border border-gold-primary/30 px-4 py-3 font-lora text-white-warm text-sm">
-                              {data.description}
-                            </td>
-                            <td className="border border-gold-primary/30 px-4 py-3 font-montserrat font-bold text-gold-primary text-sm">
-                              {data.value}
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              )}
 
               {/* CTA */}
               <div className="mt-12 text-center">

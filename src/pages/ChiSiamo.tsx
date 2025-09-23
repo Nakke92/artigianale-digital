@@ -231,8 +231,10 @@ export default function ChiSiamo() {
       </Link>
     </div>
   </Card>
-</section>
+        </section>
+      </main>
 
-<Footer />
-</div>
-);
+      <Footer />
+    </div>
+  );
+}

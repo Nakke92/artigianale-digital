@@ -41,7 +41,7 @@ export default function Blog() {
         title: 'Red Head: La Nascita di una Ribelle',
         slug: 'red-head-nascita-ribelle',
         excerpt: 'La storia dietro la creazione della nostra Red Ale dal carattere indomito.',
-        featured_image: '/src/assets/red-head-label.jpeg',
+        featured_image: '/src/assets/red-head-new.jpeg',
         published_at: '2024-03-10',
         created_at: '2024-03-10'
       },

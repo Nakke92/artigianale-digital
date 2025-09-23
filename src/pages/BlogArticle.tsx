@@ -13,7 +13,7 @@ const articles = {
     image: '/src/assets/golden-shower-label.jpeg',
     content: `Si racconta che, in un paesino polveroso del Vecchio West, il governatore di Dodge City si fosse smarrito durante un viaggio tra deserti e colline assolate. La sua figura elegante e fiera dominava la strada principale, e ogni raggio di luce dorata illuminava i suoi capelli e il volto scolpito.
 
-              Una sera, tra luci tremolanti e risate ovattate dei saloon, i suoi occhi incontrarono quelli di una donna bionda e luminosa, dalle linee sinuose e dalle piccole rotondità che catturavano la luce. I suoi occhi celeste brillante ricordavano un cielo limpido d’estate, la bocca delicata e sinuosa, il naso perfetto e gli zigomi alti: la quintessenza della bellezza.
+              Una sera, tra bagliori dorati e sussurri ovattati dei saloon, i suoi occhi si persero in quelli di una giovane donna bionda e radiosa, dalle curve armoniose e dalle piccole rotondità che rifrangevano ogni scintilla di luce. I suoi occhi celesti cristallino brillavano come un cielo d’estate terso e infinito, la bocca delicata e sinuosa pareva scolpita dalla luce, il naso perfetto e gli zigomi alti: un’epifania di bellezza pura e celestiale.
 
               Quella notte, tra sorsi di birra e risate dorate, la passione esplose. Il cielo lampeggiava di emozioni luminose, e ogni gesto, ogni sorriso, ogni carezza diventava un bagliore intenso nel cuore del governatore. Un ricordo indelebile rimase impresso sui suoi baffi: uno schizzo improvviso lo segnò per mesi, come un segno irriverente e luminoso di quella notte unica.
 

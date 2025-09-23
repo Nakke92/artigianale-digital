@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ShoppingCart, Heart, Eye } from 'lucide-react';
+import { ShoppingCart, Eye } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface Product {
@@ -20,15 +20,11 @@ interface Product {
 interface ProductCardProps {
   product: Product;
   onAddToCart?: (product: Product) => void;
-  onToggleWishlist?: (product: Product) => void;
-  isInWishlist?: boolean;
 }
 
 export const ProductCard = ({ 
   product, 
-  onAddToCart, 
-  onToggleWishlist, 
-  isInWishlist = false 
+  onAddToCart
 }: ProductCardProps) => {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -41,9 +37,6 @@ export const ProductCard = ({
     }
   };
 
-  const handleToggleWishlist = () => {
-    onToggleWishlist?.(product);
-  };
 
   return (
     <Card className="group bg-black-glossy/80 backdrop-blur-xl border-2 border-gold-primary/40 hover:border-gold-primary/70 transition-all duration-500 hover:scale-105 overflow-hidden shadow-2xl hover:shadow-gold-primary/30">
@@ -80,8 +73,18 @@ export const ProductCard = ({
         
         {/* Overlay Actions */}
         <div className="absolute inset-0 bg-gradient-to-t from-black-glossy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="absolute bottom-4 left-4 right-4 flex gap-2">
-            <Link to={`/prodotto/${product.id}`} className="flex-1">
+          <div className="absolute bottom-4 left-4 right-4">
+            <Link to={(() => {
+              // Link to blog articles based on product name
+              if (product.name.includes('Golden Shower')) {
+                return '/blog/segreto-fermentazione-perfetta';
+              } else if (product.name.includes('Red Head')) {
+                return '/blog/red-head-nascita-ribelle';
+              } else if (product.name.includes('Bella Negra')) {
+                return '/blog/bella-negra-mistero';
+              }
+              return `/prodotto/${product.id}`;
+            })()} className="w-full">
               <Button 
                 size="sm" 
                 variant="outline"
@@ -91,16 +94,6 @@ export const ProductCard = ({
                 Dettagli
               </Button>
             </Link>
-            <Button 
-              size="sm"
-              variant="ghost"
-              onClick={handleToggleWishlist}
-              className={`bg-black-glossy/50 backdrop-blur-sm border border-red-intense/50 ${
-                isInWishlist ? 'text-red-intense bg-red-intense/20' : 'text-red-intense'
-              } hover:bg-red-intense hover:text-white-warm transition-all duration-300`}
-            >
-              <Heart className={`h-4 w-4 ${isInWishlist ? 'fill-current' : ''}`} />
-            </Button>
           </div>
         </div>
 

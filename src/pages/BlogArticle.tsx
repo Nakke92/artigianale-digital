@@ -41,6 +41,15 @@ Ogni sorso è un viaggio indietro a quella notte di libertà e desiderio, un ric
               I due, ancora rapiti dal ricordo di quella notte, decisero di catturare quell’essenza di passione e fuoco in una birra: nacque così la Red Head IPA, rossa e vibrante come i capelli della ragazza, con aromi di frutti maturi e un amaro deciso che pizzica come un bacio rubato.
 
 Nata dalla passione per i sapori intensi e dal desiderio di creare qualcosa di veramente provocatorio, questa ale rossa rappresenta il coraggio di osare.`
+  },
+
+  'bella-negra-mistero': {
+    title: 'Bella Negra: Il Mistero della Notte',
+    date: '2024-03-20',
+    image: '/src/assets/bella-negra-new.png', 
+    content: `Nel cuore della notte più buia, quando le stelle sembrano sussurrare segreti antichi, nasce Bella Negra IPA. Una birra dal carattere profondo e misterioso, come una bella donna dalla pelle scura che danza sotto la luna.
+
+La sua essenza racchiude il fascino dell'ignoto e la seduzione dell'oscurità, un sapore intenso che avvolge i sensi in un abbraccio vellutato e provocante.`
   }
 };
 

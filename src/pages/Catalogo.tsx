@@ -45,10 +45,6 @@ const Catalogo = () => {
     addItem(product);
   };
 
-  const handleToggleWishlist = (product: any) => {
-    // This will be implemented with wishlist context
-    toast.success(`${product.name} aggiunto ai preferiti!`);
-  };
 
   const filteredProducts = products
     .filter(product => 
@@ -236,7 +232,6 @@ const Catalogo = () => {
                 key={product.id}
                 product={product}
                 onAddToCart={handleAddToCart}
-                onToggleWishlist={handleToggleWishlist}
               />
             ))}
           </div>

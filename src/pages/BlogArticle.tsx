@@ -33,7 +33,7 @@ Ogni sorso è un viaggio indietro a quella notte di libertà e desiderio, un ric
       { parameter: 'Malti', description: 'Tipi di malto usati', value: 'Crystal, Munich, Caramel' },
       { parameter: 'Fermentazione', description: 'Tipo di lievito / fermentazione.', value: 'Alta fermentazione (English Ale Yeast)' },
       { parameter: 'Note di Degustazione', description: 'Aromi e sapori percepiti.', value: 'Frutti rossi, caramello, spezie, finale caldo e persistente.' }
-    ]
+    ],
   },
 
   'red-head-nascita-ribelle': {

@@ -11,7 +11,9 @@ const articles = {
     title: 'Il Segreto della Fermentazione Perfetta',
     date: '2024-03-15',
     image: '/src/assets/golden-shower-label.jpeg',
-    content: `La fermentazione è l'anima della birra, il processo magico che trasforma semplici ingredienti in una bevanda straordinaria. 
+    content: ` Si racconta che, in un polveroso saloon ai confini del West, un poeta vagabondo trovò rifugio dopo giorni di cavalcate sotto il sole cocente. Lì incontrò una donna dal sorriso selvaggio e dagli occhi di fuoco. La loro fu un’unione dirompente, una notte di passione che incendiò l’aria, fatta di risate, sorsi di whiskey e sudore.
+
+              Quando l’alba sorse, il poeta fu investito da un’ultima, travolgente cascata di emozioni, un lampo dorato che gli rimase impresso nella memoria come il ricordo di un tuono nella prateria. Tornato alla sua fattoria, ancora ebbro di quella notte, si chiuse nel suo granaio e mescolò luppoli e malti, guidato solo dall’istinto.
 
 Ogni nostro mastro birraio segue antiche tradizioni combinate con tecniche moderne per creare sapori unici e indimenticabili.`
   },

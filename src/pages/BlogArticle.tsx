@@ -11,7 +11,7 @@ const articles = {
     title: 'Golden Shower IPA – La Leggenda',
     date: '2024-03-15',
     image: '/src/assets/golden-shower-label.jpeg',
-    content: `Si racconta che, in un paesino polveroso del Vecchio West, il governatore di Dodge City alto e biondo, con baffi curati e occhi celeste intenso, si fosse smarrito durante un viaggio tra deserti e colline assolate. La sua figura elegante e fiera dominava la strada principale, e ogni raggio di luce dorata illuminava i suoi capelli e il volto scolpito.
+    content: `Si racconta che, in un paesino polveroso del Vecchio West, il governatore di Dodge City si fosse smarrito durante un viaggio tra deserti e colline assolate. La sua figura elegante e fiera dominava la strada principale, e ogni raggio di luce dorata illuminava i suoi capelli e il volto scolpito.
 
               Una sera, tra luci tremolanti e risate ovattate dei saloon, i suoi occhi incontrarono quelli di una donna bionda e luminosa, dalle linee sinuose e dalle piccole rotondità che catturavano la luce. I suoi occhi celeste brillante ricordavano un cielo limpido d’estate, la bocca delicata e sinuosa, il naso perfetto e gli zigomi alti: la quintessenza della bellezza.
 

@@ -213,28 +213,30 @@ export const HomeFeatures = () => {
           ))}
         </div>
 
-        {/* Final CTA */}
-        <div className="text-center">
-  <Card className="inline-block bg-gradient-to-br from-gold-primary/10 to-red-intense/10 backdrop-blur-sm border border-gold-primary/30 p-8 sm:p-12 hover:scale-105 transition-all duration-300">
-    <CardContent className="p-0">
-      <h3 className="font-anton text-2xl sm:text-3xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-gold-primary to-red-intense mb-6 uppercase">
-        Pronto per la Provocazione?
-      </h3>
-      <p className="font-lora text-base sm:text-lg md:text-lg text-white-warm/80 mb-8 max-w-full sm:max-w-md mx-auto">
-        Lasciati sedurre dalle nostre creazioni irriverenti e scopri un mondo di sapori audaci.
-      </p>
-      <Button
-        size="lg"
-        className="w-full sm:w-auto group relative overflow-hidden bg-gradient-to-r from-red-intense via-orange-warm to-gold-primary bg-[length:200%_100%] hover:bg-[position:100%_0] text-black-glossy font-montserrat text-lg px-8 sm:px-12 py-4 sm:py-6 uppercase tracking-wide transition-all duration-500 hover:scale-105 shadow-2xl"
-        onClick={() => window.location.href = '/catalogo'}
-      >
-        <span className="flex items-center gap-3">
-          Esplora il Catalogo
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-        </span>
-      </Button>
-    </CardContent>
-  </Card>
-</div>
+     <section className="relative py-24 bg-black-glossy">
+      {/* Final CTA */}
+      <div className="text-center">
+        <Card className="inline-block bg-gradient-to-br from-gold-primary/10 to-red-intense/10 backdrop-blur-sm border border-gold-primary/30 p-8 sm:p-12 hover:scale-105 transition-all duration-300">
+          <CardContent className="p-0">
+            <h3 className="font-anton text-2xl sm:text-3xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-gold-primary to-red-intense mb-6 uppercase">
+              Pronto per la Provocazione?
+            </h3>
+            <p className="font-lora text-base sm:text-lg md:text-lg text-white-warm/80 mb-8 max-w-full sm:max-w-md mx-auto">
+              Lasciati sedurre dalle nostre creazioni irriverenti e scopri un mondo di sapori audaci.
+            </p>
+            <Button
+              size="lg"
+              className="w-full sm:w-auto group relative overflow-hidden bg-gradient-to-r from-red-intense via-orange-warm to-gold-primary bg-[length:200%_100%] hover:bg-[position:100%_0] text-black-glossy font-montserrat text-lg px-8 sm:px-12 py-4 sm:py-6 uppercase tracking-wide transition-all duration-500 hover:scale-105 shadow-2xl"
+              onClick={() => window.location.href = '/catalogo'}
+            >
+              <span className="flex items-center gap-3">
+                Esplora il Catalogo
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
   );
 };

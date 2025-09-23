@@ -32,7 +32,7 @@ export default function Blog() {
         title: 'Golden Shower IPA – La Leggenda',
         slug: 'segreto-fermentazione-perfetta',
         excerpt: 'Scopri i trucchi del mestiere che rendono uniche le nostre birre artigianali.',
-        featured_image: '/src/assets/golden-shower-label.jpeg',
+        featured_image: '/src/assets/golden-shower-new.jpeg',
         published_at: '2024-03-15',
         created_at: '2024-03-15'
       },

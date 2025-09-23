@@ -77,7 +77,7 @@ export default function ChiSiamo() {
                     Forgiato nel mondo del design, porta ora la sua visione nell’universo della birra. Lorenzo immagina il futuro del birrificio. 
                   </p>
                   <p className="font-lora text-white-warm leading-relaxed">
-                    "Io immagino, creo e accendo il desiderio. <strong className="text-gold-primary"> Questa è la mia birra."</strong><br/>
+                    "Io immagino, creo e accendo il desiderio. <strong className="text-gold-primary"> Questa è la mia birra."</strong>
                     Le sue idee non sono semplici ricette: <em className="text-pink-transgressive">sono storie, provocazioni,</em> emozioni liquide.
                   </p>
                 </div>

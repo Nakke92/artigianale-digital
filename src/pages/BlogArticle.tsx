@@ -40,7 +40,19 @@ Ogni sorso è un viaggio indietro a quella notte di libertà e desiderio, un ric
 
               I due, ancora rapiti dal ricordo di quella notte, decisero di catturare quell’essenza di passione e fuoco in una birra: nacque così la Red Head IPA, rossa e vibrante come i capelli della ragazza, con aromi di frutti maturi e un amaro deciso che pizzica come un bacio rubato.
 
-Nata dalla passione per i sapori intensi e dal desiderio di creare qualcosa di veramente provocatorio, questa ale rossa rappresenta il coraggio di osare.`
+Nata dalla passione per i sapori intensi e dal desiderio di creare qualcosa di veramente provocatorio, questa ale rossa rappresenta il coraggio di osare.`,
+    specifications: [
+      { parameter: 'ABV (Alcohol By Volume)', description: 'Percentuale di alcol. Indica il corpo e la forza della birra.', value: '6.2%' },
+      { parameter: 'IBU (International Bitterness Units)', description: 'Unità di amaro. Più è alto, più la birra è amara.', value: '45' },
+      { parameter: 'EBC / SRM (Colore)', description: 'Scala del colore della birra (giallo paglierino → nero).', value: 'EBC 25 (rosso rubino)' },
+      { parameter: 'OG (Original Gravity)', description: 'Densità iniziale del mosto, indica zuccheri fermentabili.', value: '1.065' },
+      { parameter: 'FG (Final Gravity)', description: 'Densità finale dopo fermentazione, indica corpo residuo.', value: '1.012' },
+      { parameter: 'Carbonazione', description: 'Livello di frizzantezza, espresso in volumi di CO₂.', value: '2.2 vol.' },
+      { parameter: 'Luppoli', description: 'Varietà di luppolo usati', value: 'Cascade, Centennial, Chinook' },
+      { parameter: 'Malti', description: 'Tipi di malto usati', value: 'Crystal, Munich, Caramel' },
+      { parameter: 'Fermentazione', description: 'Tipo di lievito / fermentazione.', value: 'Alta fermentazione (English Ale Yeast)' },
+      { parameter: 'Note di Degustazione', description: 'Aromi e sapori percepiti.', value: 'Frutti rossi, caramello, spezie, finale caldo e persistente.' }
+    ]
   },
 
   'bella-negra-mistero': {
@@ -49,7 +61,19 @@ Nata dalla passione per i sapori intensi e dal desiderio di creare qualcosa di v
     image: '/src/assets/bella-negra-new.png', 
     content: `Nel cuore della notte più buia, quando le stelle sembrano sussurrare segreti antichi, nasce Bella Negra IPA. Una birra dal carattere profondo e misterioso, come una bella donna dalla pelle scura che danza sotto la luna.
 
-La sua essenza racchiude il fascino dell'ignoto e la seduzione dell'oscurità, un sapore intenso che avvolge i sensi in un abbraccio vellutato e provocante.`
+La sua essenza racchiude il fascino dell'ignoto e la seduzione dell'oscurità, un sapore intenso che avvolge i sensi in un abbraccio vellutato e provocante.`,
+    specifications: [
+      { parameter: 'ABV (Alcohol By Volume)', description: 'Percentuale di alcol. Indica il corpo e la forza della birra.', value: '6.8%' },
+      { parameter: 'IBU (International Bitterness Units)', description: 'Unità di amaro. Più è alto, più la birra è amara.', value: '55' },
+      { parameter: 'EBC / SRM (Colore)', description: 'Scala del colore della birra (giallo paglierino → nero).', value: 'EBC 80 (nero profondo)' },
+      { parameter: 'OG (Original Gravity)', description: 'Densità iniziale del mosto, indica zuccheri fermentabili.', value: '1.070' },
+      { parameter: 'FG (Final Gravity)', description: 'Densità finale dopo fermentazione, indica corpo residuo.', value: '1.015' },
+      { parameter: 'Carbonazione', description: 'Livello di frizzantezza, espresso in volumi di CO₂.', value: '2.3 vol.' },
+      { parameter: 'Luppoli', description: 'Varietà di luppolo usati', value: 'Columbus, Magnum, Warrior' },
+      { parameter: 'Malti', description: 'Tipi di malto usati', value: 'Black Patent, Chocolate, Roasted Barley' },
+      { parameter: 'Fermentazione', description: 'Tipo di lievito / fermentazione.', value: 'Alta fermentazione (American Ale Yeast)' },
+      { parameter: 'Note di Degustazione', description: 'Aromi e sapori percepiti.', value: 'Caffè, cioccolato fondente, vaniglia, finale intenso e vellutato.' }
+    ]
   }
 };
 
@@ -125,6 +149,33 @@ export default function BlogArticle() {
                   </p>
                 ))}
               </div>
+
+              {/* Specifications Section */}
+              {(article as any).specifications && (
+                <div className="mt-12 mb-8">
+                  <h2 className="font-anton text-3xl text-gold-primary mb-6 uppercase">Specifiche</h2>
+                  <div className="overflow-x-auto">
+                    <table className="w-full border-collapse border border-gold-primary/30 rounded-lg overflow-hidden">
+                      <thead>
+                        <tr className="bg-gradient-to-r from-gold-primary/20 to-orange-warm/20">
+                          <th className="border border-gold-primary/30 p-4 text-left font-anton text-gold-primary uppercase">Parametro</th>
+                          <th className="border border-gold-primary/30 p-4 text-left font-anton text-gold-primary uppercase">Descrizione</th>
+                          <th className="border border-gold-primary/30 p-4 text-left font-anton text-gold-primary uppercase">Valore</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {(article as any).specifications.map((spec: any, index: number) => (
+                          <tr key={index} className="hover:bg-gold-primary/5 transition-colors">
+                            <td className="border border-gold-primary/30 p-4 font-montserrat font-semibold text-orange-warm">{spec.parameter}</td>
+                            <td className="border border-gold-primary/30 p-4 font-lora text-white-warm">{spec.description}</td>
+                            <td className="border border-gold-primary/30 p-4 font-montserrat font-bold text-gold-primary">{spec.value}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
 
               {/* CTA */}
               <div className="mt-12 text-center">

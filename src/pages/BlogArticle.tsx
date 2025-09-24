@@ -86,7 +86,7 @@ Nata dalla passione per i sapori intensi e dal desiderio di creare qualcosa di v
 
               Al mattino la cella era vuota. Nessuno seppe dire come fosse fuggita, ma l’unica traccia che lasciò fu il ricordo di quella notte e il profumo della sua pelle che sembrava ancora fluttuare nell’aria. Il marshal, incapace di tornare alla vita di sempre, decise di rendere eterna quella memoria.
 
-Convocò il miglior mastro birraio del West e gli raccontò ogni dettaglio: il buio della cella, la luce della luna, il calore di quello sguardo. Così nacque Bella Negra IPA, una birra intensa, oscura e seducente, capace di riportare chiunque a quella notte carica di magia.`,
+Convocò il miglior mastro birraio del West e gli raccontò ogni dettaglio. Così nacque Bella Negra IPA, una birra intensa, oscura e seducente, capace di riportare chiunque a quella notte carica di magia.`,
     specifications: [
       { parameter: 'ABV (Alcohol By Volume)', description: 'Percentuale di alcol. Indica il corpo e la forza della birra.', value: '6.8%' },
       { parameter: 'IBU (International Bitterness Units)', description: 'Unità di amaro. Più è alto, più la birra è amara.', value: '55' },

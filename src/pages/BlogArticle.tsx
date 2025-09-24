@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar } from 'lucide-react';
 
 // ✅ Import delle immagini
-import goldenShower from '@assets/WhatsApp Image 2025-09-24 at 16.05.04555.jpeg';
-import redHead from '@/assets/WhatsApp Image 2025-09-24 at 16.05.05555555.jpeg';
+import goldenShower from '/src/assets/WhatsApp Image 2025-09-24 at 16.05.04555.jpeg';
+import redHead from '/src/assets/WhatsApp Image 2025-09-24 at 16.05.05555555.jpeg';
 import bellaNegra from '@/assets/bella-negra-new.png';
 
 const articles = {

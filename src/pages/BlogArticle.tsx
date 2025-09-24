@@ -13,7 +13,7 @@ const articles = {
   'segreto-fermentazione-perfetta': {
     title: 'Golden Shower IPA – La Leggenda',
     date: '2024-03-15',
-    image: 'public/WhatsApp Image 2025-09-24 at 16.05.04.webp'
+    image: '/public/WhatsApp Image 2025-09-24 at 16.05.04.webp'
     content: `Si racconta che, in un paesino polveroso del Vecchio West, il governatore di Dodge City si fosse smarrito durante un viaggio tra deserti e colline assolate. La sua figura elegante e fiera dominava la strada principale, e ogni raggio di luce dorata illuminava i suoi capelli e il volto scolpito.
 
               Una sera, tra bagliori dorati e sussurri ovattati dei saloon, i suoi occhi si persero in quelli di una giovane donna bionda e radiosa, dalle curve armoniose e dalle piccole rotondità che rifrangevano ogni scintilla di luce. I suoi occhi celesti cristallino brillavano come un cielo d’estate terso e infinito, la bocca delicata e sinuosa pareva scolpita dalla luce, il naso perfetto e gli zigomi alti: un’epifania di bellezza pura e celestiale.
@@ -42,7 +42,7 @@ Ogni sorso è un viaggio indietro a quella notte di libertà e desiderio, un ric
   'red-head-nascita-ribelle': {
     title: 'Red Head: La Nascita di una Ribelle',
     date: '2024-03-10', 
-    image: 'public/WhatsApp Image 2025-09-24 at 16.05.05.webp'
+    image: '/public/WhatsApp Image 2025-09-24 at 16.05.05.webp'
     content: `Nelle vaste praterie intorno ad Abilene, nel cuore del Vecchio West, due viaggiatori si persero tra sentieri polverosi , fino a incrociare un villaggio di nativi americani, nascosto tra campi di grano e fuochi che tremolavano nel crepuscolo. Lì, tra i tamburi lontani e le voci cantilenanti, tutto sembrava sospeso nel tempo, avvolto da un’aura di mistero e serenità primordiale.
 
               Vicino al fiume, dove le acque lambivano le rive e riflettevano il tramonto, lavando i panni dei villaggi, apparve lei: una ragazza nativa, pelle di un rosa tenue e capelli color rubino come il fuoco al tramonto. Sembrava un miraggio, sospesa tra il cielo e le onde scarlatte dei campi di grano. I suoi occhi catturavano la luce come piccole stelle liquide, e ogni movimento era un gioco di bagliori e riflessi che incantava chiunque la guardasse.

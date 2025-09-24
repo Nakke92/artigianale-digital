@@ -11,6 +11,7 @@ interface Product {
   description: string;
   price: number;
   image_url: string;
+  featured_image?: string;
   abv: number;
   ibu: number;
   style: string;
@@ -44,20 +45,7 @@ export const ProductCard = ({
         {/* Product Image */}
         <div className="aspect-[4/5] overflow-hidden bg-gradient-to-br from-gold-primary/20 to-red-intense/20">
           <img
-            src={(() => {
-              // Use new images based on product name
-              if (product.name.includes('Golden Shower')) {
-                return '/src/assets/golden-shower-new-2.png';
-              } else if (product.name.includes('Red Head')) {
-                return '/src/assets/red-head-new-2.png';
-              } else if (product.name.includes('Bella Negra')) {
-                return '/src/assets/bella-negra-new.png';
-              }
-              // Fallback to existing image_url
-              return product.image_url.startsWith('/src/') 
-                ? product.image_url.replace('/src/', '/') 
-                : product.image_url;
-            })()}
+            src={product.featured_image || product.image_url}
             alt={product.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             onError={(e) => {

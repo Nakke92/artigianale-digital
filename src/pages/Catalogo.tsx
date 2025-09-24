@@ -33,10 +33,12 @@ const Catalogo = () => {
 
       if (error) throw error;
 
-      // Trasforma image_url in URL pubblico
+      // Use image_url directly if it's already a full URL, otherwise construct Supabase URL
       const productsWithPublicImage = (data || []).map(p => ({
         ...p,
-        featured_image: `https://xchwmgqejzyvnfzfdlhz.supabase.co/storage/v1/object/public/images/${p.image_url}`
+        featured_image: p.image_url.startsWith('http') 
+          ? p.image_url 
+          : `https://xchwmgqejzyvnfzfdlhz.supabase.co/storage/v1/object/public/images/${p.image_url}`
       }));
 
       setProducts(productsWithPublicImage);

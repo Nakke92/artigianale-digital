@@ -16,6 +16,11 @@ serve(async (req) => {
   try {
     const { items, customerInfo, shippingAddress, billingAddress, promoCode } = await req.json();
 
+    // Validate required customer info
+    if (!customerInfo?.email) {
+      throw new Error("Email del cliente è richiesta");
+    }
+
     // Initialize Stripe
     const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
       apiVersion: "2025-08-27.basil",
@@ -28,6 +33,7 @@ serve(async (req) => {
     );
 
     let customerId = null;
+    let isAuthenticatedUser = false;
     
     // Check if user is authenticated
     const authHeader = req.headers.get("Authorization");
@@ -38,6 +44,7 @@ serve(async (req) => {
         const user = data.user;
         
         if (user?.email) {
+          isAuthenticatedUser = true;
           // Check if Stripe customer exists
           const customers = await stripe.customers.list({ email: user.email, limit: 1 });
           if (customers.data.length > 0) {
@@ -54,6 +61,15 @@ serve(async (req) => {
         }
       } catch (error) {
         console.log("Auth error, proceeding as guest:", error);
+        isAuthenticatedUser = false;
+      }
+    }
+
+    // For guest users, check if customer exists by email or create new
+    if (!isAuthenticatedUser && customerInfo.email) {
+      const customers = await stripe.customers.list({ email: customerInfo.email, limit: 1 });
+      if (customers.data.length > 0) {
+        customerId = customers.data[0].id;
       }
     }
 
@@ -119,8 +135,10 @@ serve(async (req) => {
     // Add customer info - only one of customer or customer_email, not both
     if (customerId) {
       sessionConfig.customer = customerId;
-    } else {
+    } else if (customerInfo.email) {
       sessionConfig.customer_email = customerInfo.email;
+    } else {
+      throw new Error("Email del cliente è richiesta per il checkout");
     }
 
     const session = await stripe.checkout.sessions.create(sessionConfig);

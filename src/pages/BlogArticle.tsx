@@ -70,7 +70,7 @@ Nata dalla passione per i sapori intensi e dal desiderio di creare qualcosa di v
   'bella-negra-mistero': {
     title: 'Bella Negra: Il Mistero della Notte',
     date: '2024-03-20',
-    image: '/bella-negra-new.webp',
+    image: '/uYb6cquCHUEbochqFtwmm.webp',
     content: `Nella polverosa Tombstone in Arizona, il sole tramontava dietro le colline e il vento portava con sé l’odore del fieno secco e del fumo dei camini. Quel giorno il marshal aveva catturato una delle bande più temute del West, uomini senza paura che avevano terrorizzato la regione per mesi. Ma quando la polvere si posò, tra i fuorilegge incatenati c’era lei: Bella Negra.
 
               La sua presenza era diversa. Alta, fiera, con i capelli corvini che le scendevano fino ai fianchi e uno sguardo che sfidava il mondo. Non disse una parola mentre la rinchiudevano nella cella di isolamento, ma negli occhi le brillava un fuoco indomabile.
@@ -140,11 +140,11 @@ export default function BlogArticle() {
           <Card className="bg-black-glossy/60 backdrop-blur-xl border-2 border-gold-primary/30 rounded-2xl overflow-hidden shadow-2xl">
             {/* Featured Image */}
             {article.image && (
-              <div className="w-full">
+              <div className="aspect-video overflow-hidden">
                 <img
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-auto object-contain"
+                  className="w-full h-full object-cover"
                 />
               </div>
             )}
@@ -172,18 +172,28 @@ export default function BlogArticle() {
 
               {/* Specifications Section */}
               {(article as any).specifications && (
-                <div className="mt-12 mb-8 space-y-4">
+                <div className="mt-12 mb-8">
                   <h2 className="font-anton text-3xl text-gold-primary mb-6 uppercase">Specifiche</h2>
-                  {(article as any).specifications.map((spec: any, index: number) => (
-                    <div
-                      key={index}
-                      className="bg-black-glossy/40 border border-gold-primary/30 rounded-xl p-4 flex flex-col md:flex-row md:items-center md:justify-between"
-                    >
-                      <span className="font-montserrat font-semibold text-orange-warm mb-2 md:mb-0 md:w-1/4">{spec.parameter}</span>
-                      <span className="font-lora text-white-warm mb-2 md:mb-0 md:w-2/4">{spec.description}</span>
-                      <span className="font-montserrat font-bold text-gold-primary md:w-1/4 text-left md:text-right">{spec.value}</span>
-                    </div>
-                  ))}
+                  <div className="overflow-x-auto">
+                    <table className="w-full border-collapse border border-gold-primary/30 rounded-lg overflow-hidden">
+                      <thead>
+                        <tr className="bg-gradient-to-r from-gold-primary/20 to-orange-warm/20">
+                          <th className="border border-gold-primary/30 p-4 text-left font-anton text-gold-primary uppercase">Parametro</th>
+                          <th className="border border-gold-primary/30 p-4 text-left font-anton text-gold-primary uppercase">Descrizione</th>
+                          <th className="border border-gold-primary/30 p-4 text-left font-anton text-gold-primary uppercase">Valore</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {(article as any).specifications.map((spec: any, index: number) => (
+                          <tr key={index} className="hover:bg-gold-primary/5 transition-colors">
+                            <td className="border border-gold-primary/30 p-4 font-montserrat font-semibold text-orange-warm">{spec.parameter}</td>
+                            <td className="border border-gold-primary/30 p-4 font-lora text-white-warm">{spec.description}</td>
+                            <td className="border border-gold-primary/30 p-4 font-montserrat font-bold text-gold-primary">{spec.value}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               )}
 

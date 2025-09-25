@@ -190,7 +190,7 @@ const Carrello = () => {
                     <div className="flex items-center gap-3 sm:gap-4">
                       <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden flex-shrink-0">
                         <img
-                          src={item.featured_image || item.image_url}
+                          src={item.image_url}
                           alt={item.name}
                           className="w-full h-full object-cover"
                         />

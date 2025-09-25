@@ -116,36 +116,37 @@ export default function BlogArticle() {
     );
   }
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('it-IT', {
+  const formatDate = (dateString: string) =>
+    new Date(dateString).toLocaleDateString('it-IT', {
       year: 'numeric',
       month: 'long',
-      day: 'numeric'
+      day: 'numeric',
     });
-  };
 
   return (
     <div className="min-h-screen bg-black-glossy">
       <Header />
-      
+
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           {/* Back Button */}
-          <Link to="/blog" className="inline-flex items-center gap-2 text-gold-primary hover:text-orange-warm transition-colors mb-8">
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2 text-gold-primary hover:text-orange-warm transition-colors mb-8"
+          >
             <ArrowLeft className="w-4 h-4" />
             Torna al Blog
           </Link>
 
           {/* Article */}
           <Card className="bg-black-glossy/60 backdrop-blur-xl border-2 border-gold-primary/30 rounded-2xl overflow-hidden shadow-2xl">
-            {/* Featured Image */}
-              {article.image && (
-                <div className="w-full flex justify-center items-center overflow-hidden bg-black-glossy mb-8">
+            {article.image && (
+              <div className="aspect-video overflow-hidden">
                 <img
-                src={article.image}
-                alt={article.title}
-                className="max-w-full max-h-[500px] object-contain"
-              />
+                  src={article.image}
+                  alt={article.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
             )}
 
@@ -164,35 +165,70 @@ export default function BlogArticle() {
               {/* Content */}
               <div className="prose prose-lg max-w-none">
                 {article.content.split('\n\n').map((paragraph, index) => (
-                  <p key={index} className="font-lora text-white-warm leading-relaxed mb-6 text-lg">
+                  <p
+                    key={index}
+                    className="font-lora text-white-warm leading-relaxed mb-6 text-lg"
+                  >
                     {paragraph}
                   </p>
                 ))}
               </div>
 
-              {/* Specifications Section */}
+              {/* Specifications Section - responsive */}
               {(article as any).specifications && (
                 <div className="mt-12 mb-8">
-                  <h2 className="font-anton text-3xl text-gold-primary mb-6 uppercase">Specifiche</h2>
-                  <div className="overflow-x-auto">
+                  <h2 className="font-anton text-3xl text-gold-primary mb-6 uppercase">
+                    Specifiche
+                  </h2>
+
+                  {/* Desktop table */}
+                  <div className="hidden md:block overflow-x-auto">
                     <table className="w-full border-collapse border border-gold-primary/30 rounded-lg overflow-hidden">
                       <thead>
                         <tr className="bg-gradient-to-r from-gold-primary/20 to-orange-warm/20">
-                          <th className="border border-gold-primary/30 p-4 text-left font-anton text-gold-primary uppercase">Parametro</th>
-                          <th className="border border-gold-primary/30 p-4 text-left font-anton text-gold-primary uppercase">Descrizione</th>
-                          <th className="border border-gold-primary/30 p-4 text-left font-anton text-gold-primary uppercase">Valore</th>
+                          <th className="border border-gold-primary/30 p-4 text-left font-anton text-gold-primary uppercase">
+                            Parametro
+                          </th>
+                          <th className="border border-gold-primary/30 p-4 text-left font-anton text-gold-primary uppercase">
+                            Descrizione
+                          </th>
+                          <th className="border border-gold-primary/30 p-4 text-left font-anton text-gold-primary uppercase">
+                            Valore
+                          </th>
                         </tr>
                       </thead>
                       <tbody>
                         {(article as any).specifications.map((spec: any, index: number) => (
-                          <tr key={index} className="hover:bg-gold-primary/5 transition-colors">
-                            <td className="border border-gold-primary/30 p-4 font-montserrat font-semibold text-orange-warm">{spec.parameter}</td>
-                            <td className="border border-gold-primary/30 p-4 font-lora text-white-warm">{spec.description}</td>
-                            <td className="border border-gold-primary/30 p-4 font-montserrat font-bold text-gold-primary">{spec.value}</td>
+                          <tr
+                            key={index}
+                            className="hover:bg-gold-primary/5 transition-colors"
+                          >
+                            <td className="border border-gold-primary/30 p-4 font-montserrat font-semibold text-orange-warm">
+                              {spec.parameter}
+                            </td>
+                            <td className="border border-gold-primary/30 p-4 font-lora text-white-warm">
+                              {spec.description}
+                            </td>
+                            <td className="border border-gold-primary/30 p-4 font-montserrat font-bold text-gold-primary">
+                              {spec.value}
+                            </td>
                           </tr>
                         ))}
                       </tbody>
                     </table>
+                  </div>
+
+                  {/* Mobile cards */}
+                  <div className="md:hidden space-y-4">
+                    {(article as any).specifications.map((spec: any, index: number) => (
+                      <Card key={index} className="bg-black-glossy/50 border border-gold-primary/30 p-4">
+                        <div className="font-montserrat font-semibold text-orange-warm mb-1">
+                          {spec.parameter}
+                        </div>
+                        <div className="font-lora text-white-warm mb-1">{spec.description}</div>
+                        <div className="font-montserrat font-bold text-gold-primary">{spec.value}</div>
+                      </Card>
+                    ))}
                   </div>
                 </div>
               )}
@@ -205,7 +241,10 @@ export default function BlogArticle() {
                       Scopri le nostre Birre
                     </h3>
                     <Link to="/catalogo">
-                      <Button size="lg" className="bg-gradient-to-r from-gold-primary to-orange-warm text-black-glossy font-montserrat font-bold px-8 py-4 hover:scale-105 transition-all">
+                      <Button
+                        size="lg"
+                        className="bg-gradient-to-r from-gold-primary to-orange-warm text-black-glossy font-montserrat font-bold px-8 py-4 hover:scale-105 transition-all"
+                      >
                         Vai al Catalogo
                       </Button>
                     </Link>

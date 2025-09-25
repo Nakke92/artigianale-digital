@@ -21,12 +21,7 @@ const Carrello = () => {
   const [appliedPromo, setAppliedPromo] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(false);
   
-  // Guest checkout form
-  const [guestEmail, setGuestEmail] = useState('');
-  const [guestName, setGuestName] = useState('');
-  const [guestSurname, setGuestSurname] = useState('');
-  const [guestPhone, setGuestPhone] = useState('');
-  const [checkoutAsGuest, setCheckoutAsGuest] = useState(false);
+  // No guest form needed - Stripe will handle guest info collection
 
   const handleUpdateQuantity = (productId: string, newQuantity: number) => {
     updateQuantity(productId, newQuantity);
@@ -111,32 +106,7 @@ const Carrello = () => {
     return calculateSubtotal() - calculateDiscount() + calculateShipping();
   };
 
-  const validateGuestForm = () => {
-    if (!checkoutAsGuest) return true;
-    
-    if (!guestEmail.trim()) {
-      toast.error('Inserisci la tua email');
-      return false;
-    }
-    
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(guestEmail)) {
-      toast.error('Inserisci un indirizzo email valido');
-      return false;
-    }
-    
-    if (!guestName.trim()) {
-      toast.error('Inserisci il tuo nome');
-      return false;
-    }
-    
-    if (!guestSurname.trim()) {
-      toast.error('Inserisci il tuo cognome');
-      return false;
-    }
-    
-    return true;
-  };
+  // Removed guest form validation - Stripe handles guest info
 
   const handleCheckout = async () => {
     if (cartItems.length === 0) {
@@ -144,22 +114,14 @@ const Carrello = () => {
       return;
     }
 
-    // Validate guest form if checking out as guest
-    if (!validateGuestForm()) {
-      return;
-    }
-
     setIsLoading(true);
     try {
-      const customerInfo = user && !checkoutAsGuest ? {
+      // For registered users, pass their info. For guests, let Stripe collect everything
+      const customerInfo = user ? {
         email: user.email || '',
         name: profile ? `${profile.first_name} ${profile.last_name}` : '',
         phone: profile?.phone || ''
-      } : {
-        email: guestEmail,
-        name: `${guestName} ${guestSurname}`,
-        phone: guestPhone
-      };
+      } : null;
 
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
@@ -335,83 +297,19 @@ const Carrello = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <div className="flex gap-2 mb-4">
-                      <Button
-                        variant={!checkoutAsGuest ? "default" : "outline"}
-                        size="sm"
-                        onClick={() => setCheckoutAsGuest(false)}
-                        className="flex-1"
-                      >
-                        Ho un account
-                      </Button>
-                      <Button
-                        variant={checkoutAsGuest ? "default" : "outline"}
-                        size="sm"
-                        onClick={() => setCheckoutAsGuest(true)}
-                        className="flex-1"
-                      >
-                        Checkout veloce
-                      </Button>
+                    <div className="text-center">
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Accedi per un checkout più veloce, oppure continua come ospite
+                      </p>
+                      <Link to="/auth">
+                        <Button variant="outline" className="w-full">
+                          Accedi al tuo Account
+                        </Button>
+                      </Link>
+                      <p className="text-xs text-muted-foreground mt-3">
+                        Come ospite, inserirai le tue informazioni direttamente su Stripe
+                      </p>
                     </div>
-                    
-                    {!checkoutAsGuest ? (
-                      <div className="text-center">
-                        <p className="text-sm text-muted-foreground mb-3">
-                          Accedi per un checkout più veloce
-                        </p>
-                        <Link to="/auth">
-                          <Button variant="outline" className="w-full">
-                            Accedi
-                          </Button>
-                        </Link>
-                      </div>
-                    ) : (
-                      <div className="space-y-3">
-                        <div>
-                          <Label htmlFor="guest-email">Email *</Label>
-                          <Input
-                            id="guest-email"
-                            type="email"
-                            placeholder="la-tua-email@esempio.com"
-                            value={guestEmail}
-                            onChange={(e) => setGuestEmail(e.target.value)}
-                            required
-                          />
-                        </div>
-                        <div className="grid grid-cols-2 gap-2">
-                          <div>
-                            <Label htmlFor="guest-name">Nome *</Label>
-                            <Input
-                              id="guest-name"
-                              placeholder="Mario"
-                              value={guestName}
-                              onChange={(e) => setGuestName(e.target.value)}
-                              required
-                            />
-                          </div>
-                          <div>
-                            <Label htmlFor="guest-surname">Cognome *</Label>
-                            <Input
-                              id="guest-surname"
-                              placeholder="Rossi"
-                              value={guestSurname}
-                              onChange={(e) => setGuestSurname(e.target.value)}
-                              required
-                            />
-                          </div>
-                        </div>
-                        <div>
-                          <Label htmlFor="guest-phone">Telefono (opzionale)</Label>
-                          <Input
-                            id="guest-phone"
-                            type="tel"
-                            placeholder="+39 123 456 7890"
-                            value={guestPhone}
-                            onChange={(e) => setGuestPhone(e.target.value)}
-                          />
-                        </div>
-                      </div>
-                    )}
                   </CardContent>
                 </Card>
               )}
@@ -464,7 +362,7 @@ const Carrello = () => {
                   
                   <Button 
                     onClick={handleCheckout}
-                    disabled={isLoading || (!user && !checkoutAsGuest)}
+                    disabled={isLoading}
                     className="w-full btn-golden text-lg py-6"
                   >
                     <CreditCard className="h-5 w-5 mr-2" />

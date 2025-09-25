@@ -16,10 +16,8 @@ serve(async (req) => {
   try {
     const { items, customerInfo, shippingAddress, billingAddress, promoCode } = await req.json();
 
-    // Validate required customer info
-    if (!customerInfo?.email) {
-      throw new Error("Email del cliente è richiesta");
-    }
+    // For guest users, customerInfo will be null - Stripe will collect the info
+    // For registered users, customerInfo will contain their details
 
     // Initialize Stripe
     const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
@@ -53,8 +51,8 @@ serve(async (req) => {
             // Create new customer
             const customer = await stripe.customers.create({
               email: user.email,
-              name: customerInfo.name,
-              phone: customerInfo.phone,
+              name: customerInfo?.name || '',
+              phone: customerInfo?.phone || '',
             });
             customerId = customer.id;
           }
@@ -65,13 +63,8 @@ serve(async (req) => {
       }
     }
 
-    // For guest users, check if customer exists by email or create new
-    if (!isAuthenticatedUser && customerInfo.email) {
-      const customers = await stripe.customers.list({ email: customerInfo.email, limit: 1 });
-      if (customers.data.length > 0) {
-        customerId = customers.data[0].id;
-      }
-    }
+    // For guest users, don't try to create customer records
+    // Stripe will handle guest checkout collection
 
     // Get products with Stripe price IDs and calculate totals
     let subtotal = 0;
@@ -135,11 +128,10 @@ serve(async (req) => {
     // Add customer info - only one of customer or customer_email, not both
     if (customerId) {
       sessionConfig.customer = customerId;
-    } else if (customerInfo.email) {
+    } else if (customerInfo?.email) {
       sessionConfig.customer_email = customerInfo.email;
-    } else {
-      throw new Error("Email del cliente è richiesta per il checkout");
     }
+    // If no customer info, Stripe will collect it during checkout
 
     const session = await stripe.checkout.sessions.create(sessionConfig);
 
@@ -149,7 +141,7 @@ serve(async (req) => {
     });
   } catch (error) {
     console.error("Error creating checkout session:", error);
-    return new Response(JSON.stringify({ error: error.message }), {
+    return new Response(JSON.stringify({ error: error instanceof Error ? error.message : 'An error occurred' }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 500,
     });

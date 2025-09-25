@@ -14,11 +14,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        'anton': ['Anton', 'sans-serif'],     // Titoli e nomi birre: bold, tutto caps
-        'montserrat': ['Montserrat', 'sans-serif'], // Sottotitoli & CTA: SemiBold
-        'lora': ['Lora', 'serif'],           // Corpo testo: Regular
-        'marker': ['Permanent Marker', 'cursive'], // Accenti grafici: piccole frasi, badge
-      },  
+        'anton': ['Anton', 'Impact', 'Arial Black', 'sans-serif'],     // Titoli e nomi birre con fallback
+        'montserrat': ['Montserrat', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'], // Sottotitoli con fallback
+        'lora': ['Lora', 'Georgia', 'Times New Roman', 'serif'],           // Corpo testo con fallback
+        'marker': ['Permanent Marker', 'Comic Sans MS', 'cursive'], // Accenti grafici con fallback
+      },
     fontSize: {
         'hero-mobile': '7rem', // mobile - increased from 5.5rem
         'hero-md': '6rem',        // tablet

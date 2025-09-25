@@ -7,9 +7,44 @@
     <meta name="description" content="Golden Shower: birre artigianali provocatorie e irriverenti. Una provocazione liquida che trasforma ogni sorso in un getto di loquace freschezza." />
     <meta name="author" content="Golden Shower Brewery" />
     
+    <!-- Critical font preloading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton:wght@400&family=Montserrat:wght@600&family=Lora:wght@400;500&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton:wght@400&family=Montserrat:wght@600&family=Lora:wght@400;500&family=Permanent+Marker&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Anton:wght@400&family=Montserrat:wght@600&family=Lora:wght@400;500&family=Permanent+Marker&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Critical CSS inline (above the fold) -->
+    <style>
+      /* Fallback fonts to prevent CLS */
+      .font-anton { font-family: 'Anton', Impact, 'Arial Black', sans-serif; }
+      .font-montserrat { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      .font-lora { font-family: 'Lora', Georgia, 'Times New Roman', serif; }
+      .font-marker { font-family: 'Permanent Marker', 'Comic Sans MS', cursive; }
+      
+      /* Critical layout fixes to prevent CLS */
+      body { margin: 0; padding: 0; min-height: 100vh; }
+      #root { min-height: 100vh; }
+      
+      /* Hero section fixed dimensions */
+      .hero-container { min-height: 100vh; }
+      .hero-title { line-height: 1.1; }
+      
+      /* Image placeholders */
+      img { max-width: 100%; height: auto; }
+      .product-image { aspect-ratio: 1/1; }
+      
+      /* Loading state to prevent layout shift */
+      .loading-placeholder { 
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+      }
+      
+      @keyframes loading {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
+    </style>
 
     <meta property="og:title" content="Golden Shower - Birra Artigianale per Palati Audaci" />
     <meta property="og:description" content="Provocazione liquida: birre artigianali irriverenti che accendono i sensi" />

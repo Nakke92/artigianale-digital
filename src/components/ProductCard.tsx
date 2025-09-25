@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { LoadingPlaceholder } from '@/components/LoadingPlaceholder';
 import { ShoppingCart, Eye } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -28,6 +29,7 @@ export const ProductCard = ({
   onAddToCart
 }: ProductCardProps) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const handleAddToCart = async () => {
     setIsLoading(true);
@@ -42,12 +44,18 @@ export const ProductCard = ({
   return (
     <Card className="group bg-black-glossy/80 backdrop-blur-xl border-2 border-gold-primary/40 hover:border-gold-primary/70 transition-all duration-500 hover:scale-105 overflow-hidden shadow-2xl hover:shadow-gold-primary/30">
       <div className="relative overflow-hidden">
-        {/* Product Image */}
-        <div className="aspect-[4/5] overflow-hidden bg-gradient-to-br from-gold-primary/20 to-red-intense/20">
+        {/* Product Image with loading placeholder */}
+        <div className="aspect-[4/5] overflow-hidden bg-gradient-to-br from-gold-primary/20 to-red-intense/20 relative">
+          {!imageLoaded && (
+            <LoadingPlaceholder className="absolute inset-0" aspectRatio="4/5" />
+          )}
           <img
             src={product.featured_image || product.image_url}
             alt={product.name}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            className={`w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ${
+              imageLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
+            onLoad={() => setImageLoaded(true)}
             onError={(e) => {
               const target = e.target as HTMLImageElement;
               target.style.display = 'none';
@@ -55,7 +63,10 @@ export const ProductCard = ({
               if (parent) {
                 parent.innerHTML = '<div class="w-full h-full flex items-center justify-center"><div class="text-center"><div class="text-4xl mb-2">🍺</div><p class="text-gold-primary text-sm font-anton uppercase">Golden Shower</p></div></div>';
               }
+              setImageLoaded(true);
             }}
+            loading="lazy"
+            decoding="async"
           />
         </div>
         

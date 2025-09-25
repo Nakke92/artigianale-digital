@@ -127,7 +127,7 @@ export default function BlogArticle() {
   return (
     <div className="min-h-screen bg-black-glossy">
       <Header />
-      
+
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           {/* Back Button */}
@@ -139,12 +139,12 @@ export default function BlogArticle() {
           {/* Article */}
           <Card className="bg-black-glossy/60 backdrop-blur-xl border-2 border-gold-primary/30 rounded-2xl overflow-hidden shadow-2xl">
             {/* Featured Image */}
-                {article.image && (
-                  <div className="w-full mb-6">
-                  <img
+            {article.image && (
+              <div className="w-full overflow-hidden">
+                <img
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-auto object-contain rounded-xl"
+                  className="w-full h-auto object-contain"
                 />
               </div>
             )}
@@ -174,25 +174,17 @@ export default function BlogArticle() {
               {(article as any).specifications && (
                 <div className="mt-12 mb-8">
                   <h2 className="font-anton text-3xl text-gold-primary mb-6 uppercase">Specifiche</h2>
-                  <div className="overflow-x-auto">
-                    <table className="w-full border-collapse border border-gold-primary/30 rounded-lg overflow-hidden">
-                      <thead>
-                        <tr className="bg-gradient-to-r from-gold-primary/20 to-orange-warm/20">
-                          <th className="border border-gold-primary/30 p-4 text-left font-anton text-gold-primary uppercase">Parametro</th>
-                          <th className="border border-gold-primary/30 p-4 text-left font-anton text-gold-primary uppercase">Descrizione</th>
-                          <th className="border border-gold-primary/30 p-4 text-left font-anton text-gold-primary uppercase">Valore</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {(article as any).specifications.map((spec: any, index: number) => (
-                          <tr key={index} className="hover:bg-gold-primary/5 transition-colors">
-                            <td className="border border-gold-primary/30 p-4 font-montserrat font-semibold text-orange-warm">{spec.parameter}</td>
-                            <td className="border border-gold-primary/30 p-4 font-lora text-white-warm">{spec.description}</td>
-                            <td className="border border-gold-primary/30 p-4 font-montserrat font-bold text-gold-primary">{spec.value}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
+                  <div className="grid gap-4">
+                    {(article as any).specifications.map((spec: any, index: number) => (
+                      <div
+                        key={index}
+                        className="bg-black-glossy/40 border border-gold-primary/30 rounded-xl p-4 flex flex-col md:flex-row md:items-center md:justify-between"
+                      >
+                        <span className="font-montserrat font-semibold text-orange-warm mb-2 md:mb-0 md:w-1/4">{spec.parameter}</span>
+                        <span className="font-lora text-white-warm mb-2 md:mb-0 md:w-2/4">{spec.description}</span>
+                        <span className="font-montserrat font-bold text-gold-primary md:w-1/4 text-right">{spec.value}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               )}

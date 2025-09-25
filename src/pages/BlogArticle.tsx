@@ -42,7 +42,7 @@ Ogni sorso è un viaggio indietro a quella notte di libertà e desiderio, un ric
   'red-head-nascita-ribelle': {
     title: 'Red Head: La Nascita di una Ribelle',
     date: '2024-03-10', 
-    image: '/public/WhatsApp Image 2025-09-24 at 16.05.05.webp',
+    image: '/whatsapp-2025-09-24-16-05-05.webp',
     content: `Nelle vaste praterie intorno ad Abilene, nel cuore del Vecchio West, due viaggiatori si persero tra sentieri polverosi , fino a incrociare un villaggio di nativi americani, nascosto tra campi di grano e fuochi che tremolavano nel crepuscolo. Lì, tra i tamburi lontani e le voci cantilenanti, tutto sembrava sospeso nel tempo, avvolto da un’aura di mistero e serenità primordiale.
 
               Vicino al fiume, dove le acque lambivano le rive e riflettevano il tramonto, lavando i panni dei villaggi, apparve lei: una ragazza nativa, pelle di un rosa tenue e capelli color rubino come il fuoco al tramonto. Sembrava un miraggio, sospesa tra il cielo e le onde scarlatte dei campi di grano. I suoi occhi catturavano la luce come piccole stelle liquide, e ogni movimento era un gioco di bagliori e riflessi che incantava chiunque la guardasse.

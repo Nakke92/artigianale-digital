@@ -299,13 +299,13 @@ const Carrello = () => {
                   <CardContent className="space-y-4">
                     <div className="text-center">
                       <p className="text-sm text-muted-foreground mb-3">
-                        Accedi codici promozionali e un checkout più veloce, oppure continua come ospite
+                        Accedi o registrati per codici promozionali e un checkout più veloce, oppure continua come ospite
                       </p>
                       <Link to="/auth">
                           <Button
     className="w-full bg-red-600 hover:bg-red-700 text-white font-bold"
   >         
-                          Accedi al tuo Account
+                          Accedi o Registrati
                         </Button>
                       </Link>
                       <p className="text-xs text-muted-foreground mt-3">

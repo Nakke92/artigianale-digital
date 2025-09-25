@@ -6,9 +6,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar } from 'lucide-react';
 
-// ✅ Import delle immagini
-import bellaNegra from '@/assets/bella-negra-new.png';
-
 const articles = {
   'segreto-fermentazione-perfetta': {
     title: 'Golden Shower IPA – La Leggenda',
@@ -73,7 +70,7 @@ Nata dalla passione per i sapori intensi e dal desiderio di creare qualcosa di v
   'bella-negra-mistero': {
     title: 'Bella Negra: Il Mistero della Notte',
     date: '2024-03-20',
-    image: bellaNegra, 
+    image: '/bella-negra-new.webp',
     content: `Nella polverosa Tombstone in Arizona, il sole tramontava dietro le colline e il vento portava con sé l’odore del fieno secco e del fumo dei camini. Quel giorno il marshal aveva catturato una delle bande più temute del West, uomini senza paura che avevano terrorizzato la regione per mesi. Ma quando la polvere si posò, tra i fuorilegge incatenati c’era lei: Bella Negra.
 
               La sua presenza era diversa. Alta, fiera, con i capelli corvini che le scendevano fino ai fianchi e uno sguardo che sfidava il mondo. Non disse una parola mentre la rinchiudevano nella cella di isolamento, ma negli occhi le brillava un fuoco indomabile.

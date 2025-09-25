@@ -9,10 +9,6 @@ import { supabase } from '@/integrations/supabase/client';
 import { Link } from 'react-router-dom';
 import { Calendar, Clock, Search } from 'lucide-react';
 
-// ✅ Import immagini
-import goldenShower from '@/assets/golden-shower-new.jpeg';
-import redHead from '@/assets/red-head-new.jpeg';
-import bellaNegra from '@/assets/bella-negra-new.png';
 
 interface BlogPost {
   id: string;
@@ -37,7 +33,7 @@ export default function Blog() {
         title: 'Golden Shower IPA – La Leggenda',
         slug: 'segreto-fermentazione-perfetta',
         excerpt: 'Scopri i trucchi del mestiere che rendono uniche le nostre birre artigianali.',
-        featured_image: goldenShower,
+        featured_image: '/whatsapp-2025-09-24-16-05-04.webp',
         published_at: '2024-03-15',
         created_at: '2024-03-15'
       },
@@ -46,7 +42,7 @@ export default function Blog() {
         title: 'Red Head: La Nascita di una Ribelle',
         slug: 'red-head-nascita-ribelle',
         excerpt: 'La storia dietro la creazione della nostra Red Ale dal carattere indomito.',
-        featured_image: redHead,
+        featured_image: '/whatsapp-2025-09-24-16-05-05.webp',
         published_at: '2024-03-10',
         created_at: '2024-03-10'
       },
@@ -55,7 +51,7 @@ export default function Blog() {
         title: 'Bella Negra: Il Mistero della Notte',
         slug: 'bella-negra-mistero',
         excerpt: 'Nel cuore della notte più buia nasce Bella Negra IPA, una birra dal carattere profondo e misterioso.',
-        featured_image: bellaNegra,
+        featured_image: '/bella-negra-new.webp',
         published_at: '2024-03-20',
         created_at: '2024-03-20'
       }

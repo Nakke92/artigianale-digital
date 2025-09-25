@@ -140,12 +140,12 @@ export default function BlogArticle() {
           <Card className="bg-black-glossy/60 backdrop-blur-xl border-2 border-gold-primary/30 rounded-2xl overflow-hidden shadow-2xl">
             {/* Featured Image */}
                 {article.image && (
-                <div className="w-full flex justify-center items-center overflow-hidden bg-black-glossy mb-8">
+                  <div className="w-full mb-6">
                   <img
                   src={article.image}
                   alt={article.title}
-                className="max-w-full max-h-[500px] object-contain"
-              />
+                  className="w-full h-auto object-contain rounded-xl"
+                />
               </div>
             )}
 

@@ -151,22 +151,16 @@ const Carrello = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
-      <main className="flex-grow flex items-center justify-center px-4">
+
+      {/* Variante A: semplice padding-top per far spazio all'header */}
+      <main className="flex-grow flex items-center justify-center px-4 pt-24">
         <div className="max-w-2xl mx-auto text-center flex flex-col items-center">
-          {/* Icona vettoriale */}
-          <CartIcon className="h-24 w-24 mb-6 text-primary" />
+          {/* usa l'icona vettoriale (mai tagliata) */}
+          <CartIcon className="h-28 w-28 mb-6 text-oro-primario" />
 
-          {/* Titolo */}
-          <h1 className="text-3xl font-display font-bold mb-4">
-            Il tuo carrello è vuoto
-          </h1>
+          <h1 className="text-3xl font-display font-bold mb-4">Il tuo carrello è vuoto</h1>
+          <p className="text-muted-foreground mb-8">Scopri la nostra selezione di birre artigianali premium</p>
 
-          {/* Descrizione */}
-          <p className="text-muted-foreground mb-8">
-            Scopri la nostra selezione di birre artigianali premium
-          </p>
-
-          {/* Pulsante */}
           <Link to="/catalogo">
             <Button className="btn-golden">
               <ShoppingCart className="h-4 w-4 mr-2" />
@@ -175,6 +169,7 @@ const Carrello = () => {
           </Link>
         </div>
       </main>
+
       <Footer />
     </div>
   );

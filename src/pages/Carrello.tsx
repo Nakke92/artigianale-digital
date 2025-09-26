@@ -146,17 +146,28 @@ const Carrello = () => {
     }
   };
 
-  if (cartItems.length === 0) {
+ if (cartItems.length === 0) {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
-      <main className="flex-grow flex items-center justify-center">
-        <div className="max-w-2xl mx-auto text-center p-6">
-          <div className="text-7xl mb-6">🛒</div>
-          <h1 className="text-3xl font-display font-bold mb-4">Il tuo carrello è vuoto</h1>
+      <main className="flex-grow flex items-center justify-center px-4">
+        <div className="max-w-2xl mx-auto text-center flex flex-col items-center">
+          {/* Icona carrello */}
+          <div className="text-8xl leading-none mb-6">
+            🛒
+          </div>
+
+          {/* Titolo */}
+          <h1 className="text-3xl font-display font-bold mb-4">
+            Il tuo carrello è vuoto
+          </h1>
+
+          {/* Descrizione */}
           <p className="text-muted-foreground mb-8">
             Scopri la nostra selezione di birre artigianali premium
           </p>
+
+          {/* Pulsante */}
           <Link to="/catalogo">
             <Button className="btn-golden">
               <ShoppingCart className="h-4 w-4 mr-2" />

@@ -13,6 +13,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useCart } from '@/contexts/CartContext';
 import { useAuth } from '@/contexts/AuthContext';
 import { toast } from 'sonner';
+import { ShoppingCart as CartIcon } from "lucide-react";
 
 const Carrello = () => {
   const { items: cartItems, updateQuantity, removeItem } = useCart();
@@ -152,10 +153,8 @@ const Carrello = () => {
       <Header />
       <main className="flex-grow flex items-center justify-center px-4">
         <div className="max-w-2xl mx-auto text-center flex flex-col items-center">
-          {/* Icona carrello */}
-          <div className="text-8xl leading-none mb-6">
-            🛒
-          </div>
+          {/* Icona vettoriale */}
+          <CartIcon className="h-24 w-24 mb-6 text-primary" />
 
           {/* Titolo */}
           <h1 className="text-3xl font-display font-bold mb-4">

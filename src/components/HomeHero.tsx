@@ -26,9 +26,9 @@ export const HomeHero = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-gold-primary/5 to-red-intense/10" />
       </div>
 
-      {/* Main Content */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-4">
-        <div className="text-center max-w-6xl mx-auto">
+      {/* Main Content - Fixed container to prevent CLS */}
+      <div className="hero-content flex items-center justify-center min-h-screen">
+        <div className="text-center w-full" style={{ maxWidth: '1536px' }}>
           
           {/* Provocative Badge */}
           <div className="inline-flex items-center gap-2 bg-red-intense/20 backdrop-blur-sm border border-red-intense/30 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-8">
@@ -39,15 +39,19 @@ export const HomeHero = () => {
             <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-gold-primary" />
           </div>
 
-          {/* Main Title - Massive and Bold with Enhanced Gold Effect */}
-          <h1 className="font-anton text-hero-mobile lg:text-hero-lg 2xl:text-[10rem] leading-none uppercase text-transparent bg-clip-text bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] mb-6 tracking-tight relative">
-            <span className="relative inline-block bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] bg-clip-text text-transparent animate-pulse drop-shadow-[0_0_20px_rgba(255,215,0,0.8)] filter brightness-125 contrast-125">
+          {/* Main Title - Fixed dimensions to prevent CLS */}
+          <h1 className="hero-title font-anton text-hero-mobile lg:text-hero-lg 2xl:text-[10rem] leading-none uppercase text-transparent bg-clip-text bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] mb-6 tracking-tight relative" 
+              style={{ 
+                minHeight: '160px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                contain: 'layout'
+              }}>
+            <span className="relative block bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,215,0,0.8)] filter brightness-125 contrast-125"
+                  style={{ willChange: 'transform' }}>
               Golden<br />Shower
             </span>
-            {/* Glow effect overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] bg-clip-text text-transparent opacity-50 blur-sm animate-pulse" style={{animationDuration: '3s'}}>
-              Golden<br />Shower
-            </div>
           </h1>
 
           {/* Subtitle with Attitude */}

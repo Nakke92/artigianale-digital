@@ -26,7 +26,7 @@ export default defineConfig(({ mode }) => ({
       }
     },
     target: 'esnext',
-    minify: 'terser',
+    minify: 'esbuild', // Use esbuild instead of terser (faster and no extra dependency needed)
     cssMinify: true,
     reportCompressedSize: false,
     chunkSizeWarningLimit: 1000

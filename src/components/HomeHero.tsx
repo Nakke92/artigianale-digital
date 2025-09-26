@@ -1,10 +1,13 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Sparkles, Zap, Heart, Flame } from 'lucide-react';
+import { CriticalCSS } from './CriticalCSS';
 
 export const HomeHero = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-black-glossy">
+    <>
+      <CriticalCSS />
+      <section className="hero-section hero-layout-fixed bg-black-glossy">
       {/* Animated Background with Golden Liquid Effects */}
       <div className="absolute inset-0">
         {/* Primary liquid blob */}
@@ -26,9 +29,23 @@ export const HomeHero = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-gold-primary/5 to-red-intense/10" />
       </div>
 
-      {/* Main Content - Fixed container to prevent CLS */}
-      <div className="hero-content flex items-center justify-center min-h-screen">
-        <div className="text-center w-full" style={{ maxWidth: '1536px' }}>
+      {/* Main Content - Absolutely fixed dimensions to prevent any CLS */}
+      <div className="hero-content flex items-center justify-center" 
+           style={{ 
+             position: 'relative',
+             zIndex: 10,
+             height: '100vh',
+             width: '100%',
+             contain: 'layout style paint'
+           }}>
+        <div className="text-center" 
+             style={{ 
+               width: '100%',
+               maxWidth: '1536px',
+               margin: '0 auto',
+               padding: '0 1rem',
+               contain: 'layout'
+             }}>
           
           {/* Provocative Badge */}
           <div className="inline-flex items-center gap-2 bg-red-intense/20 backdrop-blur-sm border border-red-intense/30 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-8">
@@ -62,13 +79,27 @@ export const HomeHero = () => {
             <div className="w-32 h-1 bg-gradient-to-r from-gold-primary to-red-intense mx-auto rounded-full" />
           </div>
 
-          {/* Provocative Description */}
-          <p className="font-lora text-lg md:text-xl text-white-warm/80 max-w-3xl mx-auto leading-relaxed mb-12">
-            Non la bevi per ubriacarti, ma per 
-            <span className="text-gold-primary font-semibold"> ridere</span>, per 
-            <span className="text-orange-warm font-semibold"> condividere</span>, per goderti un 
-            <span className="text-red-intense font-semibold"> getto di loquace freschezza</span> che ti sorprende ad ogni sorso.
-          </p>
+          {/* Description - Fixed container to prevent CLS */}
+          <div style={{ 
+            minHeight: '120px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginBottom: '3rem',
+            contain: 'layout'
+          }}>
+            <p className="font-lora text-lg md:text-xl text-white-warm/80 leading-relaxed"
+               style={{ 
+                 maxWidth: '768px',
+                 margin: '0 auto',
+                 contain: 'layout'
+               }}>
+              Non la bevi per ubriacarti, ma per 
+              <span className="text-gold-primary font-semibold"> ridere</span>, per 
+              <span className="text-orange-warm font-semibold"> condividere</span>, per goderti un 
+              <span className="text-red-intense font-semibold"> getto di loquace freschezza</span> che ti sorprende ad ogni sorso.
+            </p>
+          </div>
 
           {/* CTA Buttons - Futuristic Style */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
@@ -140,7 +171,8 @@ export const HomeHero = () => {
           <div className="w-1 h-3 bg-gold-primary rounded-full mt-2 animate-pulse" />
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 };
 

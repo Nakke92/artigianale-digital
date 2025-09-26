@@ -7,13 +7,12 @@ import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { ShoppingCart, Minus, Plus, Trash2, Tag, CreditCard, User } from 'lucide-react';
+import { ShoppingCart as ShoppingCartIcon, Minus, Plus, Trash2, Tag, CreditCard, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useCart } from '@/contexts/CartContext';
 import { useAuth } from '@/contexts/AuthContext';
 import { toast } from 'sonner';
-import { ShoppingCart as CartIcon } from "lucide-react";
 
 const Carrello = () => {
   const { items: cartItems, updateQuantity, removeItem } = useCart();
@@ -22,8 +21,6 @@ const Carrello = () => {
   const [appliedPromo, setAppliedPromo] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(false);
   
-  // No guest form needed - Stripe will handle guest info collection
-
   const handleUpdateQuantity = (productId: string, newQuantity: number) => {
     updateQuantity(productId, newQuantity);
   };
@@ -51,19 +48,16 @@ const Carrello = () => {
         return;
       }
 
-      // Check if expired
       if (data.expires_at && new Date(data.expires_at) < new Date()) {
         toast.error('Codice promozionale scaduto');
         return;
       }
 
-      // Check usage limit
       if (data.usage_limit && data.used_count >= data.usage_limit) {
         toast.error('Codice promozionale esaurito');
         return;
       }
 
-      // Check minimum order amount
       const subtotal = calculateSubtotal();
       if (data.min_order_amount && subtotal < data.min_order_amount) {
         toast.error(`Ordine minimo per questo codice: €${data.min_order_amount}`);
@@ -107,8 +101,6 @@ const Carrello = () => {
     return calculateSubtotal() - calculateDiscount() + calculateShipping();
   };
 
-  // Removed guest form validation - Stripe handles guest info
-
   const handleCheckout = async () => {
     if (cartItems.length === 0) {
       toast.error('Il carrello è vuoto');
@@ -117,7 +109,6 @@ const Carrello = () => {
 
     setIsLoading(true);
     try {
-      // For registered users, pass their info. For guests, let Stripe collect everything
       const customerInfo = user ? {
         email: user.email || '',
         name: profile ? `${profile.first_name} ${profile.last_name}` : '',
@@ -147,34 +138,51 @@ const Carrello = () => {
     }
   };
 
- if (cartItems.length === 0) {
-  return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <Header />
+  // --- CARRELLO VUOTO (emoji nativa con fallback font per evitare tagli) ---
+  if (cartItems.length === 0) {
+    return (
+      <div className="min-h-screen bg-background flex flex-col">
+        <Header />
 
-      {/* Variante A: semplice padding-top per far spazio all'header */}
-      <main className="flex-grow flex items-center justify-center px-4 pt-24">
-        <div className="max-w-2xl mx-auto text-center flex flex-col items-center">
-          {/* usa l'icona vettoriale (mai tagliata) */}
-          <CartIcon className="h-28 w-28 mb-6 text-oro-primario" />
+        {/* Lascia spazio all'header fisso con paddingTop; regola se necessario */}
+        <main
+          className="flex-grow flex items-center justify-center px-4"
+          style={{ paddingTop: '6rem' }}
+        >
+          <div className="max-w-2xl mx-auto text-center flex flex-col items-center">
+            {/* Emoji nativa — font stack per assicurarne il rendering corretto su vari OS */}
+            <div
+              className="mb-6"
+              style={{
+                fontSize: '6.5rem',
+                lineHeight: 1,
+                fontFamily: `'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Android Emoji', sans-serif`,
+                WebkitFontSmoothing: 'antialiased',
+                MozOsxFontSmoothing: 'grayscale'
+              }}
+              aria-hidden
+            >
+              🛒
+            </div>
 
-          <h1 className="text-3xl font-display font-bold mb-4">Il tuo carrello è vuoto</h1>
-          <p className="text-muted-foreground mb-8">Scopri la nostra selezione di birre artigianali premium</p>
+            <h1 className="text-3xl font-display font-bold mb-4">Il tuo carrello è vuoto</h1>
+            <p className="text-muted-foreground mb-8">Scopri la nostra selezione di birre artigianali premium</p>
 
-          <Link to="/catalogo">
-            <Button className="btn-golden">
-              <ShoppingCart className="h-4 w-4 mr-2" />
-              Vai al Catalogo
-            </Button>
-          </Link>
-        </div>
-      </main>
+            <Link to="/catalogo">
+              <Button className="btn-golden inline-flex items-center">
+                <ShoppingCartIcon className="h-4 w-4 mr-2" />
+                Vai al Catalogo
+              </Button>
+            </Link>
+          </div>
+        </main>
 
-      <Footer />
-    </div>
-  );
-}
+        <Footer />
+      </div>
+    );
+  }
 
+  // --- CARRELLO NON VUOTO (normale render) ---
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -215,7 +223,7 @@ const Carrello = () => {
                           <Button
                             variant="outline"
                             size="icon"
-                            onClick={() => updateQuantity(item.product_id, item.quantity - 1)}
+                            onClick={() => handleUpdateQuantity(item.product_id, item.quantity - 1)}
                             className="h-7 w-7 sm:h-8 sm:w-8"
                           >
                             <Minus className="h-3 w-3" />
@@ -224,7 +232,7 @@ const Carrello = () => {
                           <Button
                             variant="outline"
                             size="icon"
-                            onClick={() => updateQuantity(item.product_id, item.quantity + 1)}
+                            onClick={() => handleUpdateQuantity(item.product_id, item.quantity + 1)}
                             className="h-7 w-7 sm:h-8 sm:w-8"
                           >
                             <Plus className="h-3 w-3" />
@@ -234,7 +242,7 @@ const Carrello = () => {
                         <Button
                           variant="ghost"
                           size="icon"
-                          onClick={() => removeItem(item.product_id)}
+                          onClick={() => handleRemoveItem(item.product_id)}
                           className="text-destructive hover:text-destructive h-7 w-7 sm:h-8 sm:w-8"
                         >
                           <Trash2 className="h-3 w-3 sm:h-4 sm:w-4" />
@@ -307,9 +315,7 @@ const Carrello = () => {
                         Accedi o registrati per codici promozionali e un checkout più veloce, oppure continua come ospite
                       </p>
                       <Link to="/auth">
-                          <Button
-    className="w-full bg-red-600 hover:bg-red-700 text-white font-bold"
-  >         
+                        <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold">
                           Accedi o Registrati
                         </Button>
                       </Link>

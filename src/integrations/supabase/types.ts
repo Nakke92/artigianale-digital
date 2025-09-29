@@ -316,7 +316,22 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      validate_promo_code: {
+        Args: { input_code: string }
+        Returns: {
+          code: string
+          description: string
+          discount_type: string
+          discount_value: number
+          error_message: string
+          expires_at: string
+          id: string
+          is_valid: boolean
+          min_order_amount: number
+          usage_limit: number
+          used_count: number
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never

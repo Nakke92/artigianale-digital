@@ -36,35 +36,44 @@ const Carrello = () => {
     }
 
     try {
-      const { data, error } = await supabase
-        .from('promo_codes')
-        .select('*')
-        .eq('code', promoCode.toUpperCase())
-        .eq('is_active', true)
-        .single();
+      const { data, error } = await supabase.rpc('validate_promo_code', {
+        input_code: promoCode.trim()
+      });
 
-      if (error || !data) {
-        toast.error('Codice promozionale non valido');
+      if (error) {
+        toast.error('Errore durante la validazione del codice');
         return;
       }
 
-      if (data.expires_at && new Date(data.expires_at) < new Date()) {
-        toast.error('Codice promozionale scaduto');
+      // The function returns an array with one result
+      const result = data?.[0];
+      
+      if (!result?.is_valid) {
+        toast.error(result?.error_message || 'Codice promozionale non valido');
         return;
       }
 
-      if (data.usage_limit && data.used_count >= data.usage_limit) {
-        toast.error('Codice promozionale esaurito');
-        return;
-      }
-
+      // Check minimum order amount
       const subtotal = calculateSubtotal();
-      if (data.min_order_amount && subtotal < data.min_order_amount) {
-        toast.error(`Ordine minimo per questo codice: €${data.min_order_amount}`);
+      if (result.min_order_amount && subtotal < result.min_order_amount) {
+        toast.error(`Ordine minimo per questo codice: €${result.min_order_amount}`);
         return;
       }
 
-      setAppliedPromo(data);
+      // Convert the result to match the expected format
+      const promoData = {
+        id: result.id,
+        code: result.code,
+        description: result.description,
+        discount_type: result.discount_type,
+        discount_value: result.discount_value,
+        min_order_amount: result.min_order_amount,
+        expires_at: result.expires_at,
+        usage_limit: result.usage_limit,
+        used_count: result.used_count
+      };
+
+      setAppliedPromo(promoData);
       toast.success('Codice promozionale applicato!');
     } catch (error) {
       toast.error('Errore durante l\'applicazione del codice');

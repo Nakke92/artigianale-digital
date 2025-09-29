@@ -2,6 +2,50 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import Stripe from "https://esm.sh/stripe@18.5.0";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
+// Input validation schema
+const checkoutSchema = {
+  items: "array",
+  customerInfo: "object|null",
+  shippingAddress: "object|null", 
+  billingAddress: "object|null",
+  promoCode: "string|null"
+};
+
+// Rate limiting map (simple in-memory rate limiting)
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+const RATE_LIMIT_WINDOW = 60000; // 1 minute
+const RATE_LIMIT_MAX = 10; // 10 requests per minute per IP
+
+function validateInput(body: any): boolean {
+  if (!body || typeof body !== 'object') return false;
+  if (!Array.isArray(body.items) || body.items.length === 0) return false;
+  for (const item of body.items) {
+    if (!item.product_id || !item.quantity || item.quantity <= 0) return false;
+  }
+  return true;
+}
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const existing = rateLimitMap.get(ip);
+  
+  if (!existing || now > existing.resetTime) {
+    rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
+    return true;
+  }
+  
+  if (existing.count >= RATE_LIMIT_MAX) {
+    return false;
+  }
+  
+  existing.count++;
+  return true;
+}
+
+function generateSessionToken(): string {
+  return crypto.randomUUID();
+}
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
@@ -14,7 +58,26 @@ serve(async (req) => {
   }
 
   try {
-    const { items, customerInfo, shippingAddress, billingAddress, promoCode } = await req.json();
+    // Rate limiting by IP
+    const clientIP = req.headers.get("x-forwarded-for") || req.headers.get("cf-connecting-ip") || "unknown";
+    if (!checkRateLimit(clientIP)) {
+      return new Response(JSON.stringify({ error: "Rate limit exceeded" }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+        status: 429,
+      });
+    }
+
+    const body = await req.json();
+    
+    // Input validation
+    if (!validateInput(body)) {
+      return new Response(JSON.stringify({ error: "Invalid input data" }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+        status: 400,
+      });
+    }
+
+    const { items, customerInfo, shippingAddress, billingAddress, promoCode } = body;
 
     // For guest users, customerInfo will be null - Stripe will collect the info
     // For registered users, customerInfo will contain their details
@@ -32,6 +95,7 @@ serve(async (req) => {
 
     let customerId = null;
     let isAuthenticatedUser = false;
+    let sessionToken = null;
     
     // Check if user is authenticated
     const authHeader = req.headers.get("Authorization");
@@ -58,9 +122,15 @@ serve(async (req) => {
           }
         }
       } catch (error) {
-        console.log("Auth error, proceeding as guest:", error);
+        // Secure logging: no sensitive data exposed
+        console.log("Authentication failed, proceeding as guest");
         isAuthenticatedUser = false;
       }
+    }
+
+    // Generate session token for guest users
+    if (!isAuthenticatedUser) {
+      sessionToken = generateSessionToken();
     }
 
     // For guest users, don't try to create customer records
@@ -122,6 +192,8 @@ serve(async (req) => {
         promo_code: promoCode || '',
         items_count: items.length.toString(),
         subtotal: subtotal.toString(),
+        session_token: sessionToken || '',
+        user_authenticated: isAuthenticatedUser.toString(),
       },
     };
 
@@ -135,13 +207,17 @@ serve(async (req) => {
 
     const session = await stripe.checkout.sessions.create(sessionConfig);
 
-    return new Response(JSON.stringify({ url: session.url }), {
+    return new Response(JSON.stringify({ 
+      url: session.url, 
+      sessionToken: sessionToken 
+    }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
     });
   } catch (error) {
-    console.error("Error creating checkout session:", error);
-    return new Response(JSON.stringify({ error: error instanceof Error ? error.message : 'An error occurred' }), {
+    // Secure error logging - no sensitive data exposed
+    console.error("Checkout session creation failed:", error instanceof Error ? error.message : "Unknown error");
+    return new Response(JSON.stringify({ error: "Failed to create checkout session" }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 500,
     });

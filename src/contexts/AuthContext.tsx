@@ -52,13 +52,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         .single();
 
       if (error && error.code !== 'PGRST116') {
-        console.error('Error fetching profile:', error);
+        // Secure logging: no sensitive user data exposed
+        console.error('Profile fetch failed:', error.code || 'Unknown error');
         return;
       }
 
       setProfile(data);
     } catch (error) {
-      console.error('Error fetching profile:', error);
+      console.error('Profile fetch failed:', error instanceof Error ? error.message : 'Unknown error');
     }
   };
 

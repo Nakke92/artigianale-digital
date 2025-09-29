@@ -140,7 +140,7 @@ const Carrello = () => {
         toast.error('Errore durante la creazione del checkout');
       }
     } catch (error: any) {
-      console.error('Checkout error:', error);
+      console.error('Checkout failed');
       toast.error('Errore durante il checkout');
     } finally {
       setIsLoading(false);

@@ -33,7 +33,7 @@ const Successo = () => {
         });
 
         if (error) {
-          console.error('Error processing payment success:', error);
+          console.error('Payment processing failed');
           toast.error('Errore nel recupero dei dati dell\'ordine');
         } else if (data) {
           setOrderData(data);
@@ -42,7 +42,7 @@ const Successo = () => {
           toast.success('Ordine confermato con successo!');
         }
       } catch (error) {
-        console.error('Error processing payment success:', error);
+        console.error('Payment processing failed');
         toast.error('Errore nel recupero dei dati dell\'ordine');
       } finally {
         setLoading(false);

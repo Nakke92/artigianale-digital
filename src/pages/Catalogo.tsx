@@ -43,7 +43,7 @@ const Catalogo = () => {
 
       setProducts(productsWithPublicImage);
     } catch (error) {
-      console.error('Error fetching products:', error);
+      console.error('Product loading failed');
       toast.error('Errore nel caricamento dei prodotti');
     } finally {
       setLoading(false);

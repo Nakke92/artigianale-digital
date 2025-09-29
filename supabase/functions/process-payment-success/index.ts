@@ -16,6 +16,13 @@ serve(async (req) => {
   try {
     const { session_id } = await req.json();
 
+    if (!session_id) {
+      return new Response(JSON.stringify({ error: "Missing session ID" }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+        status: 400,
+      });
+    }
+
     // Initialize Stripe
     const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
       apiVersion: "2025-08-27.basil",
@@ -39,8 +46,9 @@ serve(async (req) => {
       });
     }
 
-    // Get user from auth header
+    // Get user from auth header and handle session token for guests
     let userId = null;
+    let sessionToken = null;
     const authHeader = req.headers.get("Authorization");
     if (authHeader) {
       try {
@@ -48,9 +56,12 @@ serve(async (req) => {
         const { data } = await supabaseClient.auth.getUser(token);
         userId = data.user?.id;
       } catch (error) {
-        console.log("Auth error:", error);
+        console.log("Authentication failed, checking for guest session");
       }
     }
+
+    // Extract session token from metadata for guest orders
+    sessionToken = session.metadata?.session_token || null;
 
     // Calculate totals from session
     const subtotal = session.amount_subtotal! / 100;
@@ -58,29 +69,36 @@ serve(async (req) => {
     const taxAmount = (session.total_details?.amount_tax || 0) / 100;
     const shippingAmount = session.shipping_cost?.amount_total ? session.shipping_cost.amount_total / 100 : 0;
 
-    // Create order in database
+    // Create order in database with session token support
+    const orderData: any = {
+      user_id: userId,
+      stripe_payment_intent_id: session.payment_intent,
+      status: 'paid',
+      subtotal,
+      tax_amount: taxAmount,
+      shipping_amount: shippingAmount,
+      total_amount: totalAmount,
+      currency: session.currency?.toUpperCase() || 'EUR',
+      shipping_address: session.shipping_details?.address,
+      billing_address: session.customer_details?.address,
+      customer_email: session.customer_details?.email || session.customer_email,
+      customer_phone: session.customer_details?.phone,
+      promo_code: session.metadata?.promo_code || null,
+    };
+
+    // Add session token for guest orders
+    if (!userId && sessionToken) {
+      orderData.session_token = sessionToken;
+    }
+
     const { data: order, error: orderError } = await supabaseClient
       .from('orders')
-      .insert({
-        user_id: userId,
-        stripe_payment_intent_id: session.payment_intent,
-        status: 'paid',
-        subtotal,
-        tax_amount: taxAmount,
-        shipping_amount: shippingAmount,
-        total_amount: totalAmount,
-        currency: session.currency?.toUpperCase() || 'EUR',
-        shipping_address: session.shipping_details?.address,
-        billing_address: session.customer_details?.address,
-        customer_email: session.customer_details?.email || session.customer_email,
-        customer_phone: session.customer_details?.phone,
-        promo_code: session.metadata?.promo_code || null,
-      })
+      .insert(orderData)
       .select()
       .single();
 
     if (orderError) {
-      console.error("Error creating order:", orderError);
+      console.error("Order creation failed:", orderError.code || "Unknown error");
       return new Response(JSON.stringify({ error: "Failed to create order" }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
         status: 500,
@@ -101,7 +119,7 @@ serve(async (req) => {
           .single();
         
         if (productError || !product) {
-          console.warn(`Product not found for Stripe price ID: ${item.price.id}`);
+          console.warn(`Product mapping failed for Stripe price ID: ${item.price.id}`);
           continue;
         }
         
@@ -117,7 +135,7 @@ serve(async (req) => {
           });
         
         if (itemError) {
-          console.error(`Error creating order item for product ${product.id}:`, itemError);
+          console.error(`Order item creation failed for product ${product.id}:`, itemError.code || "Unknown error");
         }
       }
     }
@@ -132,8 +150,8 @@ serve(async (req) => {
     });
 
   } catch (error) {
-    console.error("Error processing payment success:", error);
-    return new Response(JSON.stringify({ error: error instanceof Error ? error.message : 'An error occurred' }), {
+    console.error("Payment processing failed:", error instanceof Error ? error.message : "Unknown error");
+    return new Response(JSON.stringify({ error: "Payment processing failed" }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 500,
     });

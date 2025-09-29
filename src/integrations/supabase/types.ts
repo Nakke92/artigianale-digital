@@ -79,6 +79,7 @@ export type Database = {
           discount_amount: number | null
           id: string
           promo_code: string | null
+          session_token: string | null
           shipping_address: Json | null
           shipping_amount: number | null
           status: string | null
@@ -98,6 +99,7 @@ export type Database = {
           discount_amount?: number | null
           id?: string
           promo_code?: string | null
+          session_token?: string | null
           shipping_address?: Json | null
           shipping_amount?: number | null
           status?: string | null
@@ -117,6 +119,7 @@ export type Database = {
           discount_amount?: number | null
           id?: string
           promo_code?: string | null
+          session_token?: string | null
           shipping_address?: Json | null
           shipping_amount?: number | null
           status?: string | null
@@ -316,6 +319,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      set_guest_session_token: {
+        Args: { token: string }
+        Returns: undefined
+      }
       validate_promo_code: {
         Args: { input_code: string }
         Returns: {

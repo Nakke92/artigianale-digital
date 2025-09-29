@@ -88,7 +88,7 @@ export default function Admin() {
         totalCustomers: profiles?.length || 0
       });
     } catch (error) {
-      console.error('Error fetching stats:', error);
+      console.error('Stats loading failed');
       toast({
         title: "Errore",
         description: "Errore nel caricamento delle statistiche.",

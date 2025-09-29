@@ -33,7 +33,7 @@ export default function Newsletter() {
       });
       setEmail('');
     } catch (error) {
-      console.error('Error subscribing to newsletter:', error);
+      console.error('Newsletter subscription failed');
       toast({
         title: "Errore",
         description: "Errore durante l'iscrizione. Riprova più tardi.",

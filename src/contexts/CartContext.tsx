@@ -48,7 +48,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setItems(parsedCart);
       }
     } catch (error) {
-      console.error('Error loading cart from localStorage:', error);
+      // Secure logging: no cart data exposed
+      console.error('Cart loading failed');
     }
   }, []);
 
@@ -57,7 +58,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
     } catch (error) {
-      console.error('Error saving cart to localStorage:', error);
+      // Secure logging: no cart data exposed  
+      console.error('Cart saving failed');
     }
   }, [items]);
 

@@ -18,20 +18,57 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-toast'],
-          utils: ['lucide-react', 'clsx', 'tailwind-merge']
+        manualChunks: (id) => {
+          // Core React libraries
+          if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
+            return 'react-vendor';
+          }
+          // Radix UI components - split by frequency of use
+          if (id.includes('@radix-ui/react-dialog') || id.includes('@radix-ui/react-toast') || id.includes('@radix-ui/react-dropdown-menu')) {
+            return 'ui-core';
+          }
+          if (id.includes('@radix-ui')) {
+            return 'ui-extended';
+          }
+          // Supabase and database
+          if (id.includes('@supabase') || id.includes('@tanstack/react-query')) {
+            return 'database';
+          }
+          // Icons and utilities
+          if (id.includes('lucide-react')) {
+            return 'icons';
+          }
+          if (id.includes('clsx') || id.includes('tailwind-merge') || id.includes('class-variance-authority')) {
+            return 'utils';
+          }
+          // Large third-party libraries
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
         }
+      },
+      external: [],
+      treeshake: {
+        moduleSideEffects: false
       }
     },
     target: 'esnext',
-    minify: 'esbuild', // Use esbuild instead of terser (faster and no extra dependency needed)
+    minify: 'esbuild',
     cssMinify: true,
     reportCompressedSize: false,
-    chunkSizeWarningLimit: 1000
+    chunkSizeWarningLimit: 500
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom']
+    include: [
+      'react', 
+      'react-dom', 
+      'react-router-dom',
+      '@radix-ui/react-dialog',
+      '@radix-ui/react-toast', 
+      '@radix-ui/react-dropdown-menu',
+      'lucide-react',
+      '@supabase/supabase-js'
+    ],
+    force: false
   }
 }));

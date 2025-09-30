@@ -2,8 +2,11 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Sparkles, Zap, Heart, Flame } from 'lucide-react';
 import { CriticalCSS } from './CriticalCSS';
+import { useNavigate } from 'react-router-dom';
 
 export const HomeHero = () => {
+  const navigate = useNavigate();
+  
   return (
     <>
       <CriticalCSS />
@@ -106,7 +109,7 @@ export const HomeHero = () => {
             <Button 
               size="lg" 
               className="group relative overflow-hidden bg-gradient-to-r from-gold-primary via-orange-warm to-gold-primary bg-[length:200%_100%] hover:bg-[position:100%_0] text-black-glossy font-montserrat text-lg px-12 py-6 uppercase tracking-wide transition-all duration-500 hover:scale-105 shadow-2xl hover:shadow-gold-primary/50"
-              onClick={() => window.location.href = '/catalogo'}
+              onClick={() => navigate('/catalogo')}
             >
               <span className="relative z-10 flex items-center gap-3">
                 Scopri le Birre
@@ -118,7 +121,7 @@ export const HomeHero = () => {
               size="lg" 
               variant="outline" 
               className="group relative overflow-hidden border-2 border-gold-primary bg-transparent hover:bg-gold-primary text-gold-primary hover:text-black-glossy font-montserrat text-lg px-12 py-6 uppercase tracking-wide transition-all duration-300 hover:scale-105 backdrop-blur-sm"
-              onClick={() => window.location.href = '/carrello'}
+              onClick={() => navigate('/carrello')}
             >
               <span className="flex items-center gap-3">
                 Compra Ora
@@ -177,6 +180,8 @@ export const HomeHero = () => {
 };
 
 export const HomeFeatures = () => {
+  const navigate = useNavigate();
+  
   const features = [
     {
       icon: <Zap className="h-8 w-8" />,
@@ -262,7 +267,7 @@ export const HomeFeatures = () => {
               <Button
                 size="lg"
                 className="w-full sm:w-auto group relative overflow-hidden bg-gradient-to-r from-red-intense via-orange-warm to-gold-primary bg-[length:200%_100%] hover:bg-[position:100%_0] text-black-glossy font-montserrat text-lg px-8 sm:px-12 py-4 sm:py-6 uppercase tracking-wide transition-all duration-500 hover:scale-105 shadow-2xl"
-                onClick={() => window.location.href = '/catalogo'}
+                onClick={() => navigate('/catalogo')}
               >
                 <span className="flex items-center gap-3">
                   Esplora il Catalogo

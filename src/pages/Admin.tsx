@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
+import { useNavigate } from 'react-router-dom';
 import { 
   Package, 
   ShoppingCart, 
@@ -28,6 +29,7 @@ interface AdminStats {
 }
 
 export default function Admin() {
+  const navigate = useNavigate();
   const [stats, setStats] = useState<AdminStats>({
     totalOrders: 0,
     totalRevenue: 0,
@@ -127,7 +129,7 @@ export default function Admin() {
               <p className="text-muted-foreground mb-6">
                 Non hai i permessi necessari per accedere a questa area.
               </p>
-              <Button onClick={() => window.location.href = '/auth'}>
+              <Button onClick={() => navigate('/auth')}>
                 Accedi
               </Button>
             </Card>

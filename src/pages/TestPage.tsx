@@ -2,10 +2,12 @@ import { useCart } from '@/contexts/CartContext';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useNavigate } from 'react-router-dom';
 
 const TestPage = () => {
   const { items, totalItems, subtotal, addItem, clearCart } = useCart();
   const { user, profile } = useAuth();
+  const navigate = useNavigate();
 
   const testProduct = {
     id: 'ae1f38ab-3526-4558-94b0-3963f3d3bd90', // Golden Shower IPA
@@ -84,13 +86,13 @@ const TestPage = () => {
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="flex gap-2 flex-wrap">
-              <Button onClick={() => window.location.href = '/auth'}>
+              <Button onClick={() => navigate('/auth')}>
                 Vai a Login/Registrazione
               </Button>
-              <Button onClick={() => window.location.href = '/catalogo'}>
+              <Button onClick={() => navigate('/catalogo')}>
                 Vai al Catalogo
               </Button>
-              <Button onClick={() => window.location.href = '/carrello'}>
+              <Button onClick={() => navigate('/carrello')}>
                 Vai al Carrello
               </Button>
             </div>

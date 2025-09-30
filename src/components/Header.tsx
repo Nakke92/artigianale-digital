@@ -5,11 +5,13 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { ShoppingCart, Menu, User, Heart, LogOut } from 'lucide-react';
 import { useCart } from '@/contexts/CartContext';
 import { useAuth } from '@/contexts/AuthContext';
+import { useNavigate, Link } from 'react-router-dom';
 
 export const Header = () => {
   const { totalItems } = useCart();
   const { user, signOut } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navigation = [
     { name: 'Catalogo', href: '/catalogo' },
@@ -22,22 +24,22 @@ export const Header = () => {
     <header className="fixed top-0 z-50 w-full bg-black-glossy/80 backdrop-blur-xl border-b border-gold-primary/20">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center space-x-2 hover:scale-105 transition-transform cursor-pointer" onClick={() => window.location.href = '/'}>
+        <Link to="/" className="flex items-center space-x-2 hover:scale-105 transition-transform">
           <div className="relative">
             <h1 className="font-anton text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold-primary to-orange-warm uppercase tracking-wide">
               Golden Shower
             </h1>
             <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-gold-primary to-transparent" />
           </div>
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {navigation.map((item) => (
-            <a key={item.name} href={item.href} className="group relative font-montserrat text-sm uppercase tracking-wide text-white-warm hover:text-gold-primary transition-colors py-2">
+            <Link key={item.name} to={item.href} className="group relative font-montserrat text-sm uppercase tracking-wide text-white-warm hover:text-gold-primary transition-colors py-2">
               {item.name}
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-primary group-hover:w-full transition-all duration-300" />
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -58,7 +60,7 @@ export const Header = () => {
               variant="ghost"
               size="sm"
               className="hidden sm:flex font-montserrat uppercase tracking-wide text-white-warm hover:text-gold-primary hover:bg-gold-primary/10 transition-all"
-              onClick={() => window.location.href = '/auth'}
+              onClick={() => navigate('/auth')}
             >
               <User className="h-4 w-4 mr-2" />
               Login
@@ -67,7 +69,7 @@ export const Header = () => {
           
           <Button
             className="group relative overflow-hidden bg-gradient-to-r from-gold-primary to-orange-warm text-black-glossy font-montserrat uppercase tracking-wide px-6 py-2 hover:scale-105 transition-all duration-300"
-            onClick={() => window.location.href = '/carrello'}
+            onClick={() => navigate('/carrello')}
           >
             <span className="relative z-10">Carrello ({totalItems})</span>
           </Button>
@@ -87,14 +89,14 @@ export const Header = () => {
                 
                 <div className="flex flex-col space-y-3">
                   {navigation.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
-                      href={item.href}
+                      to={item.href}
                       className="text-white-warm hover:text-gold-primary transition-colors py-2 font-montserrat uppercase tracking-wide"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
 
@@ -112,13 +114,13 @@ export const Header = () => {
                     <Button 
                       variant="outline" 
                       className="w-full justify-start border-gold-primary/30 text-white-warm hover:bg-gold-primary hover:text-black-glossy" 
-                      onClick={() => window.location.href = '/auth'}
+                      onClick={() => navigate('/auth')}
                     >
                       <User className="h-4 w-4 mr-2" />
                       Account
                     </Button>
                   )}
-                  <Button variant="outline" className="w-full justify-start border-gold-primary/30 text-white-warm hover:bg-gold-primary hover:text-black-glossy" onClick={() => window.location.href = '/carrello'}>
+                  <Button variant="outline" className="w-full justify-start border-gold-primary/30 text-white-warm hover:bg-gold-primary hover:text-black-glossy" onClick={() => navigate('/carrello')}>
                     <ShoppingCart className="h-4 w-4 mr-2" />
                     Carrello ({totalItems})
                   </Button>

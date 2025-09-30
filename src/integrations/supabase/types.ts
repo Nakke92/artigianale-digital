@@ -14,6 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
+      customer_data: {
+        Row: {
+          billing_address: Json | null
+          created_at: string
+          customer_email: string | null
+          customer_phone: string | null
+          id: string
+          order_id: string
+          shipping_address: Json | null
+          updated_at: string
+        }
+        Insert: {
+          billing_address?: Json | null
+          created_at?: string
+          customer_email?: string | null
+          customer_phone?: string | null
+          id?: string
+          order_id: string
+          shipping_address?: Json | null
+          updated_at?: string
+        }
+        Update: {
+          billing_address?: Json | null
+          created_at?: string
+          customer_email?: string | null
+          customer_phone?: string | null
+          id?: string
+          order_id?: string
+          shipping_address?: Json | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       order_items: {
         Row: {
           created_at: string
@@ -71,16 +104,12 @@ export type Database = {
       }
       orders: {
         Row: {
-          billing_address: Json | null
           created_at: string
           currency: string | null
-          customer_email: string | null
-          customer_phone: string | null
           discount_amount: number | null
           id: string
           promo_code: string | null
           session_token: string | null
-          shipping_address: Json | null
           shipping_amount: number | null
           status: string | null
           stripe_payment_intent_id: string | null
@@ -91,16 +120,12 @@ export type Database = {
           user_id: string | null
         }
         Insert: {
-          billing_address?: Json | null
           created_at?: string
           currency?: string | null
-          customer_email?: string | null
-          customer_phone?: string | null
           discount_amount?: number | null
           id?: string
           promo_code?: string | null
           session_token?: string | null
-          shipping_address?: Json | null
           shipping_amount?: number | null
           status?: string | null
           stripe_payment_intent_id?: string | null
@@ -111,16 +136,12 @@ export type Database = {
           user_id?: string | null
         }
         Update: {
-          billing_address?: Json | null
           created_at?: string
           currency?: string | null
-          customer_email?: string | null
-          customer_phone?: string | null
           discount_amount?: number | null
           id?: string
           promo_code?: string | null
           session_token?: string | null
-          shipping_address?: Json | null
           shipping_amount?: number | null
           status?: string | null
           stripe_payment_intent_id?: string | null

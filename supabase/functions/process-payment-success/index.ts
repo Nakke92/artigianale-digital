@@ -69,7 +69,7 @@ serve(async (req) => {
     const taxAmount = (session.total_details?.amount_tax || 0) / 100;
     const shippingAmount = session.shipping_cost?.amount_total ? session.shipping_cost.amount_total / 100 : 0;
 
-    // Create order in database with session token support
+    // Create order in database with session token support (without sensitive data)
     const orderData: any = {
       user_id: userId,
       stripe_payment_intent_id: session.payment_intent,
@@ -79,10 +79,6 @@ serve(async (req) => {
       shipping_amount: shippingAmount,
       total_amount: totalAmount,
       currency: session.currency?.toUpperCase() || 'EUR',
-      shipping_address: session.shipping_details?.address,
-      billing_address: session.customer_details?.address,
-      customer_email: session.customer_details?.email || session.customer_email,
-      customer_phone: session.customer_details?.phone,
       promo_code: session.metadata?.promo_code || null,
     };
 
@@ -103,6 +99,24 @@ serve(async (req) => {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
         status: 500,
       });
+    }
+
+    // Create customer data entry separately with proper access control
+    const customerData = {
+      order_id: order.id,
+      customer_email: session.customer_details?.email || session.customer_email,
+      customer_phone: session.customer_details?.phone,
+      shipping_address: session.shipping_details?.address,
+      billing_address: session.customer_details?.address,
+    };
+
+    const { error: customerDataError } = await supabaseClient
+      .from('customer_data')
+      .insert(customerData);
+
+    if (customerDataError) {
+      console.error("Customer data creation failed:", customerDataError.code || "Unknown error");
+      // Continue execution as this is not critical for order completion
     }
 
     // Create order items with real product mapping

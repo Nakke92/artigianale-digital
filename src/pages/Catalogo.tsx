@@ -99,12 +99,12 @@ const Catalogo = () => {
   }
 
   return (
-    <div className="min-h-screen relative bg-gradient-to-b from-black-glossy via-black-glossy/90 to-bianco-caldo overflow-hidden">
+    <div className="min-h-screen relative bg-gradient-to-b from-black-glossy via-black-glossy/90 to-white-warm overflow-hidden">
       {/* Liquid Golden Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-oro-primario/20 rounded-full filter blur-3xl animate-pulse-golden"></div>
-        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-arancio-caldo/15 rounded-full filter blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-72 h-72 bg-oro-scuro/10 rounded-full filter blur-3xl animate-pulse-golden" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gold-primary/20 rounded-full filter blur-3xl animate-pulse-golden"></div>
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-orange-warm/15 rounded-full filter blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-72 h-72 bg-gold-dark/10 rounded-full filter blur-3xl animate-pulse-golden" style={{ animationDelay: '2s' }}></div>
       </div>
       
       {/* Animated Liquid Drops */}
@@ -120,7 +120,7 @@ const Catalogo = () => {
               animationDuration: `${4 + (i % 3)}s`,
             }}
           >
-            <div className="w-4 h-6 bg-oro-primario rounded-full transform rotate-45"></div>
+            <div className="w-4 h-6 bg-gold-primary rounded-full transform rotate-45"></div>
           </div>
         ))}
       </div>
@@ -130,33 +130,33 @@ const Catalogo = () => {
       <main className="relative z-10 container mx-auto px-4 py-8">
         {/* Page Header */}
         <div className="text-center mb-12 pt-12">
-          <h1 className="font-anton text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-oro-primario via-arancio-caldo to-oro-scuro mb-6 tracking-wider uppercase">
+          <h1 className="font-anton text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold-primary via-orange-warm to-gold-dark mb-6 tracking-wider uppercase">
             CATALOGO
           </h1>
-          <p className="font-lora text-xl text-bianco-caldo/90 max-w-3xl mx-auto leading-relaxed">
-            Scopri le nostre <span className="text-oro-primario font-bold">provocazioni liquide</span> premium. 
-            Ogni birra è una <span className="text-arancio-caldo">storia audace</span>, ogni sorso un'esperienza che 
-            <span className="text-oro-scuro"> accende i sensi</span>.
+          <p className="font-lora text-xl text-white-warm/90 max-w-3xl mx-auto leading-relaxed">
+            Scopri le nostre <span className="text-gold-primary font-bold">provocazioni liquide</span> premium. 
+            Ogni birra è una <span className="text-orange-warm">storia audace</span>, ogni sorso un'esperienza che 
+            <span className="text-gold-dark"> accende i sensi</span>.
           </p>
         </div>
 
         {/* Filters and Search */}
-        <div className="bg-black-glossy/60 backdrop-blur-xl border border-oro-primario/30 rounded-2xl p-6 mb-8 shadow-2xl">
+        <div className="bg-black-glossy/60 backdrop-blur-xl border border-gold-primary/30 rounded-2xl p-6 mb-8 shadow-2xl">
           <div className="flex flex-col lg:flex-row gap-4 items-center">
             <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-oro-primario" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-primary" />
               <Input
                 placeholder="Cerca le tue provocazioni..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 bg-black-glossy/50 border-oro-primario/30 text-bianco-caldo placeholder:text-bianco-caldo/50 focus:border-oro-primario"
+                className="pl-10 bg-black-glossy/50 border-gold-primary/30 text-white-warm placeholder:text-white-warm/50 focus:border-gold-primary"
               />
             </div>
 
             <div className="flex items-center gap-2">
-              <Filter className="h-4 w-4 text-oro-primario" />
+              <Filter className="h-4 w-4 text-gold-primary" />
               <Select value={filterStyle} onValueChange={setFilterStyle}>
-                <SelectTrigger className="w-[180px] bg-black-glossy/50 border-oro-primario/30 text-bianco-caldo">
+                <SelectTrigger className="w-[180px] bg-black-glossy/50 border-gold-primary/30 text-white-warm">
                   <SelectValue placeholder="Stile birra" />
                 </SelectTrigger>
                 <SelectContent>
@@ -169,9 +169,9 @@ const Catalogo = () => {
             </div>
 
             <div className="flex items-center gap-2">
-              <SlidersHorizontal className="h-4 w-4 text-oro-primario" />
+              <SlidersHorizontal className="h-4 w-4 text-gold-primary" />
               <Select value={sortBy} onValueChange={setSortBy}>
-                <SelectTrigger className="w-[180px] bg-black-glossy/50 border-oro-primario/30 text-bianco-caldo">
+                <SelectTrigger className="w-[180px] bg-black-glossy/50 border-gold-primary/30 text-white-warm">
                   <SelectValue placeholder="Ordina per" />
                 </SelectTrigger>
                 <SelectContent>
@@ -187,23 +187,23 @@ const Catalogo = () => {
 
           <div className="flex flex-wrap gap-2 mt-4">
             {searchTerm && (
-              <Badge className="gap-1 bg-oro-primario/20 text-oro-primario border-oro-primario/30">
+              <Badge className="gap-1 bg-gold-primary/20 text-gold-primary border-gold-primary/30">
                 Ricerca: {searchTerm}
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="h-auto p-0 text-oro-primario hover:text-arancio-caldo"
+                  className="h-auto p-0 text-gold-primary hover:text-orange-warm"
                   onClick={() => setSearchTerm('')}
                 >×</Button>
               </Badge>
             )}
             {filterStyle !== 'all' && (
-              <Badge className="gap-1 bg-arancio-caldo/20 text-arancio-caldo border-arancio-caldo/30">
+              <Badge className="gap-1 bg-orange-warm/20 text-orange-warm border-orange-warm/30">
                 Stile: {filterStyle}
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="h-auto p-0 text-arancio-caldo hover:text-oro-primario"
+                  className="h-auto p-0 text-orange-warm hover:text-gold-primary"
                   onClick={() => setFilterStyle('all')}
                 >×</Button>
               </Badge>

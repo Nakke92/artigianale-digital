@@ -11,9 +11,9 @@ export default function ChiSiamo() {
     <div className="min-h-screen relative bg-gradient-to-b from-black-glossy via-black-glossy/95 to-black-glossy overflow-hidden">
       {/* Liquid Golden Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-oro-primario/20 rounded-full filter blur-3xl animate-pulse-golden"></div>
-        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-arancio-caldo/15 rounded-full filter blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-72 h-72 bg-oro-scuro/10 rounded-full filter blur-3xl animate-pulse-golden" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gold-primary/20 rounded-full filter blur-3xl animate-pulse-golden"></div>
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-orange-warm/15 rounded-full filter blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-72 h-72 bg-gold-dark/10 rounded-full filter blur-3xl animate-pulse-golden" style={{animationDelay: '2s'}}></div>
       </div>
       
       {/* Animated Liquid Drops */}
@@ -29,7 +29,7 @@ export default function ChiSiamo() {
               animationDuration: `${4 + (i % 3)}s`
             }}
           >
-            <div className="w-4 h-6 bg-oro-primario rounded-full transform rotate-45"></div>
+            <div className="w-4 h-6 bg-gold-primary rounded-full transform rotate-45"></div>
           </div>
         ))}
       </div>
@@ -40,15 +40,15 @@ export default function ChiSiamo() {
         {/* Hero Section - Provocative */}
         <section className="text-center py-16 relative">
           <div className="relative z-10">
-            <h1 className="font-anton text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-oro-primario via-arancio-caldo to-oro-scuro mb-6 tracking-wider uppercase">
+            <h1 className="font-anton text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold-primary via-orange-warm to-gold-dark mb-6 tracking-wider uppercase">
               Golden Shower Brewery
             </h1>
-            <h2 className="font-montserrat text-2xl md:text-3xl font-bold text-arancio-caldo mb-8 uppercase tracking-wide">
+            <h2 className="font-montserrat text-2xl md:text-3xl font-bold text-orange-warm mb-8 uppercase tracking-wide">
               Dove la Provocazione Incontra l'Artigianalità
             </h2>
             <p className="font-lora text-xl text-white-warm max-w-4xl mx-auto leading-relaxed">
-              Due amici toscani di <strong className="text-oro-primario">Staffoli</strong>, un piccolo borgo 
-              dove il birrificio è nato dalla voglia di <em className="text-arancio-caldo">rompere le regole</em> 
+              Due amici toscani di <strong className="text-gold-primary">Staffoli</strong>, un piccolo borgo 
+              dove il birrificio è nato dalla voglia di <em className="text-orange-warm">rompere le regole</em>
               e sperimentare con l'irriverenza più autentica.
             </p>
           </div>
@@ -56,16 +56,16 @@ export default function ChiSiamo() {
 
         {/* Founders Section - The Provocateurs */}
         <section className="py-16">
-          <h2 className="font-anton text-5xl font-bold text-oro-primario text-center mb-12 uppercase tracking-wider">
+          <h2 className="font-anton text-5xl font-bold text-gold-primary text-center mb-12 uppercase tracking-wider">
             Il Team
           </h2>
           
           <div className="grid md:grid-cols-2 gap-12">
             {/* Lorenzo - The Visionary - Now First */}
-            <Card className="bg-black-glossy/60 backdrop-blur-xl border border-rosso-intenso/50 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300">
+            <Card className="bg-black-glossy/60 backdrop-blur-xl border border-red-intense/50 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300">
               <CardContent className="p-8 text-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-rosso-intenso to-arancio-caldo rounded-full mx-auto mb-6 flex items-center justify-center animate-float">
-                  <Palette className="h-16 w-16 text-bianco-caldo" />
+                <div className="w-32 h-32 bg-gradient-to-br from-red-intense to-orange-warm rounded-full mx-auto mb-6 flex items-center justify-center animate-float">
+                  <Palette className="h-16 w-16 text-white-warm" />
                 </div>
                 <h3 className="font-anton text-3xl font-bold text-red-intense mb-3 uppercase">Lorenzo Paolicchi</h3>
                 <p className="font-montserrat text-lg text-gold-primary mb-4 uppercase tracking-wide">Il MastroBirraio Visionario</p>
@@ -83,7 +83,7 @@ export default function ChiSiamo() {
                 </div>
 
                 <div className="mt-6 flex items-center justify-center space-x-4">
-                  <a href="tel:3406489563" className="flex items-center space-x-2 text-arancio-caldo hover:text-rosso-intenso transition-colors">
+                  <a href="tel:3406489563" className="flex items-center space-x-2 text-orange-warm hover:text-red-intense transition-colors">
                     <Phone className="h-4 w-4" />
                     <span className="font-lora">340 648 9563</span>
                   </a>
@@ -92,10 +92,10 @@ export default function ChiSiamo() {
             </Card>
 
             {/* Nicolò - The Alchemist - Now Second */}
-            <Card className="bg-black-glossy/60 backdrop-blur-xl border border-oro-primario/30 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300">
+            <Card className="bg-black-glossy/60 backdrop-blur-xl border border-gold-primary/30 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300">
               <CardContent className="p-8 text-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-oro-primario to-arancio-caldo rounded-full mx-auto mb-6 flex items-center justify-center animate-float" style={{animationDelay: '1s'}}>
-                  <Beaker className="h-16 w-16 text-nero-lucido" />
+                <div className="w-32 h-32 bg-gradient-to-br from-gold-primary to-orange-warm rounded-full mx-auto mb-6 flex items-center justify-center animate-float" style={{animationDelay: '1s'}}>
+                  <Beaker className="h-16 w-16 text-black-glossy" />
                 </div>
                 <h3 className="font-anton text-3xl font-bold text-gold-primary mb-3 uppercase">Nicolò Boschi</h3>
                 <p className="font-montserrat text-lg text-orange-warm mb-4 uppercase tracking-wide">Il MastroBirraio Alchimista</p>
@@ -112,7 +112,7 @@ export default function ChiSiamo() {
                 </div>
 
                 <div className="mt-6 flex items-center justify-center space-x-4">
-                  <a href="tel:3480720786" className="flex items-center space-x-2 text-oro-primario hover:text-arancio-caldo transition-colors">
+                  <a href="tel:3480720786" className="flex items-center space-x-2 text-gold-primary hover:text-orange-warm transition-colors">
                     <Phone className="h-4 w-4" />
                     <span className="font-lora">348 072 0786</span>
                   </a>
@@ -122,77 +122,77 @@ export default function ChiSiamo() {
           </div>
         </section>
 
-        <div className="my-16 h-0.5 bg-gradient-to-r from-transparent via-oro-primario to-transparent"></div>
+        <div className="my-16 h-0.5 bg-gradient-to-r from-transparent via-gold-primary to-transparent"></div>
 
         {/* Story Section - The Genesis */}
         <section className="py-16">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="font-anton text-4xl font-bold text-oro-primario mb-6 uppercase tracking-wide">La Genesis</h2>
-              <div className="space-y-2 font-lora text-bianco-caldo/90 leading-relaxed">
+              <h2 className="font-anton text-4xl font-bold text-gold-primary mb-6 uppercase tracking-wide">La Genesis</h2>
+              <div className="space-y-2 font-lora text-white-warm/90 leading-relaxed">
                 <p>
-                  <strong className="text-oro-primario">Golden Shower</strong> nasce come una provocazione liquida 
-                  nel cuore della Toscana, a <em className="text-arancio-caldo">Staffoli</em>, dove due amici decidono 
+                  <strong className="text-gold-primary">Golden Shower</strong> nasce come una provocazione liquida 
+                  nel cuore della Toscana, a <em className="text-orange-warm">Staffoli</em>, dove due amici decidono 
                   di trasformare l'irriverenza in arte fermentata.
                 </p>
                 <p>
-                  Ispirata al mondo dello <span className="text-rosso-intenso">"squirt" femminile</span> e al desiderio 
-                  di creare un'esperienza sensoriale che <strong className="text-oro-primario">accenda tutti i sensi</strong>, 
+                  Ispirata al mondo dello <span className="text-red-intense">"squirt" femminile</span> e al desiderio 
+                  di creare un'esperienza sensoriale che <strong className="text-gold-primary">accenda tutti i sensi</strong>, 
                   ogni birra è pensata per chi non ha paura di osare.
                 </p>
                 <p>
-                  La nostra filosofia è semplice: <em className="text-nero-lucido/90">"Non la bevi per ubriacarti, 
+                  La nostra filosofia è semplice: <em className="text-black-glossy/90">"Non la bevi per ubriacarti,
                   ma per ridere, per condividere, per goderti un getto di loquace freschezza che ti sorprende ad ogni sorso."</em>
                 </p>
               </div>
             </div>
             
-            <div className="bg-black-glossy/60 backdrop-blur-xl border border-oro-primario/30 rounded-2xl p-8 text-center shadow-2xl">
-              <h3 className="font-anton text-3xl font-bold text-rosso-intenso mb-6 uppercase">La Nostra Filosofia</h3>
-              <blockquote className="font-lora text-xl text-bianco-caldo/90 italic leading-relaxed">
+            <div className="bg-black-glossy/60 backdrop-blur-xl border border-gold-primary/30 rounded-2xl p-8 text-center shadow-2xl">
+              <h3 className="font-anton text-3xl font-bold text-red-intense mb-6 uppercase">La Nostra Filosofia</h3>
+              <blockquote className="font-lora text-xl text-white-warm/90 italic leading-relaxed">
                 "Creare birre che non seguono le regole, ma scrivono le proprie. 
-                Ogni sorso è una <span className="text-oro-primario">provocazione</span>, 
-                ogni bottiglia un <span className="text-arancio-caldo">invito al piacere</span> 
+                Ogni sorso è una <span className="text-gold-primary">provocazione</span>, 
+                ogni bottiglia un <span className="text-orange-warm">invito al piacere</span> 
                 senza compromessi."
               </blockquote>
             </div>
           </div>
         </section>
 
-        <div className="my-16 h-0.5 bg-gradient-to-r from-transparent via-arancio-caldo to-transparent"></div>
+        <div className="my-16 h-0.5 bg-gradient-to-r from-transparent via-orange-warm to-transparent"></div>
 
         {/* Location & Contact */}
         <section className="py-16">
-          <h2 className="font-anton text-4xl font-bold text-nero-lucido text-center mb-12 uppercase tracking-wide">
+          <h2 className="font-anton text-4xl font-bold text-black-glossy text-center mb-12 uppercase tracking-wide">
             Ci Trovi a Staffoli
           </h2>
           
-          <Card className="bg-black-glossy/60 backdrop-blur-xl border border-oro-primario/30 rounded-2xl max-w-2xl mx-auto shadow-2xl">
+          <Card className="bg-black-glossy/60 backdrop-blur-xl border border-gold-primary/30 rounded-2xl max-w-2xl mx-auto shadow-2xl">
             <CardContent className="p-8 text-center">
               <div className="flex justify-center mb-6">
-                <div className="p-6 bg-gradient-to-br from-oro-primario to-arancio-caldo rounded-full animate-pulse-golden">
-                  <MapPin className="h-12 w-12 text-nero-lucido" />
+                <div className="p-6 bg-gradient-to-br from-gold-primary to-orange-warm rounded-full animate-pulse-golden">
+                  <MapPin className="h-12 w-12 text-black-glossy" />
                 </div>
               </div>
               
-              <h3 className="font-anton text-2xl font-bold text-oro-primario mb-4 uppercase">Birrificio Golden Shower</h3>
-              <p className="font-lora text-lg text-nero-lucido/80 mb-6">
+              <h3 className="font-anton text-2xl font-bold text-gold-primary mb-4 uppercase">Birrificio Golden Shower</h3>
+              <p className="font-lora text-lg text-black-glossy/80 mb-6">
                 Nel cuore pulsante di Staffoli, dove la tradizione toscana 
                 incontra l'audacia più provocante.
               </p>
               
               <div className="space-y-4 text-left max-w-md mx-auto">
                 <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-oro-primario" />
-                  <span className="font-lora text-nero-lucido/80">info@goldenshower.beer</span>
+                  <Mail className="h-5 w-5 text-gold-primary" />
+                  <span className="font-lora text-black-glossy/80">info@goldenshower.beer</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-arancio-caldo" />
-                  <span className="font-lora text-nero-lucido/80">348 072 0786 (Nicolò)</span>
+                  <Phone className="h-5 w-5 text-orange-warm" />
+                  <span className="font-lora text-black-glossy/80">348 072 0786 (Nicolò)</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-rosso-intenso" />
-                  <span className="font-lora text-nero-lucido/80">340 648 9563 (Lorenzo)</span>
+                  <Phone className="h-5 w-5 text-red-intense" />
+                  <span className="font-lora text-black-glossy/80">340 648 9563 (Lorenzo)</span>
                 </div>
               </div>
             </CardContent>
@@ -202,20 +202,20 @@ export default function ChiSiamo() {
 
         {/* CTA Section - Seductive */}
 <section className="py-16 text-center">
-  <Card className="bg-gradient-to-r from-oro-primario to-arancio-caldo p-12 max-w-3xl mx-auto rounded-2xl shadow-2xl">
-    <h2 className="font-anton text-2xl sm:text-3xl md:text-4xl font-bold text-nero-lucido mb-6 uppercase tracking-wide">
+  <Card className="bg-gradient-to-r from-gold-primary to-orange-warm p-12 max-w-3xl mx-auto rounded-2xl shadow-2xl">
+    <h2 className="font-anton text-2xl sm:text-3xl md:text-4xl font-bold text-black-glossy mb-6 uppercase tracking-wide">
       Pronto per l'Esperienza?
     </h2>
-    <p className="font-lora text-xl text-nero-lucido/90 mb-8 leading-relaxed">
-      Scopri le nostre <span className="text-nero-lucido font-bold">provocazioni liquide</span> e lasciati trasportare 
-      in un viaggio sensoriale che <em className="text-rosso-intenso font-bold">accenderà i tuoi sensi</em> 
+    <p className="font-lora text-xl text-black-glossy/90 mb-8 leading-relaxed">
+      Scopri le nostre <span className="text-black-glossy font-bold">provocazioni liquide</span> e lasciati trasportare 
+      in un viaggio sensoriale che <em className="text-red-intense font-bold">accenderà i tuoi sensi</em> 
       come mai prima d'ora.
     </p>
     <div className="flex flex-col sm:flex-row gap-6 items-center justify-center">
       <Link to="/catalogo" className="w-full sm:w-auto">
         <Button
           size="lg"
-          className="w-full sm:w-auto bg-nero-lucido text-oro-primario hover:bg-nero-lucido/90 text-xl px-8 sm:px-12 py-4 font-montserrat font-bold uppercase tracking-wide hover:scale-105 transition-all duration-300"
+          className="w-full sm:w-auto bg-black-glossy text-gold-primary hover:bg-black-glossy/90 text-xl px-8 sm:px-12 py-4 font-montserrat font-bold uppercase tracking-wide hover:scale-105 transition-all duration-300"
         >
           Esplora le Birre
         </Button>
@@ -223,7 +223,7 @@ export default function ChiSiamo() {
       <Link to="/contatti" className="w-full sm:w-auto">
         <Button
           size="lg"
-          className="w-full sm:w-auto bg-rosso-intenso text-bianco-caldo hover:bg-rosso-intenso/90 text-xl px-8 sm:px-12 py-4 font-montserrat font-bold uppercase tracking-wide hover:scale-105 transition-all duration-300"
+          className="w-full sm:w-auto bg-red-intense text-white-warm hover:bg-red-intense/90 text-xl px-8 sm:px-12 py-4 font-montserrat font-bold uppercase tracking-wide hover:scale-105 transition-all duration-300"
         >
           Contattaci Subito
         </Button>

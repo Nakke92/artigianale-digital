@@ -254,6 +254,7 @@ export type Database = {
           date_of_birth: string | null
           first_name: string | null
           id: string
+          is_admin: boolean | null
           is_verified: boolean | null
           last_name: string | null
           phone: string | null
@@ -268,6 +269,7 @@ export type Database = {
           date_of_birth?: string | null
           first_name?: string | null
           id: string
+          is_admin?: boolean | null
           is_verified?: boolean | null
           last_name?: string | null
           phone?: string | null
@@ -282,6 +284,7 @@ export type Database = {
           date_of_birth?: string | null
           first_name?: string | null
           id?: string
+          is_admin?: boolean | null
           is_verified?: boolean | null
           last_name?: string | null
           phone?: string | null
@@ -340,6 +343,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      is_admin: {
+        Args: Record<PropertyKey, never>
+        Returns: boolean
+      }
       set_guest_session_token: {
         Args: { token: string }
         Returns: undefined

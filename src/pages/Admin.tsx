@@ -47,14 +47,28 @@ export default function Admin() {
   }, [isAuthorized]);
 
   const checkAuthorization = async () => {
-    // Simple auth check - in production, implement proper role-based access
     const { data: { user } } = await supabase.auth.getUser();
     
-    if (user && user.email === 'admin@goldenshower.beer') {
+    if (!user) {
+      setIsAuthorized(false);
+      setLoading(false);
+      return;
+    }
+
+    // Check if user has admin role in database (secure check)
+    const { data: roleData, error } = await supabase
+      .from('user_roles')
+      .select('role')
+      .eq('user_id', user.id)
+      .eq('role', 'admin')
+      .single();
+
+    if (!error && roleData) {
       setIsAuthorized(true);
     } else {
       setIsAuthorized(false);
     }
+    
     setLoading(false);
   };
 

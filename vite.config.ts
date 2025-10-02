@@ -14,40 +14,11 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-    dedupe: ["react", "react-dom"],
+    dedupe: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime", "scheduler"],
   },
   build: {
     rollupOptions: {
-      output: {
-        manualChunks: (id) => {
-          // Core React libraries
-          if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
-            return 'react-vendor';
-          }
-          // Radix UI components - split by frequency of use
-          if (id.includes('@radix-ui/react-dialog') || id.includes('@radix-ui/react-toast') || id.includes('@radix-ui/react-dropdown-menu')) {
-            return 'ui-core';
-          }
-          if (id.includes('@radix-ui')) {
-            return 'ui-extended';
-          }
-          // Supabase and database
-          if (id.includes('@supabase') || id.includes('@tanstack/react-query')) {
-            return 'database';
-          }
-          // Icons and utilities
-          if (id.includes('lucide-react')) {
-            return 'icons';
-          }
-          if (id.includes('clsx') || id.includes('tailwind-merge') || id.includes('class-variance-authority')) {
-            return 'utils';
-          }
-          // Large third-party libraries
-          if (id.includes('node_modules')) {
-            return 'vendor';
-          }
-        }
-      },
+      output: {},
       external: [],
       treeshake: {
         moduleSideEffects: false
@@ -56,7 +27,7 @@ export default defineConfig(({ mode }) => ({
     target: 'es2015',
     minify: 'esbuild',
     cssMinify: true,
-    cssCodeSplit: false,
+    cssCodeSplit: true,
     reportCompressedSize: false,
     chunkSizeWarningLimit: 500
   },

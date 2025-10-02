@@ -9,9 +9,10 @@ import { CartProvider } from "@/contexts/CartContext";
 import { LoadingPlaceholder } from "@/components/LoadingPlaceholder";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import Index from "./pages/Index";
+import Catalogo from "./pages/Catalogo";
 
 // Lazy load non-critical pages for better performance
-const Catalogo = lazy(() => import("./pages/Catalogo"));
+// Catalogo importato staticamente sopra
 const ChiSiamo = lazy(() => import("./pages/ChiSiamo"));
 const Blog = lazy(() => import("./pages/Blog"));
 const FAQ = lazy(() => import("./pages/FAQ"));

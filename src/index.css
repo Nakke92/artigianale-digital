@@ -106,8 +106,11 @@
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Lora', serif;
+    background: #000000;
+    background: hsl(var(--background));
+    color: #ffffff;
+    color: hsl(var(--foreground));
+    font-family: 'Lora', Georgia, serif;
   }
 
   h1, h2, h3, h4, h5, h6 {

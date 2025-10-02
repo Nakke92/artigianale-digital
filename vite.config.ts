@@ -52,9 +52,10 @@ export default defineConfig(({ mode }) => ({
         moduleSideEffects: false
       }
     },
-    target: 'esnext',
+    target: 'es2015',
     minify: 'esbuild',
     cssMinify: true,
+    cssCodeSplit: false,
     reportCompressedSize: false,
     chunkSizeWarningLimit: 500
   },

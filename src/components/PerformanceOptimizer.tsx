@@ -25,12 +25,12 @@ export const PerformanceOptimizer = () => {
     fontPreconnectCrossDomain.crossOrigin = 'anonymous';
     document.head.appendChild(fontPreconnectCrossDomain);
 
-    // Service worker registration for caching
-    if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
-      navigator.serviceWorker.register('/sw.js').catch(() => {
-        // Silent fail for service worker registration
-      });
-    }
+    // Service worker disabled temporarily to prevent caching issues
+    // if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
+    //   navigator.serviceWorker.register('/sw.js').catch(() => {
+    //     // Silent fail for service worker registration
+    //   });
+    // }
 
     return () => {
       // Cleanup

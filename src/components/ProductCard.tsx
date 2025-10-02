@@ -49,6 +49,14 @@ export const ProductCard = ({
           {!imageLoaded && (
             <LoadingPlaceholder className="absolute inset-0" aspectRatio="4/5" />
           )}
+          {imageLoaded && !document.querySelector(`img[alt="${product.name}"]`)?.getAttribute('src') && (
+            <div className="w-full h-full flex items-center justify-center">
+              <div className="text-center">
+                <div className="text-4xl mb-2">🍺</div>
+                <p className="text-gold-primary text-sm font-anton uppercase">Golden Shower</p>
+              </div>
+            </div>
+          )}
           <img
             src={product.featured_image || product.image_url}
             alt={product.name}
@@ -59,10 +67,6 @@ export const ProductCard = ({
             onError={(e) => {
               const target = e.target as HTMLImageElement;
               target.style.display = 'none';
-              const parent = target.parentElement;
-              if (parent) {
-                parent.innerHTML = '<div class="w-full h-full flex items-center justify-center"><div class="text-center"><div class="text-4xl mb-2">🍺</div><p class="text-gold-primary text-sm font-anton uppercase">Golden Shower</p></div></div>';
-              }
               setImageLoaded(true);
             }}
             loading="lazy"

@@ -19,10 +19,7 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {},
-      external: [],
-      treeshake: {
-        moduleSideEffects: false
-      }
+      external: []
     },
     target: 'es2015',
     minify: 'esbuild',

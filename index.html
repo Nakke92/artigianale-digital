@@ -145,8 +145,6 @@
       * {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        transform-style: preserve-3d;
-        backface-visibility: hidden;
       }
       
       /* Immediate layout stabilization */
@@ -200,11 +198,48 @@
               regs.forEach(function(reg){ reg.unregister().catch(function(){}); });
             }).catch(function(){});
           }
-          if (window.caches && caches.keys) {
-            caches.keys().then(function(keys){ return Promise.all(keys.map(function(k){ return caches.delete(k); })); }).catch(function(){});
-          }
         } catch(e) { /* noop */ }
       })();
+    </script>
+    
+    <!-- Watchdog: detect if React fails to mount -->
+    <script>
+      window.__APP_MOUNTED__ = false;
+      window.__SCRIPT_ERRORS__ = [];
+      window.addEventListener('error', function(e) {
+        window.__SCRIPT_ERRORS__.push({
+          msg: e.message,
+          src: e.filename,
+          line: e.lineno
+        });
+      });
+      
+      setTimeout(function() {
+        if (!window.__APP_MOUNTED__) {
+          var root = document.getElementById('root');
+          if (root) {
+            root.innerHTML = '<div style="padding:40px;color:#fff;background:#000;font-family:sans-serif;text-align:center;min-height:100vh">' +
+              '<h1 style="color:#ffd700">⚠️ App Mount Failed</h1>' +
+              '<p>React app non si è caricato correttamente.</p>' +
+              '<p><strong>Script errors:</strong> ' + (window.__SCRIPT_ERRORS__.length || 'nessuno') + '</p>' +
+              '<pre style="text-align:left;background:#111;padding:20px;overflow:auto;max-width:800px;margin:20px auto">' +
+              JSON.stringify(window.__SCRIPT_ERRORS__, null, 2) +
+              '</pre>' +
+              '<p><strong>window.onerror:</strong> ' + (window.onerror ? 'definito' : 'non definito') + '</p>' +
+              '<p><strong>Scripts loaded:</strong></p>' +
+              '<ul style="list-style:none;padding:0">';
+            var scripts = document.querySelectorAll('script[src]');
+            for (var i = 0; i < scripts.length; i++) {
+              root.innerHTML += '<li>✓ ' + scripts[i].src + '</li>';
+            }
+            root.innerHTML += '</ul></div>';
+          }
+          console.error('[WATCHDOG] App failed to mount within 6s', {
+            errors: window.__SCRIPT_ERRORS__,
+            scripts: Array.from(document.querySelectorAll('script[src]')).map(function(s){ return s.src; })
+          });
+        }
+      }, 6000);
     </script>
   </head>
 

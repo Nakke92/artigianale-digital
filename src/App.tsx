@@ -7,6 +7,7 @@ import { lazy, Suspense } from "react";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { CartProvider } from "@/contexts/CartContext";
 import { LoadingPlaceholder } from "@/components/LoadingPlaceholder";
+import ErrorBoundary from "@/components/ErrorBoundary";
 import Index from "./pages/Index";
 
 // Lazy load non-critical pages for better performance
@@ -42,87 +43,89 @@ const App = () => (
         <CartProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/catalogo" element={
-                <Suspense fallback={<PageLoader />}>
-                  <Catalogo />
-                </Suspense>
-              } />
-              <Route path="/chi-siamo" element={
-                <Suspense fallback={<PageLoader />}>
-                  <ChiSiamo />
-                </Suspense>
-              } />
-              <Route path="/blog" element={
-                <Suspense fallback={<PageLoader />}>
-                  <Blog />
-                </Suspense>
-              } />
-              <Route path="/blog/:slug" element={
-                <Suspense fallback={<PageLoader />}>
-                  <BlogArticle />
-                </Suspense>
-              } />
-              <Route path="/faq" element={
-                <Suspense fallback={<PageLoader />}>
-                  <FAQ />
-                </Suspense>
-              } />
-              <Route path="/contatti" element={
-                <Suspense fallback={<PageLoader />}>
-                  <Contatti />
-                </Suspense>
-              } />
-              <Route path="/newsletter" element={
-                <Suspense fallback={<PageLoader />}>
-                  <Newsletter />
-                </Suspense>
-              } />
-              <Route path="/privacy" element={
-                <Suspense fallback={<PageLoader />}>
-                  <Privacy />
-                </Suspense>
-              } />
-              <Route path="/terms" element={
-                <Suspense fallback={<PageLoader />}>
-                  <Terms />
-                </Suspense>
-              } />
-              <Route path="/admin" element={
-                <Suspense fallback={<PageLoader />}>
-                  <Admin />
-                </Suspense>
-              } />
-              <Route path="/auth" element={
-                <Suspense fallback={<PageLoader />}>
-                  <Auth />
-                </Suspense>
-              } />
-              <Route path="/carrello" element={
-                <Suspense fallback={<PageLoader />}>
-                  <Carrello />
-                </Suspense>
-              } />
-              <Route path="/successo" element={
-                <Suspense fallback={<PageLoader />}>
-                  <Successo />
-                </Suspense>
-              } />
-              <Route path="/test" element={
-                <Suspense fallback={<PageLoader />}>
-                  <TestPage />
-                </Suspense>
-              } />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={
-                <Suspense fallback={<PageLoader />}>
-                  <NotFound />
-                </Suspense>
-              } />
-            </Routes>
-          </BrowserRouter>
+          <ErrorBoundary>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/catalogo" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Catalogo />
+                  </Suspense>
+                } />
+                <Route path="/chi-siamo" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <ChiSiamo />
+                  </Suspense>
+                } />
+                <Route path="/blog" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Blog />
+                  </Suspense>
+                } />
+                <Route path="/blog/:slug" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <BlogArticle />
+                  </Suspense>
+                } />
+                <Route path="/faq" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <FAQ />
+                  </Suspense>
+                } />
+                <Route path="/contatti" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Contatti />
+                  </Suspense>
+                } />
+                <Route path="/newsletter" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Newsletter />
+                  </Suspense>
+                } />
+                <Route path="/privacy" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Privacy />
+                  </Suspense>
+                } />
+                <Route path="/terms" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Terms />
+                  </Suspense>
+                } />
+                <Route path="/admin" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Admin />
+                  </Suspense>
+                } />
+                <Route path="/auth" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Auth />
+                  </Suspense>
+                } />
+                <Route path="/carrello" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Carrello />
+                  </Suspense>
+                } />
+                <Route path="/successo" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Successo />
+                  </Suspense>
+                } />
+                <Route path="/test" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <TestPage />
+                  </Suspense>
+                } />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <NotFound />
+                  </Suspense>
+                } />
+              </Routes>
+            </BrowserRouter>
+          </ErrorBoundary>
         </CartProvider>
       </AuthProvider>
     </TooltipProvider>

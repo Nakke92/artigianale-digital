@@ -26,11 +26,13 @@ export const PerformanceOptimizer = () => {
     document.head.appendChild(fontPreconnectCrossDomain);
 
     // Service worker disabled temporarily to prevent caching issues
-    // if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
-    //   navigator.serviceWorker.register('/sw.js').catch(() => {
-    //     // Silent fail for service worker registration
-    //   });
-    // }
+    // Additionally, actively unregister any existing service workers that might be
+    // serving stale assets and causing blank screens in production.
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((regs) => {
+        regs.forEach((reg) => reg.unregister().catch(() => {}));
+      }).catch(() => {});
+    }
 
     return () => {
       // Cleanup

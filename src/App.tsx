@@ -8,6 +8,7 @@ import { AuthProvider } from "@/contexts/AuthContext";
 import { CartProvider } from "@/contexts/CartContext";
 import { LoadingPlaceholder } from "@/components/LoadingPlaceholder";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import { BeerBubbles } from "@/components/BeerBubbles";
 import Index from "./pages/Index";
 import Catalogo from "./pages/Catalogo";
 
@@ -42,6 +43,7 @@ const App = () => (
     <TooltipProvider>
       <AuthProvider>
         <CartProvider>
+          <BeerBubbles />
           <Toaster />
           <Sonner />
           <ErrorBoundary>

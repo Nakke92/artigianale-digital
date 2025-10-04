@@ -13,6 +13,24 @@ export const HomeHero = () => {
       <section className="hero-section hero-layout-fixed bg-black-glossy">
       {/* Animated Background with Golden Liquid Effects */}
       <div className="absolute inset-0">
+        {/* Beer Pouring Effect - Cascata Dorata */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {Array.from({ length: 18 }).map((_, i) => (
+            <div
+              key={i}
+              className="beer-stream"
+              style={{
+                left: `${5 + (i * 5.5)}%`,
+                animationName: 'beer-pour',
+                animationDuration: `${6 + (i % 4)}s`,
+                animationDelay: `${i * 0.4}s`,
+                animationIterationCount: 'infinite',
+                animationTimingFunction: 'linear'
+              }}
+            />
+          ))}
+        </div>
+
         {/* Primary liquid blob */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-gold-primary via-orange-warm to-red-intense rounded-full blur-3xl opacity-30 animate-pulse" 
              style={{animationDuration: '4s'}} />

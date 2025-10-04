@@ -30,6 +30,23 @@ export const HomeHero = () => {
         
         {/* Flowing gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-gold-primary/5 to-red-intense/10" />
+
+        {/* Beer Bubbles Effect - Bolle Frizzanti */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="beer-bubble"
+              style={{
+                '--bubble-size': `${Math.random() * 20 + 15}px`,
+                '--bubble-duration': `${Math.random() * 6 + 8}s`,
+                '--bubble-delay': `${Math.random() * 5}s`,
+                '--bubble-drift': `${(Math.random() - 0.5) * 60}px`,
+                left: `${Math.random() * 100}%`,
+              } as React.CSSProperties}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Main Content - Absolutely fixed dimensions to prevent any CLS */}

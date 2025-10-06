@@ -316,20 +316,29 @@
   }
 
   /* Bollicine Frizzanti Dorate */
-  .beer-bubble {
+  .beer-bubble-wrapper {
     position: absolute;
     bottom: -20px;
+    animation: bubble-rise linear infinite;
+    will-change: transform, opacity;
+    pointer-events: none;
+  }
+
+  .beer-bubble {
     border-radius: 50%;
     background: radial-gradient(circle at 30% 30%, 
-      hsl(51 100% 60% / 0.7), 
-      hsl(43 90% 55% / 0.6), 
-      hsl(20 100% 50% / 0.5));
-    border: 1px solid hsl(51 100% 70% / 0.3);
+      hsl(51 100% 65% / 0.9), 
+      hsl(43 90% 60% / 0.8), 
+      hsl(20 100% 55% / 0.7));
+    border: 1.5px solid hsl(51 100% 70% / 0.5);
     box-shadow: 
-      0 0 10px hsl(51 100% 50% / 0.6),
-      inset 2px 2px 4px hsl(0 0% 100% / 0.3),
+      0 0 15px hsl(51 100% 50% / 0.8),
+      0 0 25px hsl(51 100% 50% / 0.4),
+      inset 2px 2px 4px hsl(0 0% 100% / 0.4),
       inset -2px -2px 4px hsl(0 0% 0% / 0.2);
-    animation: bubble-rise linear infinite, bubble-wobble ease-in-out infinite;
+    animation: bubble-wobble ease-in-out infinite;
+    mix-blend-mode: screen;
+    will-change: transform;
   }
 
   .beer-bubble::before {

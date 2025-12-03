@@ -368,10 +368,7 @@ export type Database = {
         }
         Returns: boolean
       }
-      set_guest_session_token: {
-        Args: { token: string }
-        Returns: undefined
-      }
+      set_guest_session_token: { Args: { token: string }; Returns: undefined }
       validate_promo_code: {
         Args: { input_code: string }
         Returns: {

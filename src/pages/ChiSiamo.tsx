@@ -141,7 +141,7 @@ export default function ChiSiamo() {
                   ogni birra è pensata per chi non ha paura di osare.
                 </p>
                 <p>
-                  La nostra filosofia è semplice: <em className="text-black-glossy/90">"Non la bevi per ubriacarti,
+                  La nostra filosofia è semplice: <em className="text-white-warm/90">"Non la bevi per ubriacarti,
                   ma per ridere, per condividere, per goderti un getto di loquace freschezza che ti sorprende ad ogni sorso."</em>
                 </p>
               </div>
@@ -163,7 +163,7 @@ export default function ChiSiamo() {
 
         {/* Location & Contact */}
         <section className="py-16">
-          <h2 className="font-anton text-4xl font-bold text-black-glossy text-center mb-12 uppercase tracking-wide">
+          <h2 className="font-anton text-4xl font-bold text-gold-primary text-center mb-12 uppercase tracking-wide">
             Ci Trovi a Staffoli
           </h2>
           
@@ -176,7 +176,7 @@ export default function ChiSiamo() {
               </div>
               
               <h3 className="font-anton text-2xl font-bold text-gold-primary mb-4 uppercase">Birrificio Golden Shower</h3>
-              <p className="font-lora text-lg text-black-glossy/80 mb-6">
+              <p className="font-lora text-lg text-white-warm/80 mb-6">
                 Nel cuore pulsante di Staffoli, dove la tradizione toscana 
                 incontra l'audacia più provocante.
               </p>
@@ -184,15 +184,15 @@ export default function ChiSiamo() {
               <div className="space-y-4 text-left max-w-md mx-auto">
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-gold-primary" />
-                  <span className="font-lora text-black-glossy/80">info@goldenshower.beer</span>
+                  <span className="font-lora text-white-warm/80">info@goldenshower.beer</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-orange-warm" />
-                  <span className="font-lora text-black-glossy/80">348 072 0786 (Nicolò)</span>
+                  <span className="font-lora text-white-warm/80">348 072 0786 (Nicolò)</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-red-intense" />
-                  <span className="font-lora text-black-glossy/80">340 648 9563 (Lorenzo)</span>
+                  <span className="font-lora text-white-warm/80">340 648 9563 (Lorenzo)</span>
                 </div>
               </div>
             </CardContent>

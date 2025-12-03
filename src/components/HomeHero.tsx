@@ -111,7 +111,7 @@ export const HomeHero = () => {
           </div>
 
           {/* Stats Cards */}
-          <div className="grid grid-cols-3 gap-3 sm:gap-6 max-w-2xl mx-auto">
+          <div className="grid grid-cols-3 gap-3 sm:gap-6 max-w-2xl mx-auto pb-20">
             <Card className="bg-white-warm/10 backdrop-blur-sm border border-gold-primary/20 hover:bg-white-warm/20 transition-all duration-300 group">
               <CardContent className="p-3 sm:p-6 text-center">
                 <div className="text-xl sm:text-3xl font-anton text-gold-primary mb-1 sm:mb-2 group-hover:scale-110 transition-transform">

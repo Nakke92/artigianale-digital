@@ -59,44 +59,24 @@ export const HomeHero = () => {
             <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-gold-primary" />
           </div>
 
-          {/* Main Title - Fixed dimensions to prevent CLS */}
-          <h1 className="hero-title font-anton text-hero-mobile lg:text-hero-lg 2xl:text-[10rem] leading-none uppercase text-transparent bg-clip-text bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] mb-6 tracking-tight relative" 
-              style={{ 
-                minHeight: '160px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                contain: 'layout'
-              }}>
-            <span className="relative block bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,215,0,0.8)] filter brightness-125 contrast-125"
-                  style={{ willChange: 'transform' }}>
+          {/* Main Title */}
+          <h1 className="hero-title font-anton text-hero-mobile lg:text-hero-lg 2xl:text-[10rem] leading-none uppercase text-transparent bg-clip-text bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] mb-8 tracking-tight relative flex items-center justify-center">
+            <span className="relative block bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,215,0,0.8)] filter brightness-125 contrast-125">
               Golden<br />Shower
             </span>
           </h1>
 
           {/* Subtitle with Attitude */}
-          <div className="mb-12">
+          <div className="mb-8 mt-4">
             <p className="font-montserrat text-xl md:text-3xl text-white-warm/90 font-semibold uppercase tracking-wide mb-4">
               Birra Artigianale per Palati Audaci
             </p>
             <div className="w-32 h-1 bg-gradient-to-r from-gold-primary to-red-intense mx-auto rounded-full" />
           </div>
 
-          {/* Description - Fixed container to prevent CLS */}
-          <div style={{ 
-            minHeight: '120px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginBottom: '3rem',
-            contain: 'layout'
-          }}>
-            <p className="font-lora text-lg md:text-xl text-white-warm/80 leading-relaxed"
-               style={{ 
-                 maxWidth: '768px',
-                 margin: '0 auto',
-                 contain: 'layout'
-               }}>
+          {/* Description */}
+          <div className="mb-10 px-4">
+            <p className="font-lora text-lg md:text-xl text-white-warm/80 leading-relaxed max-w-3xl mx-auto">
               Non la bevi per ubriacarti, ma per 
               <span className="text-gold-primary font-semibold"> ridere</span>, per 
               <span className="text-orange-warm font-semibold"> condividere</span>, per goderti un 

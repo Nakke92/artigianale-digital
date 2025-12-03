@@ -191,7 +191,7 @@ export default function Contatti() {
                     <MapPin className="h-5 w-5 text-gold-primary mt-1 flex-shrink-0" />
                     <div>
                       <p className="font-montserrat font-medium text-white-warm">Birrificio Golden Shower</p>
-                      <p className="font-lora text-black-glossy/80">
+                      <p className="font-lora text-white-warm/80">
                         Staffoli, Toscana<br />
                         Italia
                       </p>
@@ -203,10 +203,10 @@ export default function Contatti() {
                     <div>
                       <p className="font-montserrat font-medium text-white-warm">Telefono</p>
                       <div className="space-y-1">
-                        <a href="tel:+393480720786" className="font-lora text-black-glossy/80 hover:text-gold-primary transition-colors block">
+                        <a href="tel:+393480720786" className="font-lora text-white-warm/80 hover:text-gold-primary transition-colors block">
                           +39 348 072 0786 (Nicolò)
                         </a>
-                        <a href="tel:+393406489563" className="font-lora text-black-glossy/80 hover:text-orange-warm transition-colors block">
+                        <a href="tel:+393406489563" className="font-lora text-white-warm/80 hover:text-orange-warm transition-colors block">
                           +39 340 648 9563 (Lorenzo)
                         </a>
                       </div>
@@ -217,7 +217,7 @@ export default function Contatti() {
                     <Mail className="h-5 w-5 text-gold-primary flex-shrink-0" />
                     <div>
                       <p className="font-montserrat font-medium text-white-warm">Email</p>
-                      <a href="mailto:info@goldenshower.beer" className="font-lora text-black-glossy/80 hover:text-gold-primary transition-colors">
+                      <a href="mailto:info@goldenshower.beer" className="font-lora text-white-warm/80 hover:text-gold-primary transition-colors">
                         info@goldenshower.beer
                       </a>
                     </div>
@@ -227,7 +227,7 @@ export default function Contatti() {
                     <Clock className="h-5 w-5 text-gold-primary mt-1 flex-shrink-0" />
                     <div>
                       <p className="font-montserrat font-medium text-white-warm">Orari di Apertura</p>
-                      <div className="font-lora text-black-glossy/80 text-sm">
+                      <div className="font-lora text-white-warm/80 text-sm">
                         <p>Lun - Ven: 9:00 - 18:00</p>
                         <p>Sabato: 10:00 - 16:00</p>
                         <p>Domenica: Chiuso</p>
@@ -278,7 +278,7 @@ export default function Contatti() {
                   <div className="text-center">
                     <MapPin className="h-12 w-12 text-gold-primary mx-auto mb-2 animate-pulse-golden" />
                     <p className="font-montserrat font-bold text-white-warm">Mappa del Birrificio</p>
-                    <p className="font-lora text-sm text-black-glossy/80">Staffoli, Toscana</p>
+                    <p className="font-lora text-sm text-white-warm/80">Staffoli, Toscana</p>
                   </div>
                 </div>
               </CardContent>

@@ -154,10 +154,13 @@ serve(async (req) => {
       }
     }
 
+    // Strip sensitive fields before returning to client
+    const { session_token, stripe_payment_intent_id, ...safeOrder } = order;
+    
     return new Response(JSON.stringify({ 
       success: true, 
       order_id: order.id,
-      order 
+      order: safeOrder 
     }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,

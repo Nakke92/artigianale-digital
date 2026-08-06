@@ -13,9 +13,9 @@ export const CriticalCSS = () => {
       .hero-section {
         position: relative;
         width: 100%;
-        height: 100vh;
-        contain: layout style paint;
+        min-height: 100vh;
       }
+
       
       .hero-content-wrapper {
         position: absolute;

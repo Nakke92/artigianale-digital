@@ -109,7 +109,7 @@ export default function Blog() {
               News & Eventi
             </h1>
             <p className="font-lora text-xl text-white-warm max-w-2xl mx-auto">
-              Resta aggiornato sulle nostre <span className="text-gold-primary">ultime creazioni</span>, eventi e storie dal mondo <span className="text-red-intense">Golden Shower</span>
+              Resta aggiornato sulle nostre <span className="text-gold-primary">ultime creazioni</span>, eventi e storie dal mondo <span className="text-red-intense">Birreria LI-DO</span>
             </p>
           </div>
         </section>

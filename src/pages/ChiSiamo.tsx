@@ -41,7 +41,7 @@ export default function ChiSiamo() {
         <section className="text-center py-16 relative">
           <div className="relative z-10">
             <h1 className="font-anton text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold-primary via-orange-warm to-gold-dark mb-6 tracking-wider uppercase">
-              Golden Shower Brewery
+              Birreria LI-DO
             </h1>
             <h2 className="font-montserrat text-2xl md:text-3xl font-bold text-orange-warm mb-8 uppercase tracking-wide">
               Dove la Provocazione Incontra l'Artigianalità
@@ -131,7 +131,7 @@ export default function ChiSiamo() {
               <h2 className="font-anton text-4xl font-bold text-gold-primary mb-6 uppercase tracking-wide">La Genesis</h2>
               <div className="space-y-2 font-lora text-white-warm/90 leading-relaxed">
                 <p>
-                  <strong className="text-gold-primary">Golden Shower</strong> nasce come una provocazione liquida 
+                  <strong className="text-gold-primary">Birreria LI-DO</strong> nasce come una provocazione liquida 
                   nel cuore della Toscana, a <em className="text-orange-warm">Staffoli</em>, dove due amici decidono 
                   di trasformare l'irriverenza in arte fermentata.
                 </p>
@@ -175,7 +175,7 @@ export default function ChiSiamo() {
                 </div>
               </div>
               
-              <h3 className="font-anton text-2xl font-bold text-gold-primary mb-4 uppercase">Birrificio Golden Shower</h3>
+              <h3 className="font-anton text-2xl font-bold text-gold-primary mb-4 uppercase">Birreria LI-DO</h3>
               <p className="font-lora text-lg text-white-warm/80 mb-6">
                 Nel cuore pulsante di Staffoli, dove la tradizione toscana 
                 incontra l'audacia più provocante.
@@ -184,7 +184,7 @@ export default function ChiSiamo() {
               <div className="space-y-4 text-left max-w-md mx-auto">
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-gold-primary" />
-                  <span className="font-lora text-white-warm/80">info@goldenshower.beer</span>
+                  <span className="font-lora text-white-warm/80">info@birrerialido.it</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-orange-warm" />

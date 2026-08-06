@@ -166,7 +166,7 @@ export default function Admin() {
               Dashboard Admin
             </h1>
             <p className="text-muted-foreground">
-              Gestisci il tuo e-commerce Golden Shower
+              Gestisci il tuo e-commerce Birreria LI-DO
             </p>
           </div>
           <Button className="btn-golden">
@@ -326,11 +326,11 @@ export default function Admin() {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium mb-2">Nome Azienda</label>
-                      <Input defaultValue="Golden Shower Brewery S.r.l." />
+                      <Input defaultValue="Birreria LI-DO S.r.l." />
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-2">Email</label>
-                      <Input defaultValue="info@goldenshower.beer" />
+                      <Input defaultValue="info@birrerialido.it" />
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-2">Telefono</label>

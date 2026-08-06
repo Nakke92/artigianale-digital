@@ -37,21 +37,19 @@ export const HomeHero = () => {
            style={{ 
              position: 'relative',
              zIndex: 10,
-             height: '100vh',
-             width: '100%',
-             contain: 'layout style paint'
+             minHeight: '100vh',
+             width: '100%'
            }}>
-        <div className="text-center" 
+        <div className="text-center py-24 sm:py-28" 
              style={{ 
                width: '100%',
                maxWidth: '1536px',
                margin: '0 auto',
-               padding: '0 1rem',
-               contain: 'layout'
+               padding: '6rem 1rem 4rem'
              }}>
           
           {/* Provocative Badge */}
-          <div className="inline-flex items-center gap-2 bg-red-intense/20 backdrop-blur-sm border border-red-intense/30 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-8">
+          <div className="inline-flex items-center gap-2 bg-red-intense/20 backdrop-blur-sm border border-red-intense/30 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8">
             <Flame className="w-4 h-4 sm:w-5 sm:h-5 text-red-intense animate-pulse" />
             <span className="font-marker text-red-intense text-xs sm:text-sm uppercase tracking-wide">
               Provocazione Liquida
@@ -60,11 +58,12 @@ export const HomeHero = () => {
           </div>
 
           {/* Main Title */}
-          <h1 className="hero-title font-anton text-hero-mobile lg:text-hero-lg 2xl:text-[10rem] leading-none uppercase text-transparent bg-clip-text bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] mb-8 tracking-tight relative flex items-center justify-center">
+          <h1 className="hero-title font-anton text-5xl sm:text-7xl lg:text-hero-lg 2xl:text-[10rem] leading-[0.95] uppercase text-transparent bg-clip-text bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] mb-6 sm:mb-8 tracking-tight relative flex items-center justify-center">
             <span className="relative block bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,215,0,0.8)] filter brightness-125 contrast-125">
-              Golden<br />Shower
+              Birreria<br />LI-DO
             </span>
           </h1>
+
 
           {/* Subtitle with Attitude */}
           <div className="mb-8 mt-4">

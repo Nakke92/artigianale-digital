@@ -24,14 +24,16 @@ export const Header = () => {
     <header className="fixed top-0 z-50 w-full bg-black-glossy/80 backdrop-blur-xl border-b border-gold-primary/20">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center space-x-2 hover:scale-105 transition-transform">
+        <Link to="/" className="flex items-center shrink-0 hover:scale-105 transition-transform">
           <div className="relative">
-            <h1 className="font-anton text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold-primary to-orange-warm uppercase tracking-wide">
-              Birreria LI-DO
+            <h1 className="font-anton font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold-primary to-orange-warm uppercase tracking-wide leading-[0.95] text-xl sm:text-2xl md:text-3xl">
+              <span className="block whitespace-nowrap">Birreria</span>
+              <span className="block whitespace-nowrap md:inline md:ml-2">LI-DO</span>
             </h1>
             <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-gold-primary to-transparent" />
           </div>
         </Link>
+
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">

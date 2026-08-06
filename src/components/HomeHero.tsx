@@ -197,7 +197,7 @@ export const HomeFeatures = () => {
           <div className="inline-flex items-center gap-2 bg-gold-primary/10 backdrop-blur-sm border border-gold-primary/20 rounded-full px-6 py-3 mb-8">
             <Sparkles className="w-5 h-5 text-gold-primary" />
             <span className="font-marker text-gold-primary text-sm uppercase">
-              Perché Scegliere Golden Shower
+              Perché Scegliere Birreria LI-DO
             </span>
           </div>
           

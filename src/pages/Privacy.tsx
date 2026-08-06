@@ -36,9 +36,9 @@ export default function Privacy() {
               <section>
                 <h2 className="text-2xl font-display text-golden mb-4">1. Titolare del Trattamento</h2>
                 <p className="text-white/80">
-                  Il Titolare del trattamento dei dati è Golden Shower Brewery S.r.l., 
+                  Il Titolare del trattamento dei dati è Birreria LI-DO S.r.l., 
                   con sede in Via della Birra Artigianale, 42 - 00100 Roma (RM), 
-                  P.IVA: 12345678901, email: privacy@goldenshower.beer
+                  P.IVA: 12345678901, email: privacy@birrerialido.it
                 </p>
               </section>
 
@@ -159,7 +159,7 @@ export default function Privacy() {
                 <h2 className="text-2xl font-display text-golden mb-4">10. Contatti</h2>
                 <p className="text-white/80">
                   Per esercitare i tuoi diritti o per qualsiasi domanda sulla privacy, 
-                  contattaci a: privacy@goldenshower.beer
+                  contattaci a: privacy@birrerialido.it
                 </p>
                 <p className="text-white/60 mt-4 text-sm">
                   Ultimo aggiornamento: 19 settembre 2024

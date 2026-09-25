@@ -83,8 +83,8 @@ export const ProductCard = ({
                 return '/blog/segreto-fermentazione-perfetta';
               } else if (product.name.includes('Red Head')) {
                 return '/blog/red-head-nascita-ribelle';
-              } else if (product.name.includes('Bella Negra')) {
-                return '/blog/bella-negra-mistero';
+              } else if (product.name.includes('Trinidad Bastard') || product.name.includes('Bella Negra')) {
+                return '/blog/trinidad-bastard';
               }
               return `/prodotto/${product.id}`;
             })()} className="w-full">
@@ -119,7 +119,7 @@ export const ProductCard = ({
           <h3 className={`font-anton text-xl group-hover:text-orange-warm transition-colors uppercase tracking-wide ${
             product.name.includes('Golden Shower') ? 'text-[#FFD700]' :
             product.name.includes('Red Head') ? 'text-[#FF0000]' :
-            product.name.includes('Bella Negra') ? 'text-[#8B4513]' :
+            (product.name.includes('Trinidad Bastard') || product.name.includes('Bella Negra')) ? 'text-orange-warm' :
             'text-gold-primary'
           }`}>
             {product.name}

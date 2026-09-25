@@ -11,7 +11,7 @@ export const Footer = () => {
           <div className="space-y-6">
             <div className="relative">
               <h3 className="font-anton text-2xl text-transparent bg-clip-text bg-gradient-to-r from-gold-primary to-orange-warm uppercase tracking-wide">
-                Birreria LI-DO
+                Birrificio Lido
               </h3>
               <div className="w-16 h-0.5 bg-gradient-to-r from-gold-primary to-transparent mt-2" />
             </div>
@@ -73,7 +73,7 @@ export const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-gold-primary" />
-                <span className="font-lora text-white-warm/70">info@birrerialido.it</span>
+                <span className="font-lora text-white-warm/70">info@birrificiolido.it</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-gold-primary" />
@@ -93,7 +93,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gold-primary/20 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center">
           <p className="font-lora text-sm text-white-warm/50 mb-4 md:mb-0">
-            © 2024 Birreria LI-DO. Tutti i diritti riservati.
+            © 2024 Birrificio Lido. Tutti i diritti riservati.
           </p>
           <div className="flex items-center space-x-6 text-sm">
             <span className="text-red-intense font-semibold font-marker text-lg">⚠️ Bevi Responsabilmente</span>

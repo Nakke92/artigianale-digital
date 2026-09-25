@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/input';
 import { supabase } from '@/integrations/supabase/client';
 import { Link } from 'react-router-dom';
 import { Calendar, Clock, Search } from 'lucide-react';
+import trinidadBastardLabel from '@/assets/trinidad-bastard-etichetta-corretta.jpg';
 
 
 interface BlogPost {
@@ -48,10 +49,10 @@ export default function Blog() {
       },
       {
         id: '3',
-        title: 'Bella Negra: Il Mistero della Notte',
-        slug: 'bella-negra-mistero',
-        excerpt: 'Nel cuore della notte più buia nasce Bella Negra IPA, una birra dal carattere profondo e misterioso.',
-        featured_image: '/bella-negra-new.webp',
+        title: 'Trinidad Bastard – La Sirena dei Caraibi',
+        slug: 'trinidad-bastard',
+        excerpt: 'Tripel belga dorata, speziata ed esotica: morbida al primo sorso, calda e avvolgente nel finale. 6,6% ABV.',
+        featured_image: trinidadBastardLabel,
         published_at: '2024-03-20',
         created_at: '2024-03-20'
       }
@@ -109,7 +110,7 @@ export default function Blog() {
               News & Eventi
             </h1>
             <p className="font-lora text-xl text-white-warm max-w-2xl mx-auto">
-              Resta aggiornato sulle nostre <span className="text-gold-primary">ultime creazioni</span>, eventi e storie dal mondo <span className="text-red-intense">Birreria LI-DO</span>
+              Resta aggiornato sulle nostre <span className="text-gold-primary">ultime creazioni</span>, eventi e storie dal mondo <span className="text-red-intense">Birrificio Lido</span>
             </p>
           </div>
         </section>

@@ -60,7 +60,7 @@ export const HomeHero = () => {
           {/* Main Title */}
           <h1 className="hero-title font-anton text-5xl sm:text-7xl lg:text-hero-lg 2xl:text-[10rem] leading-[0.95] uppercase text-transparent bg-clip-text bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] mb-6 sm:mb-8 tracking-tight relative flex items-center justify-center">
             <span className="relative block bg-gradient-to-br from-[#FFD700] via-[#FFA500] to-[#FF8C00] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,215,0,0.8)] filter brightness-125 contrast-125">
-              Birreria<br />LI-DO
+              Birrificio<br />Lido
             </span>
           </h1>
 
@@ -196,7 +196,7 @@ export const HomeFeatures = () => {
           <div className="inline-flex items-center gap-2 bg-gold-primary/10 backdrop-blur-sm border border-gold-primary/20 rounded-full px-6 py-3 mb-8">
             <Sparkles className="w-5 h-5 text-gold-primary" />
             <span className="font-marker text-gold-primary text-sm uppercase">
-              Perché Scegliere Birreria LI-DO
+              Perché Scegliere Birrificio Lido
             </span>
           </div>
           

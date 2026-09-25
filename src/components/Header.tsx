@@ -27,8 +27,8 @@ export const Header = () => {
         <Link to="/" className="flex items-center shrink-0 hover:scale-105 transition-transform">
           <div className="relative">
             <h1 className="font-anton font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold-primary to-orange-warm uppercase tracking-wide leading-[0.95] text-xl sm:text-2xl md:text-3xl">
-              <span className="block whitespace-nowrap">Birreria</span>
-              <span className="block whitespace-nowrap md:inline md:ml-2">LI-DO</span>
+              <span className="block whitespace-nowrap">Birrificio</span>
+              <span className="block whitespace-nowrap md:inline md:ml-2">Lido</span>
             </h1>
             <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-gold-primary to-transparent" />
           </div>
@@ -86,7 +86,7 @@ export const Header = () => {
             <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-black-glossy border-gold-primary/20">
               <div className="flex flex-col space-y-4 mt-6">
                 <div className="text-lg font-anton text-gold-primary uppercase">
-                  Birreria LI-DO
+                  Birrificio Lido
                 </div>
                 
                 <div className="flex flex-col space-y-3">

@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar } from 'lucide-react';
+import trinidadBastardLabel from '@/assets/trinidad-bastard-etichetta-corretta.jpg';
 
 const articles = {
   'segreto-fermentazione-perfetta': {
@@ -67,32 +68,24 @@ Nata dalla passione per i sapori intensi e dal desiderio di creare qualcosa di v
     ]
   },
 
-  'bella-negra-mistero': {
-    title: 'Bella Negra: Il Mistero della Notte',
+  'trinidad-bastard': {
+    title: 'Trinidad Bastard – La Sirena dei Caraibi',
     date: '2024-03-20',
-    image: '/uYb6cquCHUEbochqFtwmm.webp',
-    content: `Nella polverosa Tombstone in Arizona, il sole tramontava dietro le colline e il vento portava con sé l’odore del fieno secco e del fumo dei camini. Quel giorno il marshal aveva catturato una delle bande più temute del West, uomini senza paura che avevano terrorizzato la regione per mesi. Ma quando la polvere si posò, tra i fuorilegge incatenati c’era lei: Bella Negra.
+    image: trinidadBastardLabel,
+    content: `Attento marinaio: questa non è una birra qualsiasi. Trinidad Bastard è una Tripel belga dorata e seducente, ispirata alle stive dei velieri, alle casse di spezie e agli incontri proibiti al chiaro di luna.
 
-              La sua presenza era diversa. Alta, fiera, con i capelli corvini che le scendevano fino ai fianchi e uno sguardo che sfidava il mondo. Non disse una parola mentre la rinchiudevano nella cella di isolamento, ma negli occhi le brillava un fuoco indomabile.
+Al primo sorso è morbida, quasi innocente. Poi emergono il calore, le note speziate e un carattere esotico che accompagna ogni bevuta con eleganza.
 
-              Quella notte, la luna piena illuminava il piccolo ufficio dello sceriffo. Il silenzio era rotto solo dal frinire dei grilli e dallo scricchiolio del legno vecchio. Il marshal non riusciva a staccare gli occhi da quella cella: la figura della donna, immobile sotto la luce argentea, sembrava una statua scolpita da un artista greco. Eppure, c’era qualcosa di selvaggio in lei, qualcosa che lo attirava come una fiamma attira la polvere.
+Con il suo 6,6% vol. è avvolgente e leggermente piccante: una compagna di viaggio intensa, da gustare lentamente tra 6 e 8 °C.
 
-              Si avvicinò, quasi senza rendersene conto. Bella Negra lo fissò, e in quello sguardo c’era un intero deserto: sabbia, vento e tempesta. In un istante il marshal sentì il cuore battergli nel petto come un tamburo di guerra. Fu un momento sospeso nel tempo, un sortilegio che nessuno dei due avrebbe mai dimenticato.
-
-              Al mattino la cella era vuota. Nessuno seppe dire come fosse fuggita, ma l’unica traccia che lasciò fu il ricordo di quella notte e il profumo della sua pelle che sembrava ancora fluttuare nell’aria. Il marshal, incapace di tornare alla vita di sempre, decise di rendere eterna quella memoria.
-
-Convocò il miglior mastro birraio del West e gli raccontò ogni dettaglio. Così nacque Bella Negra IPA, una birra intensa, oscura e seducente, capace di riportare chiunque a quella notte carica di magia.`,
+Trinidad Bastard non è fedele, non è gentile… ma è dannatamente buona.`,
     specifications: [
-      { parameter: 'ABV (Alcohol By Volume)', description: 'Percentuale di alcol. Indica il corpo e la forza della birra.', value: '6.8%' },
-      { parameter: 'IBU (International Bitterness Units)', description: 'Unità di amaro. Più è alto, più la birra è amara.', value: '55' },
-      { parameter: 'EBC / SRM (Colore)', description: 'Scala del colore della birra (giallo paglierino → nero).', value: 'EBC 80 (nero profondo)' },
-      { parameter: 'OG (Original Gravity)', description: 'Densità iniziale del mosto, indica zuccheri fermentabili.', value: '1.070' },
-      { parameter: 'FG (Final Gravity)', description: 'Densità finale dopo fermentazione, indica corpo residuo.', value: '1.015' },
-      { parameter: 'Carbonazione', description: 'Livello di frizzantezza, espresso in volumi di CO₂.', value: '2.3 vol.' },
-      { parameter: 'Luppoli', description: 'Varietà di luppolo usati', value: 'Columbus, Magnum, Warrior' },
-      { parameter: 'Malti', description: 'Tipi di malto usati', value: 'Black Patent, Chocolate, Roasted Barley' },
-      { parameter: 'Fermentazione', description: 'Tipo di lievito / fermentazione.', value: 'Alta fermentazione (American Ale Yeast)' },
-      { parameter: 'Note di Degustazione', description: 'Aromi e sapori percepiti.', value: 'Caffè, cioccolato fondente, vaniglia, finale intenso e vellutato.' }
+      { parameter: 'Stile', description: 'Famiglia brassicola di appartenenza.', value: 'Tripel belga' },
+      { parameter: 'ABV (Alcohol By Volume)', description: 'Percentuale di alcol.', value: '6,6%' },
+      { parameter: 'Formato', description: 'Contenuto della bottiglia.', value: '330 ml' },
+      { parameter: 'Temperatura di servizio', description: 'Temperatura consigliata per la degustazione.', value: '6–8 °C' },
+      { parameter: 'Colore', description: 'Aspetto nel bicchiere.', value: 'Dorato' },
+      { parameter: 'Note di degustazione', description: 'Aromi e sensazioni principali.', value: 'Spezie, note esotiche, calore avvolgente e finale leggermente piccante.' }
     ]
   }
 };

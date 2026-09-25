@@ -9,7 +9,7 @@
 ## Contenuti Trinidad Bastard
 - Titolo: **Trinidad Bastard – La Sirena dei Caraibi**.
 - Stile: **Tripel belga**.
-- Dati certi ricavati dall’etichetta: **330 ml**, **8,4% ABV**, servizio **6–8 °C**.
+- Dati certi ricavati dall’etichetta: **330 ml**, **6,6% ABV**, servizio **6–8 °C**.
 - Descrizione e articolo riscritti in forma più leggibile, mantenendo il racconto piratesco dell’etichetta: speziata, esotica, morbida al primo sorso, calda e avvolgente.
 - Le informazioni tecniche non leggibili o non dichiarate chiaramente nell’etichetta non verranno inventate.
 

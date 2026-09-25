@@ -10,6 +10,7 @@ import { Search, Filter, SlidersHorizontal } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useCart } from '@/contexts/CartContext';
 import { toast } from 'sonner';
+import trinidadBastardLabel from '@/assets/trinidad-bastard-etichetta-corretta.jpg';
 
 const Catalogo = () => {
   const { addItem } = useCart();
@@ -34,12 +35,23 @@ const Catalogo = () => {
       if (error) throw error;
 
       // Use image_url directly if it's already a full URL, otherwise construct Supabase URL
-      const productsWithPublicImage = (data || []).map(p => ({
-        ...p,
-        featured_image: p.image_url.startsWith('http') 
-          ? p.image_url 
-          : `https://xchwmgqejzyvnfzfdlhz.supabase.co/storage/v1/object/public/images/${p.image_url}`
-      }));
+      const productsWithPublicImage = (data || []).map(p => {
+        const isTrinidad = p.name.toLowerCase().includes('trinidad bastard') || p.name.toLowerCase().includes('bella negra');
+        return {
+          ...p,
+          name: isTrinidad ? 'Trinidad Bastard' : p.name,
+          description: isTrinidad
+            ? 'Tripel belga dorata, speziata ed esotica. Morbida al primo sorso, calda e avvolgente nel finale.'
+            : p.description,
+          abv: isTrinidad ? 6.6 : p.abv,
+          style: isTrinidad ? 'Tripel belga' : p.style,
+          featured_image: isTrinidad
+            ? trinidadBastardLabel
+            : p.image_url.startsWith('http')
+              ? p.image_url
+              : `https://xchwmgqejzyvnfzfdlhz.supabase.co/storage/v1/object/public/images/${p.image_url}`
+        };
+      });
 
       setProducts(productsWithPublicImage);
     } catch (error) {
@@ -69,7 +81,7 @@ const Catalogo = () => {
         case 'abv': return b.abv - a.abv;
         case 'ibu': return b.ibu - a.ibu;
         default:
-          const customOrder = ['golden shower', 'red head', 'bella negra'];
+          const customOrder = ['golden shower', 'red head', 'trinidad bastard'];
           const aIndex = customOrder.findIndex(name => a.name.toLowerCase().includes(name));
           const bIndex = customOrder.findIndex(name => b.name.toLowerCase().includes(name));
           if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;

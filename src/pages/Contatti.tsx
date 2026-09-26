@@ -190,7 +190,7 @@ export default function Contatti() {
                   <div className="flex items-start gap-3">
                     <MapPin className="h-5 w-5 text-gold-primary mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-montserrat font-medium text-white-warm">Birreria LI-DO</p>
+                      <p className="font-montserrat font-medium text-white-warm">Birrificio Lido</p>
                       <p className="font-lora text-white-warm/80">
                         Staffoli, Toscana<br />
                         Italia
@@ -217,8 +217,8 @@ export default function Contatti() {
                     <Mail className="h-5 w-5 text-gold-primary flex-shrink-0" />
                     <div>
                       <p className="font-montserrat font-medium text-white-warm">Email</p>
-                      <a href="mailto:info@birrerialido.it" className="font-lora text-white-warm/80 hover:text-gold-primary transition-colors">
-                        info@birrerialido.it
+                      <a href="mailto:info@birrificiolido.it" className="font-lora text-white-warm/80 hover:text-gold-primary transition-colors">
+                        info@birrificiolido.it
                       </a>
                     </div>
                   </div>
@@ -247,7 +247,7 @@ export default function Contatti() {
                 
                 <div className="flex gap-4">
                   <a 
-                    href="https://instagram.com/birrerialido" 
+                    href="https://instagram.com/birrificiolido" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-gold-primary to-orange-warm text-black-glossy rounded-lg hover:scale-105 transition-all duration-300 font-montserrat font-bold"
@@ -256,7 +256,7 @@ export default function Contatti() {
                     Instagram
                   </a>
                   <a 
-                    href="https://facebook.com/birrerialido" 
+                    href="https://facebook.com/birrificiolido" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-red-intense to-orange-warm text-white-warm rounded-lg hover:scale-105 transition-all duration-300 font-montserrat font-bold"

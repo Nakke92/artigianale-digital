@@ -37,7 +37,7 @@ export default function Terms() {
                 <h2 className="text-2xl font-display text-golden mb-4">1. Informazioni Generali</h2>
                 <p className="text-white/80">
                   Questi termini e condizioni regolano l'utilizzo del sito web e l'acquisto 
-                  di prodotti da Birreria LI-DO S.r.l., con sede in Via della Birra 
+                  di prodotti da Birrificio Lido S.r.l., con sede in Via della Birra 
                   Artigianale, 42 - 00100 Roma (RM), P.IVA: 12345678901.
                 </p>
               </section>

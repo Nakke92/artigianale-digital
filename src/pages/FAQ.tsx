@@ -34,7 +34,7 @@ export default function FAQ() {
       icon: "🍺",
       faqs: [
         {
-          question: "Come conservare le birre Birreria LI-DO?",
+          question: "Come conservare le birre Birrificio Lido?",
           answer: "Conserva le birre in luogo fresco e asciutto, lontano dalla luce diretta, a temperatura tra 5-12°C. Una volta aperta, consumare entro 24 ore per mantenere la qualità ottimale."
         },
         {
@@ -183,7 +183,7 @@ export default function FAQ() {
                   Contattaci
                 </Button>
               </Link>
-              <a href="mailto:info@birrerialido.it">
+              <a href="mailto:info@birrificiolido.it">
                 <Button size="lg" className="border-white/50 text-white hover:bg-white/10 hover:border-white transition-all">
                   Scrivi una Email
                 </Button>

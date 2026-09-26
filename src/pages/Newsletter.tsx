@@ -29,7 +29,7 @@ export default function Newsletter() {
       
       toast({
         title: "Iscrizione completata!",
-        description: "Benvenuto nella famiglia Birreria LI-DO. Controlla la tua email per confermare l'iscrizione.",
+        description: "Benvenuto nella famiglia Birrificio Lido. Controlla la tua email per confermare l'iscrizione.",
       });
       setEmail('');
     } catch (error) {
@@ -62,7 +62,7 @@ export default function Newsletter() {
     {
       icon: <Bell className="h-8 w-8 text-accent" />,
       title: "News e Aggiornamenti",
-      description: "Le ultime novità dal mondo Birreria LI-DO e il dietro le quinte"
+      description: "Le ultime novità dal mondo Birrificio Lido e il dietro le quinte"
     },
     {
       icon: <Mail className="h-8 w-8 text-primary" />,
@@ -81,7 +81,7 @@ export default function Newsletter() {
           <div className="absolute inset-0 retro-dots opacity-20"></div>
           <div className="relative z-10">
             <h1 className="text-4xl md:text-6xl font-display text-psychedelic mb-6">
-              Newsletter Birreria LI-DO
+              Newsletter Birrificio Lido
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Unisciti alla nostra comunità e ricevi contenuti esclusivi, 
@@ -165,7 +165,7 @@ export default function Newsletter() {
 
                 <div className="text-xs text-muted-foreground bg-muted/50 p-3 rounded-lg">
                   <p>
-                    Iscrivendoti accetti di ricevere email promozionali da Birreria LI-DO. 
+                    Iscrivendoti accetti di ricevere email promozionali da Birrificio Lido. 
                     Puoi disiscriverti in qualsiasi momento. Leggi la nostra{' '}
                     <a href="/privacy" className="text-primary hover:underline">
                       informativa sulla privacy

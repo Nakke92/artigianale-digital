@@ -166,7 +166,7 @@ export default function Admin() {
               Dashboard Admin
             </h1>
             <p className="text-muted-foreground">
-              Gestisci il tuo e-commerce Birreria LI-DO
+               Gestisci il tuo e-commerce Birrificio Lido
             </p>
           </div>
           <Button className="btn-golden">
@@ -326,11 +326,11 @@ export default function Admin() {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium mb-2">Nome Azienda</label>
-                      <Input defaultValue="Birreria LI-DO S.r.l." />
+                       <Input defaultValue="Birrificio Lido S.r.l." />
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-2">Email</label>
-                      <Input defaultValue="info@birrerialido.it" />
+                       <Input defaultValue="info@birrificiolido.it" />
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-2">Telefono</label>
